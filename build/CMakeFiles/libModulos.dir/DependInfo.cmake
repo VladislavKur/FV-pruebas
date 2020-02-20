@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo.cpp" "/home/magiic/Escritorio/ranjamp/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
-  "/home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo2.cpp" "/home/magiic/Escritorio/ranjamp/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
+  "/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.cpp" "/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
+  "/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo2.cpp" "/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
