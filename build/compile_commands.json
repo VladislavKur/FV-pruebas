@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/andres/Escritorio/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/menu.dir/menu.cpp.o -c /home/andres/Escritorio/FV-pruebas/menu.cpp",
+  "file": "/home/andres/Escritorio/FV-pruebas/menu.cpp"
+},
+{
+  "directory": "/home/andres/Escritorio/FV-pruebas/build",
   "command": "/usr/bin/g++-5    -I/home/andres/Escritorio/FV-pruebas/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.cpp",
   "file": "/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.cpp"
 },

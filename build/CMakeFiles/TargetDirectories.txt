@@ -1,4 +1,5 @@
 /home/andres/Escritorio/FV-pruebas/build/CMakeFiles/edit_cache.dir
+/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/menu.dir
 /home/andres/Escritorio/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
 /home/andres/Escritorio/FV-pruebas/build/CMakeFiles/libModulos.dir
 /home/andres/Escritorio/FV-pruebas/build/CMakeFiles/ranJamp.dir

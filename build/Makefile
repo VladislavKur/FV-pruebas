@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named menu
+
+# Build rule for target.
+menu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 menu
+.PHONY : menu
+
+# fast build rule for target.
+menu/fast:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
+.PHONY : menu/fast
+
+#=============================================================================
 # Target rules for targets named libModulos
 
 # Build rule for target.
@@ -270,6 +283,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+menu.o: menu.cpp.o
+
+.PHONY : menu.o
+
+# target to build an object file
+menu.cpp.o:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.o
+.PHONY : menu.cpp.o
+
+menu.i: menu.cpp.i
+
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.cpp.i:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.i
+.PHONY : menu.cpp.i
+
+menu.s: menu.cpp.s
+
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.cpp.s:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.s
+.PHONY : menu.cpp.s
+
 recoger.o: recoger.cpp.o
 
 .PHONY : recoger.o
@@ -304,6 +344,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... menu"
 	@echo "... rebuild_cache"
 	@echo "... libModulos"
 	@echo "... ranJamp"
@@ -321,6 +362,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... menu.o"
+	@echo "... menu.i"
+	@echo "... menu.s"
 	@echo "... recoger.o"
 	@echo "... recoger.i"
 	@echo "... recoger.s"
