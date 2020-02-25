@@ -15,18 +15,20 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb"
+
         },
         {
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/ranJamp",
+            "program": "${workspaceFolder}/build/caer",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb"
+
         }
     ]
 }
