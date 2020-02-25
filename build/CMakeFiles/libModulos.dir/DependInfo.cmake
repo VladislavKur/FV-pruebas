@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vermia/ranjamp/ej_modulos/mimodulo.cpp" "/home/vermia/ranjamp/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
-  "/home/vermia/ranjamp/ej_modulos/mimodulo2.cpp" "/home/vermia/ranjamp/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
+  "/home/vermia/FV-pruebas/ej_modulos/mimodulo.cpp" "/home/vermia/FV-pruebas/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
+  "/home/vermia/FV-pruebas/ej_modulos/mimodulo2.cpp" "/home/vermia/FV-pruebas/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
