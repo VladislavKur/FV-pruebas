@@ -10,7 +10,7 @@
 
 /home/vermia/FV-pruebas/include/config.h
 
-/home/vermia/FV-pruebas/main.cpp
+/home/vermia/FV-pruebas/recoger.cpp
 SFML/Graphics.hpp
 -
 iostream
