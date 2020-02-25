@@ -11,12 +11,13 @@ int main() {
   ////START////
   /////////////
 
-  bool pulsandoDerecha=false;
-  bool pulsandoIzquierda=false;
-  bool pulsandoEspacio=false;
-
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
+
+
+  sf::RectangleShape plataforma(sf::Vector2f(400,40));
+  sf::RectangleShape suelo(sf::Vector2f(1000,5));
+  
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -29,21 +30,36 @@ int main() {
   sf::Sprite sprite(tex);
 
   //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
+ 
   //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+
 
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
+  
 
   float jumpSpeed=0;
-  float yInicial=sprite.getPosition().y;
-  bool saltando=false;
+  //float yInicial=sprite.getPosition().y;
+  //bool saltando=false;
+  bool enTierra=false;
 
   float jumpHeight=75*2;
 
   float deltaTime = 0;
   sf::Clock clock;
+
+  sprite.setOrigin(75 / 2, 75 / 2);
+  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+  sprite.setPosition(320, 40);
+
+  plataforma.setFillColor(sf::Color(0,0,128));
+  plataforma.setPosition(200, sprite.getPosition().y+300 );
+
+
+  suelo.setFillColor(sf::Color(255,0,0));
+  suelo.setPosition(0,470);
+
+
+  sf::View view(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y), sf::Vector2f( 640.0f, 480.0f));
 
   //////////////////
   ////BUCLE////////
@@ -72,14 +88,11 @@ int main() {
 
         //Mapeo del cursor
         case sf::Keyboard::Right:
-          pulsandoDerecha=true;
           break;
 
         case sf::Keyboard::Left:
-          pulsandoIzquierda=true;
           
           case sf::Keyboard::Space:
-            pulsandoEspacio=true;
           break;
         //Tecla ESC para salir
         case sf::Keyboard::Escape:
@@ -99,45 +112,50 @@ int main() {
     ////////////
     ///UPDATE///
     ////////////
+    if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)){
     deltaTime = clock.restart().asSeconds();
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
       sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
       //Escala por defecto
       sprite.setScale(1, 1);
-      sprite.move(0.05, 0);
+      sprite.move(500*deltaTime, 0);
     }
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
       sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
           //Escala por defecto
           sprite.setScale(-1, 1);
-          sprite.move(-0.05, 0);
+          sprite.move(-500*deltaTime, 0);
     }
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
+  if(sprite.getGlobalBounds().intersects(plataforma.getGlobalBounds()) ||
+   sprite.getGlobalBounds().intersects(suelo.getGlobalBounds()) ){
+    enTierra=true;
+    jumpSpeed=0;
+    //std::cout<<plataforma.getGlobalBounds().intersects(sprite.getGlobalBounds()) << std::endl;
+  }else enTierra=false;
+    
+  
 
-          if(!saltando){
-            saltando=true;
-            jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
-          }
-          
-
-    }
-
-    if(sprite.getPosition().y>yInicial){
+    /*if(sprite.getPosition().y>yInicial){
       jumpSpeed=0;
       sprite.setPosition( sf::Vector2f(sprite.getPosition().x,yInicial) );
       saltando=false;
-    }
+    }*/
     
-    if(saltando){
-        
-        jumpSpeed+=981.0f*deltaTime;
-        
+    if(!enTierra){
+      jumpSpeed+=981.0f*deltaTime;
+    }
 
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
+      if(enTierra){
+        enTierra=false;
+        jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
+      }
     }
     
+    //Caída
     sprite.move(sf::Vector2f(0,jumpSpeed*deltaTime));
     
 
@@ -145,8 +163,34 @@ int main() {
     /////DRAW/////
     //////////////
     window.clear();
+    view.setCenter(sprite.getPosition());
+    window.setView(view);
+
     window.draw(sprite);
+    window.draw(plataforma);
+    window.draw(suelo);
+
     window.display();
+    }else{
+
+
+
+       jumpSpeed=0;
+       
+        sprite.setOrigin(75 / 2, 75 / 2);
+        sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+        sprite.setPosition(320, 40);
+
+       
+
+        plataforma.setFillColor(sf::Color(0,0,128));
+        plataforma.setPosition(200, sprite.getPosition().y+300 );
+
+
+        suelo.setFillColor(sf::Color(255,0,0));
+        suelo.setPosition(0,470);
+
+    }
   }
 
   return 0;

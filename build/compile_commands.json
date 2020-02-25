@@ -1,8 +1,8 @@
 [
 {
   "directory": "/home/magiic/Escritorio/ranjamp/build",
-  "command": "/usr/bin/g++-5    -I/home/magiic/Escritorio/ranjamp/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/ranJamp.dir/main.cpp.o -c /home/magiic/Escritorio/ranjamp/main.cpp",
-  "file": "/home/magiic/Escritorio/ranjamp/main.cpp"
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/caer.dir/caer.cpp.o -c /home/magiic/Escritorio/ranjamp/caer.cpp",
+  "file": "/home/magiic/Escritorio/ranjamp/caer.cpp"
 },
 {
   "directory": "/home/magiic/Escritorio/ranjamp/build",
@@ -13,5 +13,10 @@
   "directory": "/home/magiic/Escritorio/ranjamp/build",
   "command": "/usr/bin/g++-5    -I/home/magiic/Escritorio/ranjamp/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo2.cpp",
   "file": "/home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo2.cpp"
+},
+{
+  "directory": "/home/magiic/Escritorio/ranjamp/build",
+  "command": "/usr/bin/g++-5    -I/home/magiic/Escritorio/ranjamp/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/ranJamp.dir/main.cpp.o -c /home/magiic/Escritorio/ranjamp/main.cpp",
+  "file": "/home/magiic/Escritorio/ranjamp/main.cpp"
 }
 ]

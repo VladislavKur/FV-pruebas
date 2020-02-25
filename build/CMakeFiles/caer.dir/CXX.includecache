@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/magiic/Escritorio/ranjamp/caer.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+include/config.h
+/home/magiic/Escritorio/ranjamp/include/config.h
+ej_modulos/mimodulo.h
+/home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo.h
+
+/home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo.h
+
+/home/magiic/Escritorio/ranjamp/include/config.h
+

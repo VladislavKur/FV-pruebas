@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/magiic/Escritorio/ranjamp/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ranJamp
+# Target rules for targets named caer
 
 # Build rule for target.
-ranJamp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ranJamp
-.PHONY : ranJamp
+caer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 caer
+.PHONY : caer
 
 # fast build rule for target.
-ranJamp/fast:
-	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/build
-.PHONY : ranJamp/fast
+caer/fast:
+	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
+.PHONY : caer/fast
 
 #=============================================================================
 # Target rules for targets named libModulos
@@ -135,6 +135,46 @@ libModulos: cmake_check_build_system
 libModulos/fast:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/build
 .PHONY : libModulos/fast
+
+#=============================================================================
+# Target rules for targets named ranJamp
+
+# Build rule for target.
+ranJamp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ranJamp
+.PHONY : ranJamp
+
+# fast build rule for target.
+ranJamp/fast:
+	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/build
+.PHONY : ranJamp/fast
+
+caer.o: caer.cpp.o
+
+.PHONY : caer.o
+
+# target to build an object file
+caer.cpp.o:
+	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.o
+.PHONY : caer.cpp.o
+
+caer.i: caer.cpp.i
+
+.PHONY : caer.i
+
+# target to preprocess a source file
+caer.cpp.i:
+	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.i
+.PHONY : caer.cpp.i
+
+caer.s: caer.cpp.s
+
+.PHONY : caer.s
+
+# target to generate assembly for a file
+caer.cpp.s:
+	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.s
+.PHONY : caer.cpp.s
 
 ej_modulos/mimodulo.o: ej_modulos/mimodulo.cpp.o
 
@@ -223,10 +263,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... ranJamp"
 	@echo "... edit_cache"
+	@echo "... caer"
 	@echo "... libModulos"
+	@echo "... ranJamp"
+	@echo "... rebuild_cache"
+	@echo "... caer.o"
+	@echo "... caer.i"
+	@echo "... caer.s"
 	@echo "... ej_modulos/mimodulo.o"
 	@echo "... ej_modulos/mimodulo.i"
 	@echo "... ej_modulos/mimodulo.s"
