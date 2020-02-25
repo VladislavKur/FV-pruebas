@@ -1,4 +1,4 @@
-# Install script for directory: /home/vermia/FV-pruebas
+# Install script for directory: /home/magiic/Escritorio/ranjamp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/vermia/FV-pruebas/build/ej_modulos/cmake_install.cmake")
+  include("/home/magiic/Escritorio/ranjamp/build/ej_modulos/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vermia/FV-pruebas/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/magiic/Escritorio/ranjamp/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
