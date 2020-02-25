@@ -30,12 +30,12 @@ int main() {
   sf::Sprite sprite(tex);
 
   //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
+ 
   //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+
 
   // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 40);
+  
 
   float jumpSpeed=0;
   //float yInicial=sprite.getPosition().y;
@@ -46,6 +46,10 @@ int main() {
 
   float deltaTime = 0;
   sf::Clock clock;
+
+  sprite.setOrigin(75 / 2, 75 / 2);
+  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+  sprite.setPosition(320, 40);
 
   plataforma.setFillColor(sf::Color(0,0,128));
   plataforma.setPosition(200, sprite.getPosition().y+300 );
@@ -108,6 +112,7 @@ int main() {
     ////////////
     ///UPDATE///
     ////////////
+    if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)){
     deltaTime = clock.restart().asSeconds();
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
@@ -166,6 +171,26 @@ int main() {
     window.draw(suelo);
 
     window.display();
+    }else{
+
+
+
+       jumpSpeed=0;
+       
+        sprite.setOrigin(75 / 2, 75 / 2);
+        sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+        sprite.setPosition(320, 40);
+
+       
+
+        plataforma.setFillColor(sf::Color(0,0,128));
+        plataforma.setPosition(200, sprite.getPosition().y+300 );
+
+
+        suelo.setFillColor(sf::Color(255,0,0));
+        suelo.setPosition(0,470);
+
+    }
   }
 
   return 0;
