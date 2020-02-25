@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vermia/ranjamp/ej_modulos/mimodulo.cpp
+mimodulo.h
+/home/vermia/ranjamp/ej_modulos/mimodulo.h
+iostream
+-
+
+/home/vermia/ranjamp/ej_modulos/mimodulo.h
+
+/home/vermia/ranjamp/ej_modulos/mimodulo2.cpp
+mimodulo2.h
+/home/vermia/ranjamp/ej_modulos/mimodulo2.h
+iostream
+-
+
+/home/vermia/ranjamp/ej_modulos/mimodulo2.h
+
