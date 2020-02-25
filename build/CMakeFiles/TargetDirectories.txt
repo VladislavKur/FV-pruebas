@@ -1,6 +1,6 @@
-/home/vermia/ranjamp/build/CMakeFiles/rebuild_cache.dir
-/home/vermia/ranjamp/build/CMakeFiles/ranJamp.dir
-/home/vermia/ranjamp/build/CMakeFiles/edit_cache.dir
-/home/vermia/ranjamp/build/CMakeFiles/libModulos.dir
-/home/vermia/ranjamp/build/ej_modulos/CMakeFiles/edit_cache.dir
-/home/vermia/ranjamp/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/rebuild_cache.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/ranJamp.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/edit_cache.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/libModulos.dir
+/home/magiic/Escritorio/ranjamp/build/ej_modulos/CMakeFiles/edit_cache.dir
+/home/magiic/Escritorio/ranjamp/build/ej_modulos/CMakeFiles/rebuild_cache.dir
