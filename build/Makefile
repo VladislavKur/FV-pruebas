@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named caer
-
-# Build rule for target.
-caer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 caer
-.PHONY : caer
-
-# fast build rule for target.
-caer/fast:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
-.PHONY : caer/fast
-
-#=============================================================================
 # Target rules for targets named libModulos
 
 # Build rule for target.
@@ -148,6 +135,32 @@ ranJamp: cmake_check_build_system
 ranJamp/fast:
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/build
 .PHONY : ranJamp/fast
+
+#=============================================================================
+# Target rules for targets named caer
+
+# Build rule for target.
+caer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 caer
+.PHONY : caer
+
+# fast build rule for target.
+caer/fast:
+	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
+.PHONY : caer/fast
+
+#=============================================================================
+# Target rules for targets named recoger
+
+# Build rule for target.
+recoger: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 recoger
+.PHONY : recoger
+
+# fast build rule for target.
+recoger/fast:
+	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/build
+.PHONY : recoger/fast
 
 caer.o: caer.cpp.o
 
@@ -257,6 +270,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+recoger.o: recoger.cpp.o
+
+.PHONY : recoger.o
+
+# target to build an object file
+recoger.cpp.o:
+	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/recoger.cpp.o
+.PHONY : recoger.cpp.o
+
+recoger.i: recoger.cpp.i
+
+.PHONY : recoger.i
+
+# target to preprocess a source file
+recoger.cpp.i:
+	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/recoger.cpp.i
+.PHONY : recoger.cpp.i
+
+recoger.s: recoger.cpp.s
+
+.PHONY : recoger.s
+
+# target to generate assembly for a file
+recoger.cpp.s:
+	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/recoger.cpp.s
+.PHONY : recoger.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -264,10 +304,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... caer"
+	@echo "... rebuild_cache"
 	@echo "... libModulos"
 	@echo "... ranJamp"
-	@echo "... rebuild_cache"
+	@echo "... caer"
+	@echo "... recoger"
 	@echo "... caer.o"
 	@echo "... caer.i"
 	@echo "... caer.s"
@@ -280,6 +321,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... recoger.o"
+	@echo "... recoger.i"
+	@echo "... recoger.s"
 .PHONY : help
 
 
