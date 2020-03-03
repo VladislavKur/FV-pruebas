@@ -1,6 +1,0 @@
-/home/vermia/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/ranJamp.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/caer.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/recoger.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/edit_cache.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/menu.dir
