@@ -2,10 +2,6 @@
 #include <iostream>
 
 
-
-
-
-
 #define kVel 5
 
 int main() {

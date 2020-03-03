@@ -4,8 +4,11 @@ project(ranJamp)
 #Añadir tantos subdirectorios como se necesiten
 #En cada subdirectorio debe haber un fichero CMakeLists.txt
 #Habitualmente cada subdirectorio determinará una libreria 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> d60851529fcbf6fc19fe5c365deeca3a4432cc48
 
 #Opciones a pasar al compilador de C++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")
@@ -19,7 +22,10 @@ add_executable(menu menu.cpp)
 #Añadir todos los objetos (ficheros o) que requiera el ejecutable. 
 #Habitualmente todas las librerias definidas mediante subcarpetas
 #aportaran código
+<<<<<<< HEAD
+=======
 
+>>>>>>> d60851529fcbf6fc19fe5c365deeca3a4432cc48
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 #Para usar SFML

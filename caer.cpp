@@ -3,7 +3,6 @@
 
 
 
-
 #define kVel 5
 
 int main() {

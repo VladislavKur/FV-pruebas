@@ -1,6 +1,0 @@
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/rebuild_cache.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/ranJamp.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/caer.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/recoger.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/edit_cache.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/menu.dir
