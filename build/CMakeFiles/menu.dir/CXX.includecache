@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/magiic/Escritorio/ranjamp/menu.cpp
+menu.h
+/home/magiic/Escritorio/ranjamp/menu.h
+
+/home/magiic/Escritorio/ranjamp/menu.h
+SFML/Graphics.hpp
+-
+iostream
+-
+
