@@ -1,9 +1,6 @@
-/home/vermia/FV-pruebas/build/CMakeFiles/edit_cache.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/menu.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/libModulos.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/ranJamp.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/caer.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/recoger.dir
-/home/vermia/FV-pruebas/build/ej_modulos/CMakeFiles/edit_cache.dir
-/home/vermia/FV-pruebas/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/rebuild_cache.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/ranJamp.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/caer.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/recoger.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/edit_cache.dir
+/home/magiic/Escritorio/ranjamp/build/CMakeFiles/menu.dir

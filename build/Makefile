@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vermia/FV-pruebas
+CMAKE_SOURCE_DIR = /home/magiic/Escritorio/ranjamp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vermia/FV-pruebas/build
+CMAKE_BINARY_DIR = /home/magiic/Escritorio/ranjamp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles /home/vermia/FV-pruebas/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles /home/magiic/Escritorio/ranjamp/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -109,32 +109,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named menu
-
-# Build rule for target.
-menu: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 menu
-.PHONY : menu
-
-# fast build rule for target.
-menu/fast:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
-.PHONY : menu/fast
-
-#=============================================================================
-# Target rules for targets named libModulos
-
-# Build rule for target.
-libModulos: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libModulos
-.PHONY : libModulos
-
-# fast build rule for target.
-libModulos/fast:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/build
-.PHONY : libModulos/fast
 
 #=============================================================================
 # Target rules for targets named ranJamp
@@ -175,6 +149,19 @@ recoger/fast:
 	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/build
 .PHONY : recoger/fast
 
+#=============================================================================
+# Target rules for targets named menu
+
+# Build rule for target.
+menu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 menu
+.PHONY : menu
+
+# fast build rule for target.
+menu/fast:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
+.PHONY : menu/fast
+
 caer.o: caer.cpp.o
 
 .PHONY : caer.o
@@ -201,60 +188,6 @@ caer.s: caer.cpp.s
 caer.cpp.s:
 	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.s
 .PHONY : caer.cpp.s
-
-ej_modulos/mimodulo.o: ej_modulos/mimodulo.cpp.o
-
-.PHONY : ej_modulos/mimodulo.o
-
-# target to build an object file
-ej_modulos/mimodulo.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o
-.PHONY : ej_modulos/mimodulo.cpp.o
-
-ej_modulos/mimodulo.i: ej_modulos/mimodulo.cpp.i
-
-.PHONY : ej_modulos/mimodulo.i
-
-# target to preprocess a source file
-ej_modulos/mimodulo.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.i
-.PHONY : ej_modulos/mimodulo.cpp.i
-
-ej_modulos/mimodulo.s: ej_modulos/mimodulo.cpp.s
-
-.PHONY : ej_modulos/mimodulo.s
-
-# target to generate assembly for a file
-ej_modulos/mimodulo.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.s
-.PHONY : ej_modulos/mimodulo.cpp.s
-
-ej_modulos/mimodulo2.o: ej_modulos/mimodulo2.cpp.o
-
-.PHONY : ej_modulos/mimodulo2.o
-
-# target to build an object file
-ej_modulos/mimodulo2.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o
-.PHONY : ej_modulos/mimodulo2.cpp.o
-
-ej_modulos/mimodulo2.i: ej_modulos/mimodulo2.cpp.i
-
-.PHONY : ej_modulos/mimodulo2.i
-
-# target to preprocess a source file
-ej_modulos/mimodulo2.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.i
-.PHONY : ej_modulos/mimodulo2.cpp.i
-
-ej_modulos/mimodulo2.s: ej_modulos/mimodulo2.cpp.s
-
-.PHONY : ej_modulos/mimodulo2.s
-
-# target to generate assembly for a file
-ej_modulos/mimodulo2.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s
-.PHONY : ej_modulos/mimodulo2.cpp.s
 
 main.o: main.cpp.o
 
@@ -343,22 +276,15 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... menu"
 	@echo "... rebuild_cache"
-	@echo "... libModulos"
 	@echo "... ranJamp"
 	@echo "... caer"
 	@echo "... recoger"
+	@echo "... edit_cache"
+	@echo "... menu"
 	@echo "... caer.o"
 	@echo "... caer.i"
 	@echo "... caer.s"
-	@echo "... ej_modulos/mimodulo.o"
-	@echo "... ej_modulos/mimodulo.i"
-	@echo "... ej_modulos/mimodulo.s"
-	@echo "... ej_modulos/mimodulo2.o"
-	@echo "... ej_modulos/mimodulo2.i"
-	@echo "... ej_modulos/mimodulo2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

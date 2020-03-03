@@ -1,32 +1,22 @@
 [
 {
-  "directory": "/home/vermia/FV-pruebas/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/menu.dir/menu.cpp.o -c /home/vermia/FV-pruebas/menu.cpp",
-  "file": "/home/vermia/FV-pruebas/menu.cpp"
+  "directory": "/home/magiic/Escritorio/ranjamp/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/ranJamp.dir/main.cpp.o -c /home/magiic/Escritorio/ranjamp/main.cpp",
+  "file": "/home/magiic/Escritorio/ranjamp/main.cpp"
 },
 {
-  "directory": "/home/vermia/FV-pruebas/build",
-  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/vermia/FV-pruebas/ej_modulos/mimodulo.cpp",
-  "file": "/home/vermia/FV-pruebas/ej_modulos/mimodulo.cpp"
+  "directory": "/home/magiic/Escritorio/ranjamp/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/caer.dir/caer.cpp.o -c /home/magiic/Escritorio/ranjamp/caer.cpp",
+  "file": "/home/magiic/Escritorio/ranjamp/caer.cpp"
 },
 {
-  "directory": "/home/vermia/FV-pruebas/build",
-  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o -c /home/vermia/FV-pruebas/ej_modulos/mimodulo2.cpp",
-  "file": "/home/vermia/FV-pruebas/ej_modulos/mimodulo2.cpp"
+  "directory": "/home/magiic/Escritorio/ranjamp/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/recoger.dir/recoger.cpp.o -c /home/magiic/Escritorio/ranjamp/recoger.cpp",
+  "file": "/home/magiic/Escritorio/ranjamp/recoger.cpp"
 },
 {
-  "directory": "/home/vermia/FV-pruebas/build",
-  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/ranJamp.dir/main.cpp.o -c /home/vermia/FV-pruebas/main.cpp",
-  "file": "/home/vermia/FV-pruebas/main.cpp"
-},
-{
-  "directory": "/home/vermia/FV-pruebas/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/caer.dir/caer.cpp.o -c /home/vermia/FV-pruebas/caer.cpp",
-  "file": "/home/vermia/FV-pruebas/caer.cpp"
-},
-{
-  "directory": "/home/vermia/FV-pruebas/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/recoger.dir/recoger.cpp.o -c /home/vermia/FV-pruebas/recoger.cpp",
-  "file": "/home/vermia/FV-pruebas/recoger.cpp"
+  "directory": "/home/magiic/Escritorio/ranjamp/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/menu.dir/menu.cpp.o -c /home/magiic/Escritorio/ranjamp/menu.cpp",
+  "file": "/home/magiic/Escritorio/ranjamp/menu.cpp"
 }
 ]

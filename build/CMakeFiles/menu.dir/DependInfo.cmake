@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vermia/FV-pruebas/menu.cpp" "/home/vermia/FV-pruebas/build/CMakeFiles/menu.dir/menu.cpp.o"
+  "/home/magiic/Escritorio/ranjamp/menu.cpp" "/home/magiic/Escritorio/ranjamp/build/CMakeFiles/menu.dir/menu.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

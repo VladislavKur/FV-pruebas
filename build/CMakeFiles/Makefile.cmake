@@ -14,7 +14,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/feature_tests.c"
   "CMakeFiles/feature_tests.cxx"
   "../cmake_modules/FindSFML.cmake"
-  "../ej_modulos/CMakeLists.txt"
   "/usr/share/cmake-3.5/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
@@ -109,14 +108,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.5.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "ej_modulos/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/menu.dir/DependInfo.cmake"
-  "CMakeFiles/libModulos.dir/DependInfo.cmake"
   "CMakeFiles/ranJamp.dir/DependInfo.cmake"
   "CMakeFiles/caer.dir/DependInfo.cmake"
   "CMakeFiles/recoger.dir/DependInfo.cmake"
+  "CMakeFiles/menu.dir/DependInfo.cmake"
   )
