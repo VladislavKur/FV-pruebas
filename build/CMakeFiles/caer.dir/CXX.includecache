@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/andres/Escritorio/FV-pruebas/caer.cpp
+/home/vermia/FV-pruebas/caer.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
 include/config.h
-/home/andres/Escritorio/FV-pruebas/include/config.h
+/home/vermia/FV-pruebas/include/config.h
 ej_modulos/mimodulo.h
-/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.h
+/home/vermia/FV-pruebas/ej_modulos/mimodulo.h
 
-/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.h
+/home/vermia/FV-pruebas/ej_modulos/mimodulo.h
 
-/home/andres/Escritorio/FV-pruebas/include/config.h
+/home/vermia/FV-pruebas/include/config.h
 

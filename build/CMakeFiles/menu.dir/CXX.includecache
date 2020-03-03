@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/andres/Escritorio/FV-pruebas/menu.cpp
+/home/vermia/FV-pruebas/menu.cpp
 menu.h
-/home/andres/Escritorio/FV-pruebas/menu.h
+/home/vermia/FV-pruebas/menu.h
 
-/home/andres/Escritorio/FV-pruebas/menu.h
+/home/vermia/FV-pruebas/menu.h
 SFML/Graphics.hpp
 -
 iostream
