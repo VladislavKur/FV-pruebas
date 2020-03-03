@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo.h
+/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.h
 
-/home/magiic/Escritorio/ranjamp/include/config.h
+/home/andres/Escritorio/FV-pruebas/include/config.h
 
-/home/magiic/Escritorio/ranjamp/recoger.cpp
+/home/andres/Escritorio/FV-pruebas/recoger.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
 include/config.h
-/home/magiic/Escritorio/ranjamp/include/config.h
+/home/andres/Escritorio/FV-pruebas/include/config.h
 ej_modulos/mimodulo.h
-/home/magiic/Escritorio/ranjamp/ej_modulos/mimodulo.h
+/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.h
 

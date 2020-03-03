@@ -4,14 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo.cpp" "/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o"
-  "/home/andres/Escritorio/FV-pruebas/ej_modulos/mimodulo2.cpp" "/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o"
+  "/home/andres/Escritorio/FV-pruebas/menu.cpp" "/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/menu.dir/menu.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../ej_modulos"
   )
 
 # Targets to which this target links.

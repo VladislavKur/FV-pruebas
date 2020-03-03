@@ -14,6 +14,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")
 add_executable(ranJamp main.cpp)
 add_executable(caer caer.cpp)
 add_executable(recoger recoger.cpp)
+add_executable(menu menu.cpp)
 
 #Añadir todos los objetos (ficheros o) que requiera el ejecutable. 
 #Habitualmente todas las librerias definidas mediante subcarpetas
@@ -28,5 +29,6 @@ if (SFML_FOUND)
     target_link_libraries(ranJamp ${SFML_LIBRARIES})
     target_link_libraries(caer ${SFML_LIBRARIES})
     target_link_libraries(recoger ${SFML_LIBRARIES})
+     target_link_libraries(menu ${SFML_LIBRARIES})
 endif()
 

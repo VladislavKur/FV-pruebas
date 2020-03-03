@@ -1,4 +1,4 @@
-# Install script for directory: /home/magiic/Escritorio/ranjamp/ej_modulos
+# Install script for directory: /home/andres/Escritorio/FV-pruebas/ej_modulos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

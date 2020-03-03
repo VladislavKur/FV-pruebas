@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andres/Escritorio/FV-pruebas/menu.cpp
+menu.h
+/home/andres/Escritorio/FV-pruebas/menu.h
+
+/home/andres/Escritorio/FV-pruebas/menu.h
+SFML/Graphics.hpp
+-
+iostream
+-
+

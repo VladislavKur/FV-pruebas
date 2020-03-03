@@ -48,18 +48,18 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/magiic/Escritorio/ranjamp
+CMAKE_SOURCE_DIR = /home/andres/Escritorio/FV-pruebas
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/magiic/Escritorio/ranjamp/build
+CMAKE_BINARY_DIR = /home/andres/Escritorio/FV-pruebas/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles /home/magiic/Escritorio/ranjamp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andres/Escritorio/FV-pruebas/build/CMakeFiles /home/andres/Escritorio/FV-pruebas/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andres/Escritorio/FV-pruebas/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -109,6 +109,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named menu
+
+# Build rule for target.
+menu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 menu
+.PHONY : menu
+
+# fast build rule for target.
+menu/fast:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
+.PHONY : menu/fast
 
 #=============================================================================
 # Target rules for targets named libModulos
@@ -270,6 +283,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+menu.o: menu.cpp.o
+
+.PHONY : menu.o
+
+# target to build an object file
+menu.cpp.o:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.o
+.PHONY : menu.cpp.o
+
+menu.i: menu.cpp.i
+
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.cpp.i:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.i
+.PHONY : menu.cpp.i
+
+menu.s: menu.cpp.s
+
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.cpp.s:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.s
+.PHONY : menu.cpp.s
+
 recoger.o: recoger.cpp.o
 
 .PHONY : recoger.o
@@ -304,6 +344,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... menu"
 	@echo "... rebuild_cache"
 	@echo "... libModulos"
 	@echo "... ranJamp"
@@ -321,6 +362,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... menu.o"
+	@echo "... menu.i"
+	@echo "... menu.s"
 	@echo "... recoger.o"
 	@echo "... recoger.i"
 	@echo "... recoger.s"
