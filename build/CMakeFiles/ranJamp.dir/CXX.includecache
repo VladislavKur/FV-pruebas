@@ -6,17 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/vermia/FV-pruebas/ej_modulos/mimodulo.h
-
-/home/vermia/FV-pruebas/include/config.h
-
 /home/vermia/FV-pruebas/main.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
-include/config.h
-/home/vermia/FV-pruebas/include/config.h
-ej_modulos/mimodulo.h
-/home/vermia/FV-pruebas/ej_modulos/mimodulo.h
 

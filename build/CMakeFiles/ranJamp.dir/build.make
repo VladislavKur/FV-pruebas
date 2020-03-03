@@ -90,7 +90,6 @@ ranJamp_EXTERNAL_OBJECTS =
 
 ranJamp: CMakeFiles/ranJamp.dir/main.cpp.o
 ranJamp: CMakeFiles/ranJamp.dir/build.make
-ranJamp: liblibModulos.a
 ranJamp: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 ranJamp: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 ranJamp: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so

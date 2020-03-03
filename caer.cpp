@@ -1,8 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "include/config.h"
-#include "ej_modulos/mimodulo.h"
 
 #define kVel 5
 

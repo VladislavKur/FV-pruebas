@@ -60,87 +60,13 @@ CMAKE_SOURCE_DIR = /home/vermia/FV-pruebas
 CMAKE_BINARY_DIR = /home/vermia/FV-pruebas/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/menu.dir
-
-# All Build rule for target.
-CMakeFiles/menu.dir/all:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/depend
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=6,7 "Built target menu"
-.PHONY : CMakeFiles/menu.dir/all
-
-# Include target in all.
-all: CMakeFiles/menu.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/menu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/menu.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
-.PHONY : CMakeFiles/menu.dir/rule
-
-# Convenience name for target.
-menu: CMakeFiles/menu.dir/rule
-
-.PHONY : menu
-
-# clean rule for target.
-CMakeFiles/menu.dir/clean:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/clean
-.PHONY : CMakeFiles/menu.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/menu.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/libModulos.dir
-
-# All Build rule for target.
-CMakeFiles/libModulos.dir/all:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/depend
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=3,4,5 "Built target libModulos"
-.PHONY : CMakeFiles/libModulos.dir/all
-
-# Include target in all.
-all: CMakeFiles/libModulos.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/libModulos.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libModulos.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
-.PHONY : CMakeFiles/libModulos.dir/rule
-
-# Convenience name for target.
-libModulos: CMakeFiles/libModulos.dir/rule
-
-.PHONY : libModulos
-
-# clean rule for target.
-CMakeFiles/libModulos.dir/clean:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/clean
-.PHONY : CMakeFiles/libModulos.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/libModulos.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/ranJamp.dir
 
 # All Build rule for target.
-CMakeFiles/ranJamp.dir/all: CMakeFiles/libModulos.dir/all
+CMakeFiles/ranJamp.dir/all:
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/depend
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=8,9 "Built target ranJamp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=5,6 "Built target ranJamp"
 .PHONY : CMakeFiles/ranJamp.dir/all
 
 # Include target in all.
@@ -150,7 +76,7 @@ all: CMakeFiles/ranJamp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ranJamp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ranJamp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
 .PHONY : CMakeFiles/ranJamp.dir/rule
@@ -214,7 +140,7 @@ clean: CMakeFiles/caer.dir/clean
 CMakeFiles/recoger.dir/all:
 	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/depend
 	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=10,11 "Built target recoger"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=7,8 "Built target recoger"
 .PHONY : CMakeFiles/recoger.dir/all
 
 # Include target in all.
@@ -245,22 +171,41 @@ clean: CMakeFiles/recoger.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory ej_modulos
+# Target rules for target CMakeFiles/menu.dir
 
-# Convenience name for "all" pass in the directory.
-ej_modulos/all:
+# All Build rule for target.
+CMakeFiles/menu.dir/all:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/depend
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=3,4 "Built target menu"
+.PHONY : CMakeFiles/menu.dir/all
 
-.PHONY : ej_modulos/all
+# Include target in all.
+all: CMakeFiles/menu.dir/all
 
-# Convenience name for "clean" pass in the directory.
-ej_modulos/clean:
+.PHONY : all
 
-.PHONY : ej_modulos/clean
+# Build rule for subdir invocation for target.
+CMakeFiles/menu.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/menu.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
+.PHONY : CMakeFiles/menu.dir/rule
 
-# Convenience name for "preinstall" pass in the directory.
-ej_modulos/preinstall:
+# Convenience name for target.
+menu: CMakeFiles/menu.dir/rule
 
-.PHONY : ej_modulos/preinstall
+.PHONY : menu
+
+# clean rule for target.
+CMakeFiles/menu.dir/clean:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/clean
+.PHONY : CMakeFiles/menu.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/menu.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

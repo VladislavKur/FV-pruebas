@@ -1,8 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "include/config.h"
-#include "ej_modulos/mimodulo.h"
 
 #define kVel 5
 
@@ -19,9 +17,6 @@ int main() {
   ////START////
   /////////////
 
-  bool pulsandoDerecha=false;
-  bool pulsandoIzquierda=false;
-  bool pulsandoEspacio=false;
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
@@ -84,14 +79,11 @@ int main() {
 
         //Mapeo del cursor
         case sf::Keyboard::Right:
-          pulsandoDerecha=true;
           break;
 
         case sf::Keyboard::Left:
-          pulsandoIzquierda=true;
           
           case sf::Keyboard::Space:
-            pulsandoEspacio=true;
           break;
         //Tecla ESC para salir
         case sf::Keyboard::Escape:
