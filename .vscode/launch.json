@@ -44,6 +44,19 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb"
+        },
+
+        {
+            "name": "(gdb) Murcielago",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/murcielago",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
         }
     ]
 }
