@@ -111,6 +111,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named murcielago
+
+# Build rule for target.
+murcielago: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 murcielago
+.PHONY : murcielago
+
+# fast build rule for target.
+murcielago/fast:
+	$(MAKE) -f CMakeFiles/murcielago.dir/build.make CMakeFiles/murcielago.dir/build
+.PHONY : murcielago/fast
+
+#=============================================================================
+# Target rules for targets named matar
+
+# Build rule for target.
+matar: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 matar
+.PHONY : matar
+
+# fast build rule for target.
+matar/fast:
+	$(MAKE) -f CMakeFiles/matar.dir/build.make CMakeFiles/matar.dir/build
+.PHONY : matar/fast
+
+#=============================================================================
+# Target rules for targets named reptante
+
+# Build rule for target.
+reptante: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 reptante
+.PHONY : reptante
+
+# fast build rule for target.
+reptante/fast:
+	$(MAKE) -f CMakeFiles/reptante.dir/build.make CMakeFiles/reptante.dir/build
+.PHONY : reptante/fast
+
+#=============================================================================
 # Target rules for targets named libModulos
 
 # Build rule for target.
@@ -243,6 +282,60 @@ ej_modulos/mimodulo2.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s
 .PHONY : ej_modulos/mimodulo2.cpp.s
 
+enemMurcielago.o: enemMurcielago.cpp.o
+
+.PHONY : enemMurcielago.o
+
+# target to build an object file
+enemMurcielago.cpp.o:
+	$(MAKE) -f CMakeFiles/murcielago.dir/build.make CMakeFiles/murcielago.dir/enemMurcielago.cpp.o
+.PHONY : enemMurcielago.cpp.o
+
+enemMurcielago.i: enemMurcielago.cpp.i
+
+.PHONY : enemMurcielago.i
+
+# target to preprocess a source file
+enemMurcielago.cpp.i:
+	$(MAKE) -f CMakeFiles/murcielago.dir/build.make CMakeFiles/murcielago.dir/enemMurcielago.cpp.i
+.PHONY : enemMurcielago.cpp.i
+
+enemMurcielago.s: enemMurcielago.cpp.s
+
+.PHONY : enemMurcielago.s
+
+# target to generate assembly for a file
+enemMurcielago.cpp.s:
+	$(MAKE) -f CMakeFiles/murcielago.dir/build.make CMakeFiles/murcielago.dir/enemMurcielago.cpp.s
+.PHONY : enemMurcielago.cpp.s
+
+enemRep.o: enemRep.cpp.o
+
+.PHONY : enemRep.o
+
+# target to build an object file
+enemRep.cpp.o:
+	$(MAKE) -f CMakeFiles/reptante.dir/build.make CMakeFiles/reptante.dir/enemRep.cpp.o
+.PHONY : enemRep.cpp.o
+
+enemRep.i: enemRep.cpp.i
+
+.PHONY : enemRep.i
+
+# target to preprocess a source file
+enemRep.cpp.i:
+	$(MAKE) -f CMakeFiles/reptante.dir/build.make CMakeFiles/reptante.dir/enemRep.cpp.i
+.PHONY : enemRep.cpp.i
+
+enemRep.s: enemRep.cpp.s
+
+.PHONY : enemRep.s
+
+# target to generate assembly for a file
+enemRep.cpp.s:
+	$(MAKE) -f CMakeFiles/reptante.dir/build.make CMakeFiles/reptante.dir/enemRep.cpp.s
+.PHONY : enemRep.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -269,6 +362,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+matarpersonaje.o: matarpersonaje.cpp.o
+
+.PHONY : matarpersonaje.o
+
+# target to build an object file
+matarpersonaje.cpp.o:
+	$(MAKE) -f CMakeFiles/matar.dir/build.make CMakeFiles/matar.dir/matarpersonaje.cpp.o
+.PHONY : matarpersonaje.cpp.o
+
+matarpersonaje.i: matarpersonaje.cpp.i
+
+.PHONY : matarpersonaje.i
+
+# target to preprocess a source file
+matarpersonaje.cpp.i:
+	$(MAKE) -f CMakeFiles/matar.dir/build.make CMakeFiles/matar.dir/matarpersonaje.cpp.i
+.PHONY : matarpersonaje.cpp.i
+
+matarpersonaje.s: matarpersonaje.cpp.s
+
+.PHONY : matarpersonaje.s
+
+# target to generate assembly for a file
+matarpersonaje.cpp.s:
+	$(MAKE) -f CMakeFiles/matar.dir/build.make CMakeFiles/matar.dir/matarpersonaje.cpp.s
+.PHONY : matarpersonaje.cpp.s
 
 recoger.o: recoger.cpp.o
 
@@ -303,7 +423,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... murcielago"
+	@echo "... matar"
 	@echo "... edit_cache"
+	@echo "... reptante"
 	@echo "... rebuild_cache"
 	@echo "... libModulos"
 	@echo "... ranJamp"
@@ -318,9 +441,18 @@ help:
 	@echo "... ej_modulos/mimodulo2.o"
 	@echo "... ej_modulos/mimodulo2.i"
 	@echo "... ej_modulos/mimodulo2.s"
+	@echo "... enemMurcielago.o"
+	@echo "... enemMurcielago.i"
+	@echo "... enemMurcielago.s"
+	@echo "... enemRep.o"
+	@echo "... enemRep.i"
+	@echo "... enemRep.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... matarpersonaje.o"
+	@echo "... matarpersonaje.i"
+	@echo "... matarpersonaje.s"
 	@echo "... recoger.o"
 	@echo "... recoger.i"
 	@echo "... recoger.s"

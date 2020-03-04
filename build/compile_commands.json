@@ -1,6 +1,21 @@
 [
 {
   "directory": "/home/fv/Desktop/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/murcielago.dir/enemMurcielago.cpp.o -c /home/fv/Desktop/FV-pruebas/enemMurcielago.cpp",
+  "file": "/home/fv/Desktop/FV-pruebas/enemMurcielago.cpp"
+},
+{
+  "directory": "/home/fv/Desktop/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/matar.dir/matarpersonaje.cpp.o -c /home/fv/Desktop/FV-pruebas/matarpersonaje.cpp",
+  "file": "/home/fv/Desktop/FV-pruebas/matarpersonaje.cpp"
+},
+{
+  "directory": "/home/fv/Desktop/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/reptante.dir/enemRep.cpp.o -c /home/fv/Desktop/FV-pruebas/enemRep.cpp",
+  "file": "/home/fv/Desktop/FV-pruebas/enemRep.cpp"
+},
+{
+  "directory": "/home/fv/Desktop/FV-pruebas/build",
   "command": "/usr/bin/g++-5    -I/home/fv/Desktop/FV-pruebas/ej_modulos   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o -c /home/fv/Desktop/FV-pruebas/ej_modulos/mimodulo.cpp",
   "file": "/home/fv/Desktop/FV-pruebas/ej_modulos/mimodulo.cpp"
 },

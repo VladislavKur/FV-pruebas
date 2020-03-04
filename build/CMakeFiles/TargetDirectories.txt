@@ -1,4 +1,7 @@
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/murcielago.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/matar.dir
 /home/fv/Desktop/FV-pruebas/build/CMakeFiles/edit_cache.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/reptante.dir
 /home/fv/Desktop/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
 /home/fv/Desktop/FV-pruebas/build/CMakeFiles/libModulos.dir
 /home/fv/Desktop/FV-pruebas/build/CMakeFiles/ranJamp.dir
