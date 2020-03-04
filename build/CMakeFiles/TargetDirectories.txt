@@ -1,8 +1,8 @@
-/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/edit_cache.dir
-/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
-/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/libModulos.dir
-/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/ranJamp.dir
-/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/caer.dir
-/home/andres/Escritorio/FV-pruebas/build/CMakeFiles/recoger.dir
-/home/andres/Escritorio/FV-pruebas/build/ej_modulos/CMakeFiles/edit_cache.dir
-/home/andres/Escritorio/FV-pruebas/build/ej_modulos/CMakeFiles/rebuild_cache.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/edit_cache.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/libModulos.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/ranJamp.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/caer.dir
+/home/fv/Desktop/FV-pruebas/build/CMakeFiles/recoger.dir
+/home/fv/Desktop/FV-pruebas/build/ej_modulos/CMakeFiles/edit_cache.dir
+/home/fv/Desktop/FV-pruebas/build/ej_modulos/CMakeFiles/rebuild_cache.dir
