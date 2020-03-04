@@ -2,13 +2,10 @@
 #include <iostream>
 
 #include "include/config.h"
-#include "ej_modulos/mimodulo.h"
 
 #define kVel 1
 
 int main() {
-
- 
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1200, 1200), "P0. Fundamentos de los Videojuegos. DCCIA");
@@ -32,7 +29,7 @@ int main() {
   sprite.setPosition(100, 100);
 
   int modoReptante = 0; //0: suelo, 1: paredD; 2: techo 3: paredI
-  char direccion = 1; //1: reloj, -1: contrario
+  int direccion = 1; //1: reloj, -1: contrario
 
   //Bucle del juego
   while (window.isOpen()) {
@@ -41,24 +38,45 @@ int main() {
     //switch movimiento del reptante
     switch(modoReptante){
       case 0: //suelo
-          sprite.move(kVel*direccion, 0);
-          if(sprite.getPosition().x == 1100)
-            modoReptante = 3;
+            sprite.move(kVel*direccion, 0);
+            if(sprite.getPosition().x == 1100 && direccion==1)
+                modoReptante = 3;
+            else
+            {
+                if(sprite.getPosition().y == 100 && direccion==-1)
+                    modoReptante = 1;
+            }
+            
       break;
-      case 1: //paredDerecha
-          sprite.move(0, -kVel*direccion);
-          if(sprite.getPosition().y == 100)
-            modoReptante = 0;
+      case 1: //paredIzq
+            sprite.move(0, -kVel*direccion);
+            if(sprite.getPosition().y == 100 && direccion==1)
+                modoReptante = 0;
+            else
+            {
+                if(sprite.getPosition().x == 100 && direccion==-1)
+                    modoReptante = 2;
+            }
       break;
       case 2://Techo
-          sprite.move(-kVel*direccion, 0);
-          if(sprite.getPosition().x == 100)
-            modoReptante = 1;
+            sprite.move(-kVel*direccion, 0);
+            if(sprite.getPosition().x == 100 && direccion==1)
+                modoReptante = 1;
+            else
+            {
+                if(sprite.getPosition().y == 100 && direccion==-1)
+                    modoReptante = 3;
+            }
       break;
-      case 3://Techo
-          sprite.move(0, kVel*direccion);
-          if(sprite.getPosition().y == 800)
-            modoReptante = 2;
+      case 3://pared Dereecha
+            sprite.move(0, kVel*direccion);
+            if(sprite.getPosition().y == 800 && direccion==1)
+                modoReptante = 2;
+            else
+            {
+                if(sprite.getPosition().x == 1100 && direccion==-1)
+                    modoReptante = 1;
+            }
       break;
     }
     
