@@ -1,4 +1,6 @@
 #include <SFML/Graphics.hpp>
+#include "../Animacion/Animacion.h"
+#include "../Collider/Collider.h"
 
 class Player
 {
@@ -11,10 +13,10 @@ private:
     bool PU_saltoDoble; bool PU_velocidad; bool PU_slowhits; // Powerups, se pueden hacer un array mas adelante
     float jumpSpeed;
     float jumpHeight; //Constante (en principio)
-    //Animacion animacion;
+    Animacion animacion;
 public:
     //CANON
-    Player(sf::Texture&);
+    Player(sf::Texture* textura, sf::Vector2u cantidadImagenes, float SwitchTimeSprite);
     ~Player() ;
 
     //FUNCIONALIDAD

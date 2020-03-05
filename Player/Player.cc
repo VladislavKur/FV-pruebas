@@ -5,7 +5,8 @@ Player::~Player(){
 
 }
 
-Player::Player(sf::Texture &tex) : body(tex){
+Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTimeSprite) 
+: body(*tex) , animacion(tex,cantidadImagenes,SwitchTimeSprite){
     
 
     // 75 es el tamaño del sprite, cambiar

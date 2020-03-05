@@ -33,7 +33,7 @@ int main() {
 
  
 
-  Player player(tex);
+  Player player(&tex, sf::Vector2u(40,19),0.33f);
 
   sf::RectangleShape plataforma(sf::Vector2f(400,40));
   plataforma.setFillColor(sf::Color(0,0,128));

@@ -48,4 +48,3 @@ bool Collider::checkCollider(Collider &other, float push){
 
     return false;
 }
-void Collider::Move( float dx, float dy ) { body.move(dx,dy); }

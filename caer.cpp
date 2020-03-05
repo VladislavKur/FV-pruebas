@@ -26,7 +26,7 @@ int main() {
   }
 
 
-  Player player(tex);
+  Player player(&tex, sf::Vector2u(40,19),0.33f);
 
   float deltaTime = 0;
   sf::Clock clock;
