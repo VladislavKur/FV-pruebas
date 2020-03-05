@@ -15,7 +15,36 @@ bool Collider::checkCollider(Collider &other, float push){
     sf::Vector2f thisPosicion = getPosicion();
     sf::Vector2f thisMitad = getMitadSize();
 
-    float dx; float dy;
+    float deltaX = otherPosicion.x - thisPosicion.x; 
+    float deltaY = otherPosicion.y - thisPosicion.y;
+    float intersectX = abs(deltaX) - (otherMitad.x + thisMitad.x);
+    float intersectY = abs(deltaY) - (otherMitad.y + thisMitad.y);
+
+    if(intersectX < 0.0f && intersectY < 0.0f){
+
+
+        push = std::min(std::max(push,1.0f),0.0f);
+
+        if(intersectX > intersectY){
+            if(deltaX > 0.0f){
+                Move(intersectX *(1.0f-push),0.0f);
+                other.Move(-intersectX * push, 0.0f);
+            }else{
+                Move(-intersectX *(1.0f-push),0.0f);
+                other.Move(intersectX * push, 0.0f);
+            }
+        }else{
+            if(deltaY > 0.0f){
+                Move(0.0f,intersectY *(1.0f-push));
+                other.Move(0.0f,-intersectY * push);
+            }else{
+                Move(0.0f,-intersectY *(1.0f-push));
+                other.Move(0.0f, intersectY * push);
+            }
+        }
+
+        return true;
+    }
 
     return false;
 }
