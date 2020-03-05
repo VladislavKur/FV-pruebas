@@ -1,9 +1,0 @@
-/home/vermia/FV-pruebas/build/CMakeFiles/edit_cache.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/Recoger.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/ranJamp.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/Menu.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/libClases.dir
-/home/vermia/FV-pruebas/build/CMakeFiles/Gravedad.dir
-/home/vermia/FV-pruebas/build/Player/CMakeFiles/edit_cache.dir
-/home/vermia/FV-pruebas/build/Player/CMakeFiles/rebuild_cache.dir
