@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Player/Player.h"
 
 
 #define kVel 5
@@ -28,22 +29,19 @@ int main() {
     exit(0);
   }
 
-  //Y creo el spritesheet a partir de la imagen anterior
-  sf::Sprite sprite(tex);
+  
 
-  //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
-  //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+ 
 
-  // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(320, 240);
+  Player player(tex);
 
-  float jumpSpeed=0;
-  float yInicial=sprite.getPosition().y;
-  bool saltando=false;
+  sf::RectangleShape plataforma(sf::Vector2f(400,40));
+  plataforma.setFillColor(sf::Color(0,0,128));
+  plataforma.setPosition(200, player.getBody().getPosition().y+300 );
 
-  float jumpHeight=75*2;
+   sf::RectangleShape suelo(sf::Vector2f(1000,5));
+   suelo.setFillColor(sf::Color(255,0,0));
+   suelo.setPosition(0,470);
 
   float deltaTime = 0;
   sf::Clock clock;
@@ -65,32 +63,18 @@ int main() {
 
       switch (event.type) {
 
-      //Si se recibe el evento de cerrar la ventana la cierro
       case sf::Event::Closed:
         window.close();
         break;
 
-      //Se pulsó una tecla, imprimo su codigo
       case sf::Event::KeyPressed:
 
-        //Verifico si se pulsa alguna tecla de movimiento
         switch (event.key.code) {
           
-
-        //Mapeo del cursor
-        case sf::Keyboard::Right:
-          break;
-
-        case sf::Keyboard::Left:
-          
-          case sf::Keyboard::Space:
-          break;
-        //Tecla ESC para salir
         case sf::Keyboard::Escape:
           window.close();
           break;
 
-        //Cualquier tecla desconocida se imprime por pantalla su código
         default:
           std::cout << event.key.code << std::endl;
           break;
@@ -105,58 +89,22 @@ int main() {
     ////////////
     deltaTime = clock.restart().asSeconds();
 
+    player.update(deltaTime,plataforma, suelo);
 
-
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
-      sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-      //Escala por defecto
-      sprite.setScale(1, 1);
-      sprite.move(0.05, 0);
-    }
-
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
-      sprite.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
-          //Escala por defecto
-          sprite.setScale(-1, 1);
-          sprite.move(-0.05, 0);
-    }
-
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
-
-          if(!saltando){
-            saltando=true;
-            jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
-          }
-          
-
-    }
-
-    if(sprite.getPosition().y>yInicial){
-      jumpSpeed=0;
-      sprite.setPosition( sf::Vector2f(sprite.getPosition().x,yInicial) );
-      saltando=false;
-    }
-
-    if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && colision(sprite,item)){
+    if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && colision(player.getBody(),item)){
         item.setSize(sf::Vector2f(0,0));
     }
-    
-    if(saltando){
-        
-        jumpSpeed+=981.0f*deltaTime;
-        
-
-    }
-    
-    sprite.move(sf::Vector2f(0,jumpSpeed*deltaTime));
+ 
     
 
     ///////////////
     /////DRAW/////
     //////////////
     window.clear();
-    window.draw(sprite);
+    player.draw(window);
     window.draw(item);
+    window.draw(plataforma);
+    window.draw(suelo);
     window.display();
   }
 
