@@ -52,6 +52,7 @@ int main() {
     }
     if(vidas==0){
         std::cout << "Muerto" << std::endl;
+        
     }
     
     sf::Event event;
@@ -110,6 +111,11 @@ int main() {
     window.clear();
     if(!muerto)
       window.draw(personaje);
+    else{
+      personaje.setScale(personaje.getScale().x * 0.8, personaje.getScale().y * 0.8);
+      window.draw(personaje);
+      
+    }
     window.draw(enemigo);
     window.display();
   }

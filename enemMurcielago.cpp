@@ -3,7 +3,7 @@
 
 #include "include/config.h"
 
-#define kVel 0.001
+#define kVel 0.5
 
 int main() {
 
@@ -27,11 +27,13 @@ int main() {
   enemigo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   enemigo.setPosition(1100, 100);
 int cont = 1;
+  float velocidadX = kVel;
   
   //Bucle del juego
   while (window.isOpen()) {
-    enemigo.move(kVel-1, kVel+1);
-    //enemigo.setPosition(enemigo.getPosition().x-cont,enemigo.getPosition().y+cont);
+    velocidadX = pow(1.1,velocidadX);
+    //enemigo.move(-velocidadX, kVel+1);
+    enemigo.setPosition(enemigo.getPosition().x-velocidadX-kVel,enemigo.getPosition().y+velocidadX*kVel*0.5);
     cont++;
     sf::Event event;
     while (window.pollEvent(event)) {
