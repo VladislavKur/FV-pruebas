@@ -57,6 +57,19 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb"
+        },
+
+        {
+            "name": "(gdb) MatarPersonaje",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/matar",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
         }
     ]
 }
