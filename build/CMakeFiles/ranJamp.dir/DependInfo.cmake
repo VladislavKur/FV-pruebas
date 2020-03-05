@@ -4,16 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/magiic/Escritorio/ranjamp/main.cpp" "/home/magiic/Escritorio/ranjamp/build/CMakeFiles/ranJamp.dir/main.cpp.o"
+  "/home/vermia/FV-pruebas/main.cpp" "/home/vermia/FV-pruebas/build/CMakeFiles/ranJamp.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../Player"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/vermia/FV-pruebas/build/CMakeFiles/libClases.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

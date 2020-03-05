@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+  "../Player/CMakeLists.txt"
   "CMakeFiles/3.5.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeSystem.cmake"
@@ -38,12 +39,14 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Player/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/Recoger.dir/DependInfo.cmake"
   "CMakeFiles/ranJamp.dir/DependInfo.cmake"
-  "CMakeFiles/caer.dir/DependInfo.cmake"
-  "CMakeFiles/recoger.dir/DependInfo.cmake"
-  "CMakeFiles/menu.dir/DependInfo.cmake"
+  "CMakeFiles/Menu.dir/DependInfo.cmake"
+  "CMakeFiles/libClases.dir/DependInfo.cmake"
+  "CMakeFiles/Gravedad.dir/DependInfo.cmake"
   )

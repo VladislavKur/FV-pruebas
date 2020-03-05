@@ -1,22 +1,27 @@
 [
 {
-  "directory": "/home/magiic/Escritorio/ranjamp/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/ranJamp.dir/main.cpp.o -c /home/magiic/Escritorio/ranjamp/main.cpp",
-  "file": "/home/magiic/Escritorio/ranjamp/main.cpp"
+  "directory": "/home/vermia/FV-pruebas/build",
+  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/Player   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/Recoger.dir/recoger.cpp.o -c /home/vermia/FV-pruebas/recoger.cpp",
+  "file": "/home/vermia/FV-pruebas/recoger.cpp"
 },
 {
-  "directory": "/home/magiic/Escritorio/ranjamp/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/caer.dir/caer.cpp.o -c /home/magiic/Escritorio/ranjamp/caer.cpp",
-  "file": "/home/magiic/Escritorio/ranjamp/caer.cpp"
+  "directory": "/home/vermia/FV-pruebas/build",
+  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/Player   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/ranJamp.dir/main.cpp.o -c /home/vermia/FV-pruebas/main.cpp",
+  "file": "/home/vermia/FV-pruebas/main.cpp"
 },
 {
-  "directory": "/home/magiic/Escritorio/ranjamp/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/recoger.dir/recoger.cpp.o -c /home/magiic/Escritorio/ranjamp/recoger.cpp",
-  "file": "/home/magiic/Escritorio/ranjamp/recoger.cpp"
+  "directory": "/home/vermia/FV-pruebas/build",
+  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/Player   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/Menu.dir/menu.cpp.o -c /home/vermia/FV-pruebas/menu.cpp",
+  "file": "/home/vermia/FV-pruebas/menu.cpp"
 },
 {
-  "directory": "/home/magiic/Escritorio/ranjamp/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/menu.dir/menu.cpp.o -c /home/magiic/Escritorio/ranjamp/menu.cpp",
-  "file": "/home/magiic/Escritorio/ranjamp/menu.cpp"
+  "directory": "/home/vermia/FV-pruebas/build",
+  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/Player   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libClases.dir/Player/Player.cc.o -c /home/vermia/FV-pruebas/Player/Player.cc",
+  "file": "/home/vermia/FV-pruebas/Player/Player.cc"
+},
+{
+  "directory": "/home/vermia/FV-pruebas/build",
+  "command": "/usr/bin/g++-5    -I/home/vermia/FV-pruebas/Player   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/Gravedad.dir/caer.cpp.o -c /home/vermia/FV-pruebas/caer.cpp",
+  "file": "/home/vermia/FV-pruebas/caer.cpp"
 }
 ]

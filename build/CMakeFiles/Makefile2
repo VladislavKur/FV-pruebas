@@ -54,19 +54,56 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/magiic/Escritorio/ranjamp
+CMAKE_SOURCE_DIR = /home/vermia/FV-pruebas
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/magiic/Escritorio/ranjamp/build
+CMAKE_BINARY_DIR = /home/vermia/FV-pruebas/build
+
+#=============================================================================
+# Target rules for target CMakeFiles/Recoger.dir
+
+# All Build rule for target.
+CMakeFiles/Recoger.dir/all: CMakeFiles/libClases.dir/all
+	$(MAKE) -f CMakeFiles/Recoger.dir/build.make CMakeFiles/Recoger.dir/depend
+	$(MAKE) -f CMakeFiles/Recoger.dir/build.make CMakeFiles/Recoger.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=5,6 "Built target Recoger"
+.PHONY : CMakeFiles/Recoger.dir/all
+
+# Include target in all.
+all: CMakeFiles/Recoger.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Recoger.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Recoger.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
+.PHONY : CMakeFiles/Recoger.dir/rule
+
+# Convenience name for target.
+Recoger: CMakeFiles/Recoger.dir/rule
+
+.PHONY : Recoger
+
+# clean rule for target.
+CMakeFiles/Recoger.dir/clean:
+	$(MAKE) -f CMakeFiles/Recoger.dir/build.make CMakeFiles/Recoger.dir/clean
+.PHONY : CMakeFiles/Recoger.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Recoger.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ranJamp.dir
 
 # All Build rule for target.
-CMakeFiles/ranJamp.dir/all:
+CMakeFiles/ranJamp.dir/all: CMakeFiles/libClases.dir/all
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/depend
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=5,6 "Built target ranJamp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=9,10 "Built target ranJamp"
 .PHONY : CMakeFiles/ranJamp.dir/all
 
 # Include target in all.
@@ -76,9 +113,9 @@ all: CMakeFiles/ranJamp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ranJamp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ranJamp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
 .PHONY : CMakeFiles/ranJamp.dir/rule
 
 # Convenience name for target.
@@ -97,115 +134,133 @@ clean: CMakeFiles/ranJamp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/caer.dir
+# Target rules for target CMakeFiles/Menu.dir
 
 # All Build rule for target.
-CMakeFiles/caer.dir/all:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/depend
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=1,2 "Built target caer"
-.PHONY : CMakeFiles/caer.dir/all
+CMakeFiles/Menu.dir/all: CMakeFiles/libClases.dir/all
+	$(MAKE) -f CMakeFiles/Menu.dir/build.make CMakeFiles/Menu.dir/depend
+	$(MAKE) -f CMakeFiles/Menu.dir/build.make CMakeFiles/Menu.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=3,4 "Built target Menu"
+.PHONY : CMakeFiles/Menu.dir/all
 
 # Include target in all.
-all: CMakeFiles/caer.dir/all
+all: CMakeFiles/Menu.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/caer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/caer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
-.PHONY : CMakeFiles/caer.dir/rule
+CMakeFiles/Menu.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Menu.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
+.PHONY : CMakeFiles/Menu.dir/rule
 
 # Convenience name for target.
-caer: CMakeFiles/caer.dir/rule
+Menu: CMakeFiles/Menu.dir/rule
 
-.PHONY : caer
-
-# clean rule for target.
-CMakeFiles/caer.dir/clean:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/clean
-.PHONY : CMakeFiles/caer.dir/clean
+.PHONY : Menu
 
 # clean rule for target.
-clean: CMakeFiles/caer.dir/clean
+CMakeFiles/Menu.dir/clean:
+	$(MAKE) -f CMakeFiles/Menu.dir/build.make CMakeFiles/Menu.dir/clean
+.PHONY : CMakeFiles/Menu.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Menu.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/recoger.dir
+# Target rules for target CMakeFiles/libClases.dir
 
 # All Build rule for target.
-CMakeFiles/recoger.dir/all:
-	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/depend
-	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=7,8 "Built target recoger"
-.PHONY : CMakeFiles/recoger.dir/all
+CMakeFiles/libClases.dir/all:
+	$(MAKE) -f CMakeFiles/libClases.dir/build.make CMakeFiles/libClases.dir/depend
+	$(MAKE) -f CMakeFiles/libClases.dir/build.make CMakeFiles/libClases.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=7,8 "Built target libClases"
+.PHONY : CMakeFiles/libClases.dir/all
 
 # Include target in all.
-all: CMakeFiles/recoger.dir/all
+all: CMakeFiles/libClases.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/recoger.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/recoger.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
-.PHONY : CMakeFiles/recoger.dir/rule
+CMakeFiles/libClases.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libClases.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
+.PHONY : CMakeFiles/libClases.dir/rule
 
 # Convenience name for target.
-recoger: CMakeFiles/recoger.dir/rule
+libClases: CMakeFiles/libClases.dir/rule
 
-.PHONY : recoger
-
-# clean rule for target.
-CMakeFiles/recoger.dir/clean:
-	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/clean
-.PHONY : CMakeFiles/recoger.dir/clean
+.PHONY : libClases
 
 # clean rule for target.
-clean: CMakeFiles/recoger.dir/clean
+CMakeFiles/libClases.dir/clean:
+	$(MAKE) -f CMakeFiles/libClases.dir/build.make CMakeFiles/libClases.dir/clean
+.PHONY : CMakeFiles/libClases.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/libClases.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/menu.dir
+# Target rules for target CMakeFiles/Gravedad.dir
 
 # All Build rule for target.
-CMakeFiles/menu.dir/all:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/depend
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=3,4 "Built target menu"
-.PHONY : CMakeFiles/menu.dir/all
+CMakeFiles/Gravedad.dir/all: CMakeFiles/libClases.dir/all
+	$(MAKE) -f CMakeFiles/Gravedad.dir/build.make CMakeFiles/Gravedad.dir/depend
+	$(MAKE) -f CMakeFiles/Gravedad.dir/build.make CMakeFiles/Gravedad.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vermia/FV-pruebas/build/CMakeFiles --progress-num=1,2 "Built target Gravedad"
+.PHONY : CMakeFiles/Gravedad.dir/all
 
 # Include target in all.
-all: CMakeFiles/menu.dir/all
+all: CMakeFiles/Gravedad.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/menu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/menu.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
-.PHONY : CMakeFiles/menu.dir/rule
+CMakeFiles/Gravedad.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Gravedad.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
+.PHONY : CMakeFiles/Gravedad.dir/rule
 
 # Convenience name for target.
-menu: CMakeFiles/menu.dir/rule
+Gravedad: CMakeFiles/Gravedad.dir/rule
 
-.PHONY : menu
-
-# clean rule for target.
-CMakeFiles/menu.dir/clean:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/clean
-.PHONY : CMakeFiles/menu.dir/clean
+.PHONY : Gravedad
 
 # clean rule for target.
-clean: CMakeFiles/menu.dir/clean
+CMakeFiles/Gravedad.dir/clean:
+	$(MAKE) -f CMakeFiles/Gravedad.dir/build.make CMakeFiles/Gravedad.dir/clean
+.PHONY : CMakeFiles/Gravedad.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Gravedad.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory Player
+
+# Convenience name for "all" pass in the directory.
+Player/all:
+
+.PHONY : Player/all
+
+# Convenience name for "clean" pass in the directory.
+Player/clean:
+
+.PHONY : Player/clean
+
+# Convenience name for "preinstall" pass in the directory.
+Player/preinstall:
+
+.PHONY : Player/preinstall
 
 #=============================================================================
 # Special targets to cleanup operation of make.

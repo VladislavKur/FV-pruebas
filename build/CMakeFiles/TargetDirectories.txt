@@ -1,6 +1,9 @@
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/rebuild_cache.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/ranJamp.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/caer.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/recoger.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/edit_cache.dir
-/home/magiic/Escritorio/ranjamp/build/CMakeFiles/menu.dir
+/home/vermia/FV-pruebas/build/CMakeFiles/edit_cache.dir
+/home/vermia/FV-pruebas/build/CMakeFiles/Recoger.dir
+/home/vermia/FV-pruebas/build/CMakeFiles/rebuild_cache.dir
+/home/vermia/FV-pruebas/build/CMakeFiles/ranJamp.dir
+/home/vermia/FV-pruebas/build/CMakeFiles/Menu.dir
+/home/vermia/FV-pruebas/build/CMakeFiles/libClases.dir
+/home/vermia/FV-pruebas/build/CMakeFiles/Gravedad.dir
+/home/vermia/FV-pruebas/build/Player/CMakeFiles/edit_cache.dir
+/home/vermia/FV-pruebas/build/Player/CMakeFiles/rebuild_cache.dir

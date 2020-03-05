@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/magiic/Escritorio/ranjamp
+CMAKE_SOURCE_DIR = /home/vermia/FV-pruebas
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/magiic/Escritorio/ranjamp/build
+CMAKE_BINARY_DIR = /home/vermia/FV-pruebas/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +67,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles /home/magiic/Escritorio/ranjamp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles /home/vermia/FV-pruebas/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vermia/FV-pruebas/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Recoger
+
+# Build rule for target.
+Recoger: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Recoger
+.PHONY : Recoger
+
+# fast build rule for target.
+Recoger/fast:
+	$(MAKE) -f CMakeFiles/Recoger.dir/build.make CMakeFiles/Recoger.dir/build
+.PHONY : Recoger/fast
+
+#=============================================================================
 # Target rules for targets named ranJamp
 
 # Build rule for target.
@@ -124,43 +137,70 @@ ranJamp/fast:
 .PHONY : ranJamp/fast
 
 #=============================================================================
-# Target rules for targets named caer
+# Target rules for targets named Menu
 
 # Build rule for target.
-caer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 caer
-.PHONY : caer
+Menu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Menu
+.PHONY : Menu
 
 # fast build rule for target.
-caer/fast:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
-.PHONY : caer/fast
+Menu/fast:
+	$(MAKE) -f CMakeFiles/Menu.dir/build.make CMakeFiles/Menu.dir/build
+.PHONY : Menu/fast
 
 #=============================================================================
-# Target rules for targets named recoger
+# Target rules for targets named libClases
 
 # Build rule for target.
-recoger: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 recoger
-.PHONY : recoger
+libClases: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libClases
+.PHONY : libClases
 
 # fast build rule for target.
-recoger/fast:
-	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/build
-.PHONY : recoger/fast
+libClases/fast:
+	$(MAKE) -f CMakeFiles/libClases.dir/build.make CMakeFiles/libClases.dir/build
+.PHONY : libClases/fast
 
 #=============================================================================
-# Target rules for targets named menu
+# Target rules for targets named Gravedad
 
 # Build rule for target.
-menu: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 menu
-.PHONY : menu
+Gravedad: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Gravedad
+.PHONY : Gravedad
 
 # fast build rule for target.
-menu/fast:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
-.PHONY : menu/fast
+Gravedad/fast:
+	$(MAKE) -f CMakeFiles/Gravedad.dir/build.make CMakeFiles/Gravedad.dir/build
+.PHONY : Gravedad/fast
+
+Player/Player.o: Player/Player.cc.o
+
+.PHONY : Player/Player.o
+
+# target to build an object file
+Player/Player.cc.o:
+	$(MAKE) -f CMakeFiles/libClases.dir/build.make CMakeFiles/libClases.dir/Player/Player.cc.o
+.PHONY : Player/Player.cc.o
+
+Player/Player.i: Player/Player.cc.i
+
+.PHONY : Player/Player.i
+
+# target to preprocess a source file
+Player/Player.cc.i:
+	$(MAKE) -f CMakeFiles/libClases.dir/build.make CMakeFiles/libClases.dir/Player/Player.cc.i
+.PHONY : Player/Player.cc.i
+
+Player/Player.s: Player/Player.cc.s
+
+.PHONY : Player/Player.s
+
+# target to generate assembly for a file
+Player/Player.cc.s:
+	$(MAKE) -f CMakeFiles/libClases.dir/build.make CMakeFiles/libClases.dir/Player/Player.cc.s
+.PHONY : Player/Player.cc.s
 
 caer.o: caer.cpp.o
 
@@ -168,7 +208,7 @@ caer.o: caer.cpp.o
 
 # target to build an object file
 caer.cpp.o:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.o
+	$(MAKE) -f CMakeFiles/Gravedad.dir/build.make CMakeFiles/Gravedad.dir/caer.cpp.o
 .PHONY : caer.cpp.o
 
 caer.i: caer.cpp.i
@@ -177,7 +217,7 @@ caer.i: caer.cpp.i
 
 # target to preprocess a source file
 caer.cpp.i:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.i
+	$(MAKE) -f CMakeFiles/Gravedad.dir/build.make CMakeFiles/Gravedad.dir/caer.cpp.i
 .PHONY : caer.cpp.i
 
 caer.s: caer.cpp.s
@@ -186,7 +226,7 @@ caer.s: caer.cpp.s
 
 # target to generate assembly for a file
 caer.cpp.s:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.s
+	$(MAKE) -f CMakeFiles/Gravedad.dir/build.make CMakeFiles/Gravedad.dir/caer.cpp.s
 .PHONY : caer.cpp.s
 
 main.o: main.cpp.o
@@ -222,7 +262,7 @@ menu.o: menu.cpp.o
 
 # target to build an object file
 menu.cpp.o:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.o
+	$(MAKE) -f CMakeFiles/Menu.dir/build.make CMakeFiles/Menu.dir/menu.cpp.o
 .PHONY : menu.cpp.o
 
 menu.i: menu.cpp.i
@@ -231,7 +271,7 @@ menu.i: menu.cpp.i
 
 # target to preprocess a source file
 menu.cpp.i:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.i
+	$(MAKE) -f CMakeFiles/Menu.dir/build.make CMakeFiles/Menu.dir/menu.cpp.i
 .PHONY : menu.cpp.i
 
 menu.s: menu.cpp.s
@@ -240,7 +280,7 @@ menu.s: menu.cpp.s
 
 # target to generate assembly for a file
 menu.cpp.s:
-	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/menu.cpp.s
+	$(MAKE) -f CMakeFiles/Menu.dir/build.make CMakeFiles/Menu.dir/menu.cpp.s
 .PHONY : menu.cpp.s
 
 recoger.o: recoger.cpp.o
@@ -249,7 +289,7 @@ recoger.o: recoger.cpp.o
 
 # target to build an object file
 recoger.cpp.o:
-	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/recoger.cpp.o
+	$(MAKE) -f CMakeFiles/Recoger.dir/build.make CMakeFiles/Recoger.dir/recoger.cpp.o
 .PHONY : recoger.cpp.o
 
 recoger.i: recoger.cpp.i
@@ -258,7 +298,7 @@ recoger.i: recoger.cpp.i
 
 # target to preprocess a source file
 recoger.cpp.i:
-	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/recoger.cpp.i
+	$(MAKE) -f CMakeFiles/Recoger.dir/build.make CMakeFiles/Recoger.dir/recoger.cpp.i
 .PHONY : recoger.cpp.i
 
 recoger.s: recoger.cpp.s
@@ -267,7 +307,7 @@ recoger.s: recoger.cpp.s
 
 # target to generate assembly for a file
 recoger.cpp.s:
-	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/recoger.cpp.s
+	$(MAKE) -f CMakeFiles/Recoger.dir/build.make CMakeFiles/Recoger.dir/recoger.cpp.s
 .PHONY : recoger.cpp.s
 
 # Help Target
@@ -276,12 +316,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
+	@echo "... Recoger"
 	@echo "... rebuild_cache"
 	@echo "... ranJamp"
-	@echo "... caer"
-	@echo "... recoger"
-	@echo "... edit_cache"
-	@echo "... menu"
+	@echo "... Menu"
+	@echo "... libClases"
+	@echo "... Gravedad"
+	@echo "... Player/Player.o"
+	@echo "... Player/Player.i"
+	@echo "... Player/Player.s"
 	@echo "... caer.o"
 	@echo "... caer.i"
 	@echo "... caer.s"
