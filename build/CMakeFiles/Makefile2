@@ -97,39 +97,39 @@ clean: CMakeFiles/ranJamp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/caer.dir
+# Target rules for target CMakeFiles/perro.dir
 
 # All Build rule for target.
-CMakeFiles/caer.dir/all:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/depend
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=1,2 "Built target caer"
-.PHONY : CMakeFiles/caer.dir/all
+CMakeFiles/perro.dir/all:
+	$(MAKE) -f CMakeFiles/perro.dir/build.make CMakeFiles/perro.dir/depend
+	$(MAKE) -f CMakeFiles/perro.dir/build.make CMakeFiles/perro.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=3,4 "Built target perro"
+.PHONY : CMakeFiles/perro.dir/all
 
 # Include target in all.
-all: CMakeFiles/caer.dir/all
+all: CMakeFiles/perro.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/caer.dir/rule: cmake_check_build_system
+CMakeFiles/perro.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/caer.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/perro.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/magiic/Escritorio/ranjamp/build/CMakeFiles 0
-.PHONY : CMakeFiles/caer.dir/rule
+.PHONY : CMakeFiles/perro.dir/rule
 
 # Convenience name for target.
-caer: CMakeFiles/caer.dir/rule
+perro: CMakeFiles/perro.dir/rule
 
-.PHONY : caer
-
-# clean rule for target.
-CMakeFiles/caer.dir/clean:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/clean
-.PHONY : CMakeFiles/caer.dir/clean
+.PHONY : perro
 
 # clean rule for target.
-clean: CMakeFiles/caer.dir/clean
+CMakeFiles/perro.dir/clean:
+	$(MAKE) -f CMakeFiles/perro.dir/build.make CMakeFiles/perro.dir/clean
+.PHONY : CMakeFiles/perro.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/perro.dir/clean
 
 .PHONY : clean
 
@@ -177,7 +177,7 @@ clean: CMakeFiles/recoger.dir/clean
 CMakeFiles/menu.dir/all:
 	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/depend
 	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=3,4 "Built target menu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/magiic/Escritorio/ranjamp/build/CMakeFiles --progress-num=1,2 "Built target menu"
 .PHONY : CMakeFiles/menu.dir/all
 
 # Include target in all.

@@ -124,17 +124,17 @@ ranJamp/fast:
 .PHONY : ranJamp/fast
 
 #=============================================================================
-# Target rules for targets named caer
+# Target rules for targets named perro
 
 # Build rule for target.
-caer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 caer
-.PHONY : caer
+perro: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 perro
+.PHONY : perro
 
 # fast build rule for target.
-caer/fast:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
-.PHONY : caer/fast
+perro/fast:
+	$(MAKE) -f CMakeFiles/perro.dir/build.make CMakeFiles/perro.dir/build
+.PHONY : perro/fast
 
 #=============================================================================
 # Target rules for targets named recoger
@@ -168,7 +168,7 @@ caer.o: caer.cpp.o
 
 # target to build an object file
 caer.cpp.o:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.o
+	$(MAKE) -f CMakeFiles/perro.dir/build.make CMakeFiles/perro.dir/caer.cpp.o
 .PHONY : caer.cpp.o
 
 caer.i: caer.cpp.i
@@ -177,7 +177,7 @@ caer.i: caer.cpp.i
 
 # target to preprocess a source file
 caer.cpp.i:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.i
+	$(MAKE) -f CMakeFiles/perro.dir/build.make CMakeFiles/perro.dir/caer.cpp.i
 .PHONY : caer.cpp.i
 
 caer.s: caer.cpp.s
@@ -186,7 +186,7 @@ caer.s: caer.cpp.s
 
 # target to generate assembly for a file
 caer.cpp.s:
-	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.s
+	$(MAKE) -f CMakeFiles/perro.dir/build.make CMakeFiles/perro.dir/caer.cpp.s
 .PHONY : caer.cpp.s
 
 main.o: main.cpp.o
@@ -278,7 +278,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... ranJamp"
-	@echo "... caer"
+	@echo "... perro"
 	@echo "... recoger"
 	@echo "... edit_cache"
 	@echo "... menu"

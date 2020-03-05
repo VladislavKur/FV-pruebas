@@ -6,7 +6,7 @@
 },
 {
   "directory": "/home/magiic/Escritorio/ranjamp/build",
-  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/caer.dir/caer.cpp.o -c /home/magiic/Escritorio/ranjamp/caer.cpp",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/perro.dir/caer.cpp.o -c /home/magiic/Escritorio/ranjamp/caer.cpp",
   "file": "/home/magiic/Escritorio/ranjamp/caer.cpp"
 },
 {
