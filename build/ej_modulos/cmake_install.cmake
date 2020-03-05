@@ -1,4 +1,4 @@
-# Install script for directory: /home/fv/Desktop/FV-pruebas/ej_modulos
+# Install script for directory: /home/antonio/Documents/proyectoFV/FV-pruebas/ej_modulos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

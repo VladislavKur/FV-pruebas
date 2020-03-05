@@ -2,40 +2,59 @@
 #include <iostream>
 
 #include "include/config.h"
+#include "centinela.h"
 
 #define kVel 0.001
+#define UPDATE_TICK_TIME 15/1000
+
 
 int main() {
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1200, 1200), "P0. Fundamentos de los Videojuegos. DCCIA");
-
+  window.setFramerateLimit(60);
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
   if (!tex.loadFromFile("resources/sprites.png")) {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-  /////////////
-  ///Enemigo///
+  //////////////
+  ///BLOQUE////
   /////////////
 
-  //Y creo el spritesheet a partir de la imagen anterior
-  sf::Sprite enemigo(tex);
+  sf::Sprite cuerpoMueve(tex);
 
-  enemigo.setOrigin(75 / 2, 75 / 2);
-  enemigo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-  enemigo.setPosition(1100, 100);
-  int cont = 1;
-  float velocidadX = kVel;
+  cuerpoMueve.setOrigin(75 / 2, 75 / 2);
+  cuerpoMueve.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+  cuerpoMueve.setPosition(600, 600);
+
+  Centinela::Centinela maloso(tex,1000, 600);
 
   //Bucle del juego
+
+  sf::Clock updateClock;
+  float delta;
   while (window.isOpen()) {
-    std::cout << velocidadX << std::endl;
-    velocidadX = pow(velocidadX,2);
-    enemigo.move(velocidadX, kVel+1);
+    /////////////////////////////////////////////
+    //LO PRIMERO ES LA COMPROBACION DE UPDATEAR//
+    /////////////////////////////////////////////
+    if(updateClock.getElapsedTime.asMilliseconds()>UPDATE_TICK_TIME){
+      delta = updateClock.restart().asMilliseconds();
+      maloso.update(cuerpoMueve);
+
+    }
+    
+
+    //////////////////////////
+    //LO SEGUNDO ES RENDERIZAR
+    //////////////////////////
+    window.clear();
+    cuerpoMueve.move(kVel*(delta/UPDATE_TICK_TIME),0);
+    maloso.render(window, delta/UPDATE_TICK_TIME);
+    window.draw(cuerpoMueve);
+
     //enemigo.setPosition(enemigo.getPosition().x-cont,enemigo.getPosition().y+cont);
-    cont++;
     sf::Event event;
     while (window.pollEvent(event)) {
 
@@ -60,8 +79,7 @@ int main() {
       }
     }
 
-    window.clear();
-    window.draw(enemigo);
+
     window.display();
   }
 
