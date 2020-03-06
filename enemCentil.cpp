@@ -44,17 +44,7 @@ int main() {
       maloso.update(cuerpoMueve);
 
     }
-    
 
-    //////////////////////////
-    //LO SEGUNDO ES RENDERIZAR
-    //////////////////////////
-    window.clear();
-    cuerpoMueve.move(kVel*(delta/UPDATE_TICK_TIME),0);
-    maloso.render(window, delta/UPDATE_TICK_TIME);
-    window.draw(cuerpoMueve);
-
-    //enemigo.setPosition(enemigo.getPosition().x-cont,enemigo.getPosition().y+cont);
     sf::Event event;
     while (window.pollEvent(event)) {
 
@@ -78,8 +68,13 @@ int main() {
         }
       }
     }
-
-
+    //////////////////////////
+    //LO SEGUNDO ES RENDERIZAR
+    //////////////////////////
+    window.clear();
+    cuerpoMueve.move(kVel*(delta/UPDATE_TICK_TIME),0);
+    maloso.render(window, delta/UPDATE_TICK_TIME);
+    window.draw(cuerpoMueve);
     window.display();
   }
 

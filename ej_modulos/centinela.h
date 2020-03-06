@@ -9,11 +9,16 @@ class Centinela{
     public:
         Centinela(sf::Texture& tex);
         Centinela(sf::Texture& tex,int x, int y);
-        void update(sf::Sprite entrada);
+        void update(sf::Sprite& entrada);
         void render(sf::RenderWindow& entrada, float porcentaje);
     private:
         float posX;
         float posY;
+        float posXanterior;
+        float posYanterior;
+        float diffX;
+        float diffY;
+        float velocidad = 0.001;
         int modo;
         //modo: 0 quieto, modo: 1 caminar, modo: 2 matar
         sf::Sprite cuerpo;
