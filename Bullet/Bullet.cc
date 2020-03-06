@@ -1,7 +1,7 @@
 #include "Bullet.h"
 
 Bullet::Bullet(float p_x, float p_y, bool p_facing) : body(){
-    lifetime=40;
+    lifetime=5;
 
     facing=p_facing;
     

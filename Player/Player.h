@@ -44,4 +44,5 @@ public:
 
     void setSaltos();
     void setVelocidad();
+    void setArma(int);
 };
