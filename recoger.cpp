@@ -5,7 +5,7 @@
 
 #define kVel 5
 
-bool colision(sf::Sprite objeto1, sf::RectangleShape objeto2){
+bool colision(sf::RectangleShape objeto1, sf::RectangleShape objeto2){
     if(objeto1.getGlobalBounds().intersects(objeto2.getGlobalBounds())){
         return true;
     }
@@ -28,31 +28,27 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
-
   
   std::cout << "Pulsa E para recoger el rectangulo verde" << std::endl;
  
+  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 400) );  
+  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) );  
 
   Player player(&tex, sf::Vector2u(40,19),0.33f);
 
-  sf::RectangleShape plataforma(sf::Vector2f(400,40));
-  plataforma.setFillColor(sf::Color(0,0,128));
-  plataforma.setPosition(200, player.getBody().getPosition().y+300 );
-
-   sf::RectangleShape suelo(sf::Vector2f(1000,5));
-   suelo.setFillColor(sf::Color(255,0,0));
-   suelo.setPosition(0,470);
-
+  
   float deltaTime = 0;
   sf::Clock clock;
 
   sf::RectangleShape item(sf::Vector2f(25.0f, 17.0f));
   item.setFillColor(sf::Color(0,255,0));
   item.setPosition(sf::Vector2f(200,200));
+ sf::View view(sf::Vector2f(player.getBody().getPosition().x, player.getBody().getPosition().y), sf::Vector2f( 640.0f, 480.0f));
 
   //////////////////
   ////BUCLE////////
   ////////////////
+  
   while (window.isOpen()) {
     
     //////////////
@@ -91,10 +87,11 @@ int main() {
     ////////////
     deltaTime = clock.restart().asSeconds();
 
-    player.update(deltaTime,plataforma, suelo);
+    player.update(deltaTime,plataforma1, plataforma2);
 
     if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && colision(player.getBody(),item)){
         item.setSize(sf::Vector2f(0,0));
+        player.setSaltos();
         item.setPosition(-500,-500); //lejos de la accion         
         player.obtenerPU_SaltoDoble();              
     }
@@ -107,8 +104,6 @@ int main() {
     window.clear();
     player.draw(window);
     window.draw(item);
-    window.draw(plataforma);
-    window.draw(suelo);
     window.display();
   }
 

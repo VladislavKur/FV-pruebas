@@ -71,6 +71,19 @@
             "externalConsole": false,
             "MIMode": "gdb"
 
+        },
+        {
+            "name": "(gdb) Acciones",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Acciones",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
+
         }
     ]
 }

@@ -1,12 +1,15 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include "../Animacion/Animacion.h"
 #include "../Collider/Collider.h"
+#include "../Plataforma/Plataforma.h"
 
 class Player
 {
 private:
     sf::Vector2u textura;
-    sf::Sprite body;
+    sf::RectangleShape body;
+    
     float velocidad;
     int saltos;
     int arma;
@@ -21,7 +24,9 @@ public:
 
     //FUNCIONALIDAD
     void draw(sf::RenderWindow& window);
-    void update(float deltaTime, sf::RectangleShape plataforma, sf::RectangleShape suelo);
+    void update(float deltaTime, Plataforma plataforma, Plataforma suelo);
+    Collider getCollider(){return Collider(body);}
+    
     void saltar();
 
     //GET
@@ -31,7 +36,7 @@ public:
     bool getPU_Velocidad(){return PU_velocidad;}; 
     bool getPU_Slowhits(){return PU_slowhits;};
     float getJumpSpeed(){return jumpSpeed;};
-    sf::Sprite getBody(){return body;}
+    sf::RectangleShape getBody(){return body;}
 
     //SET
     void obtenerPU_SaltoDoble();
@@ -45,4 +50,7 @@ public:
     void setSaltos();
     void setVelocidad();
     void setArma(int);
+
+    void moveRight(float deltaTime);
+    void moveLeft(float deltaTime);
 };

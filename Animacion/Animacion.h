@@ -1,5 +1,6 @@
+#pragma once
 #include <SFML/Graphics.hpp>
-
+//ALEJANDRO EL GUAPO ME HA DICHO QUE PONGA RELOJES DENTRO DE ANIMACION
 class Animacion{
 
     public:
@@ -7,6 +8,7 @@ class Animacion{
         ~Animacion();
         void Update(float deltaTime);
         void setSprite(sf::Vector2u Sprites);
+        
         
         sf::IntRect textureRect;
 
