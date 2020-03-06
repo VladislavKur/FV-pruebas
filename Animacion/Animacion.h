@@ -1,5 +1,6 @@
+#pragma once
 #include <SFML/Graphics.hpp>
-
+//ALEJANDRO EL GUAPO ME HA DICHO QUE PONGA RELOJES DENTRO DE ANIMACION
 class Animacion{
 
     public:

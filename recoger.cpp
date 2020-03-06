@@ -93,6 +93,7 @@ int main() {
 
     if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && colision(player.getBody(),item)){
         item.setSize(sf::Vector2f(0,0));
+        player.setSaltos();
     }
  
     
