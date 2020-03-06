@@ -5,7 +5,7 @@
 
 #define kVel 5
 
-bool colision(sf::Sprite objeto1, sf::RectangleShape objeto2){
+bool colision(sf::RectangleShape objeto1, sf::RectangleShape objeto2){
     if(objeto1.getGlobalBounds().intersects(objeto2.getGlobalBounds())){
         return true;
     }

@@ -8,6 +8,7 @@ add_library(libClases STATIC)
 add_subdirectory(Player)
 add_subdirectory(Animacion)
 add_subdirectory(Collider)
+add_subdirectory(Plataforma)
 
 #Opciones a pasar al compilador de C++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")

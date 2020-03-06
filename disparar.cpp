@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Player/Player.h"
-#include "Plataforma/Plataforma.h"
+#include "Bullet/Bullet.h"
 
 
 #define kVel 5
+#define maxBullets 64
 
 int main() {
   /////////////
@@ -14,6 +15,7 @@ int main() {
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
 
+  
 
   sf::RectangleShape plataforma(sf::Vector2f(400,40));
   sf::RectangleShape suelo(sf::Vector2f(1000,5));
@@ -26,28 +28,24 @@ int main() {
     exit(0);
   }
 
+  Bullet* bullets[maxBullets];
+  for(int i=0 ; i<maxBullets ; i++){
+    bullets[i]=NULL;
+  }
 
-  Player player(&tex, sf::Vector2u(6,4),0.33f);
-  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, sprite.getPosition().y+300) );  
-  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,470) );  
-
-
-
+  Player player(&tex, sf::Vector2u(40,19),0.33f);
 
   float deltaTime = 0;
   sf::Clock clock;
 
-  
+  float cooldown=0;
 
-  
   plataforma.setFillColor(sf::Color(0,0,128));
   plataforma.setPosition(200, sprite.getPosition().y+300 );
 
 
-
   suelo.setFillColor(sf::Color(255,0,0));
   suelo.setPosition(0,470);
-  
 
 
   sf::View view(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y), sf::Vector2f( 640.0f, 480.0f));
@@ -100,23 +98,54 @@ int main() {
     if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)){
     deltaTime = clock.restart().asSeconds();
 
-    player.update(deltaTime, plataforma1, plataforma2);
-  
-  
-    //plataforma1.getCollider().checkCollision( .getCollider(),0.0f);
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
+        for(int i=0 ; i<maxBullets ; i++){
+          if(bullets[i]==NULL && cooldown<=0){
+            bullets[i]=new Bullet( player.getBody().getPosition().x , player.getBody().getPosition().y, (player.getBody().getScale().x > 0) );
+            cooldown=1500*deltaTime;
+            break;
+          }
+        }
+    }
+
+    player.update(deltaTime, plataforma, suelo);
+    cooldown-=deltaTime;
+
+    for(int i=0 ; i<maxBullets ; i++){
+      if(bullets[i]!=NULL){
+        bullets[i]->update(deltaTime);
+        if(bullets[i]->lifetime<=0){
+          delete bullets[i];
+          bullets[i]=NULL;
+        }
+      }
+    }
+    
     
 
-    view.setCenter(player.getBody().getPosition());
+    /*if(sprite.getPosition().y>yInicial){
+      jumpSpeed=0;
+      sprite.setPosition( sf::Vector2f(sprite.getPosition().x,yInicial) );
+      saltando=false;
+    }*/
+    
+    
+    
+
     ///////////////
     /////DRAW/////
     //////////////
     window.clear();
-    
+    view.setCenter(player.getBody().getPosition());
     window.setView(view);
 
+    for (unsigned int i = 0; i < maxBullets; i++){
+      if(bullets[i] != NULL){
+        bullets[i]->draw(window);
+      }
+    }
+    
     player.draw(window);
-    plataforma1.Draw(window);
-    plataforma2.Draw(window);
     window.draw(plataforma);
     window.draw(suelo);
 

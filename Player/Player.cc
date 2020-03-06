@@ -1,7 +1,8 @@
+#pragma once
 #include "Player.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
-
+#include "../Plataforma/Plataforma.h"
 Player::~Player(){
 
 }
@@ -22,16 +23,16 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
     
 }
 
-void Player::update(float deltaTime, sf::RectangleShape plataforma, sf::RectangleShape suelo){
+void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))moveRight(deltaTime);
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))moveLeft(deltaTime);
 
- /* if(body.getGlobalBounds().intersects(plataforma.getGlobalBounds()) ||
+ if(body.getGlobalBounds().intersects(plataforma.getGlobalBounds()) ||
    body.getGlobalBounds().intersects(suelo.getGlobalBounds()) ){
     saltos=1;
     jumpSpeed=0;
     //std::cout<<plataforma.getGlobalBounds().intersects(sprite.getGlobalBounds()) << std::endl;
-  }else saltos=0;*/
+  }else saltos=0;
 
   if(saltos==0){
       jumpSpeed+=981.0f*deltaTime;
