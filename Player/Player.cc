@@ -70,7 +70,7 @@ void Player::saltar(){
   if(saltos!=0){
         
         jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
-        std::cout<<saltos<<std::endl;
+        std::cout<< "Saltos: " << saltos<<std::endl;
         saltos--;
       }
 }

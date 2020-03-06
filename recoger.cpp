@@ -30,7 +30,7 @@ int main() {
   }
 
   
-
+  std::cout << "Pulsa E para recoger el rectangulo verde" << std::endl;
  
 
   Player player(&tex, sf::Vector2u(40,19),0.33f);
