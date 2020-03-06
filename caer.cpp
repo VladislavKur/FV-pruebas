@@ -23,12 +23,8 @@ int main() {
 
 
   Player player(&tex, sf::Vector2u(6,4),0.33f);
-  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 300) );  
-  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) );  
-
-
-     Vector2f gp = player.getBody().getPosition();
-    FloatRect gbb = player.getBody().getGlobalBounds();
+  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 300) );
+  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) );
 
   float deltaTime = 0;
   sf::Clock clock;
@@ -38,6 +34,8 @@ int main() {
   RectangleShape coliIzquierdaVisible;
   RectangleShape coliDerechaVisible;
 
+  std::cout << "Usa las flechas para moverte y SPACE para saltar" << std::endl;
+  std::cout << "Comprueba las colisiones con la plataforma" << std::endl;
 
   sf::View view(sf::Vector2f(player.getBody().getPosition().x, player.getBody().getPosition().y), sf::Vector2f( 640.0f, 480.0f));
 
