@@ -26,38 +26,35 @@ int main() {
   enemigo.setOrigin(75 / 2, 75 / 2);
   enemigo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   enemigo.setPosition(1100, 100);
-<<<<<<< HEAD
-int cont = 1;
+  int cont = 1;
   float velocidadX = kVel;
-  
+  std::cout<<"cambio"<<std::endl;
   //Bucle del juego
   while (window.isOpen()) {
     velocidadX = pow(1.1,velocidadX);
-    //enemigo.move(-velocidadX, kVel+1);
-    enemigo.setPosition(enemigo.getPosition().x-velocidadX-kVel,enemigo.getPosition().y+velocidadX*kVel*0.5);
-=======
-  int cont = 1;
-  float velocidadX = kVel;
+        
+    if(enemigo.getPosition().y > 500){
+      std::cout<<"cambio2"<<std::endl;
+      enemigo.move(-kVel*4,0);
+    }
+    else{
+      //enemigo.move(-velocidadX, kVel+1);
+      enemigo.setPosition(enemigo.getPosition().x-velocidadX*0.5,enemigo.getPosition().y+velocidadX*kVel);
+    }
 
-  //Bucle del juego
-  while (window.isOpen()) {
-    std::cout << velocidadX << std::endl;
-    velocidadX = pow(velocidadX,2);
-    enemigo.move(velocidadX, kVel+1);
-    //enemigo.setPosition(enemigo.getPosition().x-cont,enemigo.getPosition().y+cont);
->>>>>>> 1ea4a73fc17bc1b73c2a9734a56b272de397aabb
     cont++;
-    sf::Event event;
-    while (window.pollEvent(event)) {
 
-      switch (event.type) {
+    sf::Event evnt;
+    while (window.pollEvent(evnt)) {
+
+      switch (evnt.type){
       //Si se recibe el evento de cerrar la ventana la cierro
       case sf::Event::Closed:
         window.close();
         break;
 
       case sf::Event::KeyPressed:
-        switch (event.key.code) {
+        switch (evnt.key.code) {
             //Tecla ESC para salir
             case sf::Keyboard::Escape:
             window.close();
@@ -65,7 +62,7 @@ int cont = 1;
 
             //Cualquier tecla desconocida se imprime por pantalla su código
             default:
-            std::cout << event.key.code << std::endl;
+            std::cout << evnt.key.code << std::endl;
             break;
         }
       }
