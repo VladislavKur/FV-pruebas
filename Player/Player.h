@@ -22,6 +22,7 @@ public:
     //FUNCIONALIDAD
     void draw(sf::RenderWindow& window);
     void update(float deltaTime, sf::RectangleShape plataforma, sf::RectangleShape suelo);
+    void saltar();
 
     //GET
     int getSaltos(){return saltos;}

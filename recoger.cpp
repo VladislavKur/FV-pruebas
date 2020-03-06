@@ -74,9 +74,11 @@ int main() {
         case sf::Keyboard::Escape:
           window.close();
           break;
+        case sf::Keyboard::Space:
+
+        break;
 
         default:
-          std::cout << event.key.code << std::endl;
           break;
         }
         default: break;
@@ -93,6 +95,8 @@ int main() {
 
     if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && colision(player.getBody(),item)){
         item.setSize(sf::Vector2f(0,0));
+        item.setPosition(-500,-500); //lejos de la accion         
+        player.obtenerPU_SaltoDoble();              
     }
  
     
