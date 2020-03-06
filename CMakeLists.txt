@@ -6,6 +6,7 @@ project(ranJamp)
 #Habitualmente cada subdirectorio determinará una libreria 
 add_library(libClases STATIC)
 add_subdirectory(Player)
+add_subdirectory(Bullet)
 add_subdirectory(Animacion)
 add_subdirectory(Collider)
 add_subdirectory(Plataforma)
@@ -18,6 +19,7 @@ add_executable(ranJamp main.cpp)
 add_executable(Gravedad caer.cpp)
 add_executable(Menu menu.cpp)
 add_executable(Recoger recoger.cpp)
+add_executable(Disparar disparar.cpp)
 
 #Añadir todos los objetos (ficheros o) que requiera el ejecutable. 
 #Habitualmente todas las librerias definidas mediante subcarpetas
@@ -26,6 +28,7 @@ target_link_libraries(ranJamp libClases)
 target_link_libraries(Gravedad libClases)
     target_link_libraries(Menu libClases)
     target_link_libraries(Recoger libClases)
+    target_link_libraries(Disparar libClases)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 #Para usar SFML
@@ -36,4 +39,5 @@ if (SFML_FOUND)
     target_link_libraries(Gravedad ${SFML_LIBRARIES})
     target_link_libraries(Menu ${SFML_LIBRARIES})
     target_link_libraries(Recoger ${SFML_LIBRARIES})
+    target_link_libraries(Disparar ${SFML_LIBRARIES})
 endif()

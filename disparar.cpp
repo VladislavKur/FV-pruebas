@@ -35,6 +35,11 @@ int main() {
 
   Player player(&tex, sf::Vector2u(40,19),0.33f);
 
+
+  
+  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 400) );  
+  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) ); 
+
   float deltaTime = 0;
   sf::Clock clock;
 
@@ -108,7 +113,7 @@ int main() {
         }
     }
 
-    player.update(deltaTime, plataforma, suelo);
+    player.update(deltaTime, plataforma1, plataforma2);
     cooldown-=deltaTime;
 
     for(int i=0 ; i<maxBullets ; i++){

@@ -15,7 +15,7 @@ class Plataforma{
         void Draw(sf::RenderWindow& window);
 
         Collider getCollider(){return Collider(body);}
-
+        sf::RectangleShape getBody();
 
     private:
 

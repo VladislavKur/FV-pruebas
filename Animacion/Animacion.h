@@ -9,6 +9,7 @@ class Animacion{
         void Update(float deltaTime);
         void setSprite(sf::Vector2u Sprites);
         
+        
         sf::IntRect textureRect;
 
     private:

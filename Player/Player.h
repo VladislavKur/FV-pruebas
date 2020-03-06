@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../Animacion/Animacion.h"
 #include "../Collider/Collider.h"
+#include "../Plataforma/Plataforma.h"
 
 class Player
 {
@@ -23,9 +24,10 @@ public:
 
     //FUNCIONALIDAD
     void draw(sf::RenderWindow& window);
-    void update(float deltaTime, sf::RectangleShape plataforma, sf::RectangleShape suelo);
+    void update(float deltaTime, Plataforma plataforma, Plataforma suelo);
     Collider getCollider(){return Collider(body);}
     
+    void saltar();
 
     //GET
     int getSaltos(){return saltos;}

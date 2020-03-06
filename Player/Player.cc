@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Player.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -27,26 +27,23 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))moveRight(deltaTime);
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))moveLeft(deltaTime);
 
- if(body.getGlobalBounds().intersects(plataforma.getGlobalBounds()) ||
-   body.getGlobalBounds().intersects(suelo.getGlobalBounds()) ){
-    saltos=1;
+ if(body.getGlobalBounds().intersects(plataforma.getBody().getGlobalBounds()) ||
+   body.getGlobalBounds().intersects(suelo.getBody().getGlobalBounds()) ){
+    saltos = PU_saltoDoble ? 2 : 1;
     jumpSpeed=0;
-    //std::cout<<plataforma.getGlobalBounds().intersects(sprite.getGlobalBounds()) << std::endl;
-  }else saltos=0;
-
-  if(saltos==0){
+   } else 
       jumpSpeed+=981.0f*deltaTime;
+
+  //caer
+    if(saltos==0){
+       
     }
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
-      if(saltos!=0){
-        
-        saltos--;
-        jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
-      }
+        saltar();
     }
     
-    //Caída
+    //Caída constante
     body.move(sf::Vector2f(0,jumpSpeed*deltaTime));
 }
 
@@ -75,4 +72,19 @@ void Player::moveLeft(float deltaTime){
      body.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
      body.setScale(-1, 1);
      body.move(-500*deltaTime, 0);
+
+
+}
+void Player::saltar(){
+  if(saltos!=0){
+        
+        jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
+        std::cout<<saltos<<std::endl;
+        saltos--;
+      }
+}
+
+
+void Player::obtenerPU_SaltoDoble(){
+  PU_saltoDoble=true;
 }

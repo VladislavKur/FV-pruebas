@@ -12,3 +12,6 @@ Plataforma:: Plataforma(sf::Texture* textura, sf::Vector2f size, sf::Vector2f po
 }
 
 void Plataforma:: Draw(sf::RenderWindow& window){ window.draw(body);}
+sf::RectangleShape Plataforma::getBody(){
+    return body;
+}
