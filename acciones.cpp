@@ -7,7 +7,7 @@
 #define kVel 5
 #define maxBullets 64
 
-bool colision(sf::Sprite objeto1, sf::RectangleShape objeto2){
+bool colision(sf::RectangleShape objeto1, sf::RectangleShape objeto2){
     if(objeto1.getGlobalBounds().intersects(objeto2.getGlobalBounds())){
         return true;
     }
@@ -46,6 +46,9 @@ int main() {
   sf::Clock clock;
 
   float cooldown=0;
+
+  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 400) );  
+  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) );  
 
   plataforma.setFillColor(sf::Color(0,0,128));
   plataforma.setPosition(200, sprite.getPosition().y+300 );
@@ -118,7 +121,7 @@ int main() {
         }
     }
 
-    player.update(deltaTime, plataforma, suelo);
+    player.update(deltaTime, plataforma1, plataforma2);
 
     if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && colision(player.getBody(),item)){
         item.setSize(sf::Vector2f(0,0));
@@ -163,10 +166,10 @@ int main() {
       }
     }
     
+    plataforma1.Draw(window);
+    plataforma2.Draw(window);
     player.draw(window);
-    window.draw(plataforma);
     window.draw(item);
-    window.draw(suelo);
 
     window.display();
     }else{
