@@ -9,6 +9,7 @@ Player::~Player(){
 Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTimeSprite) 
 : body(*tex) , animacion(tex,cantidadImagenes,SwitchTimeSprite){
     
+    arma=0;
 
     // 75 es el tamaño del sprite, cambiar
     body.setOrigin(75 / 2, 75 / 2);
@@ -78,4 +79,8 @@ void Player::saltar(){
 
 void Player::obtenerPU_SaltoDoble(){
   PU_saltoDoble=true;
+}
+
+void Player::setArma(int p_arma){
+  arma = p_arma;
 }

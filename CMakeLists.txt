@@ -19,6 +19,7 @@ add_executable(Gravedad caer.cpp)
 add_executable(Menu menu.cpp)
 add_executable(Recoger recoger.cpp)
 add_executable(Disparar disparar.cpp)
+add_executable(Acciones acciones.cpp)
 
 #Añadir todos los objetos (ficheros o) que requiera el ejecutable. 
 #Habitualmente todas las librerias definidas mediante subcarpetas
@@ -28,6 +29,7 @@ target_link_libraries(Gravedad libClases)
     target_link_libraries(Menu libClases)
     target_link_libraries(Recoger libClases)
     target_link_libraries(Disparar libClases)
+    target_link_libraries(Acciones libClases)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 #Para usar SFML
@@ -39,4 +41,5 @@ if (SFML_FOUND)
     target_link_libraries(Menu ${SFML_LIBRARIES})
     target_link_libraries(Recoger ${SFML_LIBRARIES})
     target_link_libraries(Disparar ${SFML_LIBRARIES})
+    target_link_libraries(Acciones ${SFML_LIBRARIES})
 endif()

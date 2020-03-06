@@ -12,7 +12,7 @@ Bullet::Bullet(float p_x, float p_y, bool p_facing) : body(){
 
 void Bullet::update(float deltaTime){
     lifetime-=deltaTime;
-    body.move( (facing ? 1 : -1) * 600*deltaTime,0);
+    body.move( (facing ? 1 : -1) * 1200*deltaTime,0);
 }
 
 void Bullet::draw(sf::RenderWindow& window){
