@@ -47,8 +47,8 @@ int main() {
   while (window.isOpen()) {
     
     if(personaje.getGlobalBounds().intersects(enemigo.getGlobalBounds()) && vidas > 0){
-        vidas--;
-        muerto = true;
+      vidas--;
+      muerto = true;
     }
     if(vidas==0){
         std::cout << "Muerto" << std::endl;
