@@ -22,6 +22,7 @@ add_executable(murcielago enemMurcielago.cpp)
 #Habitualmente todas las librerias definidas mediante subcarpetas
 #aportaran código
 target_link_libraries(ranJamp libModulos)
+target_link_libraries(murcielago libModulos)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 #Para usar SFML

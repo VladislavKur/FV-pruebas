@@ -29,7 +29,7 @@ int main() {
 
   jugador.setOrigin(75 / 2, 75 / 2);
   jugador.setTextureRect(sf::IntRect(1 * 75, 1 * 75, 75, 75));
-  jugador.setPosition(1100, 100);
+  jugador.setPosition(100, 600);
   
   //float velocidadX = kVel;
   
