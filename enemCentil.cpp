@@ -39,7 +39,7 @@ int main() {
     /////////////////////////////////////////////
     //LO PRIMERO ES LA COMPROBACION DE UPDATEAR//
     /////////////////////////////////////////////
-    if(updateClock.getElapsedTime.asMilliseconds()>UPDATE_TICK_TIME){
+    if(updateClock.getElapsedTime.asMilliseconds()>UPDATE_TICK_TIME){ //si hay que actualizar, actualiza
       delta = updateClock.restart().asMilliseconds();
       maloso.update(cuerpoMueve);
 

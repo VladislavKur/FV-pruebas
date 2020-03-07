@@ -33,8 +33,11 @@ void Centinela::update(sf::Sprite& entrada){
 
     float posJugador = entrada.getPosition().x;
 
-    float diffX = posJugador - posX;
-    float diffabs = abs(diffX);
+    float local_diffX = posJugador - posX;
+    float local_diffabs = abs(diffX);
+
+    diffX = 0; //inicialmente no se mueve
+    diffY = 0; //inicialmente no se mueve
 
     bool cambio; //no nos cambiamos de modo por defecto
     do{
@@ -42,22 +45,22 @@ void Centinela::update(sf::Sprite& entrada){
         switch(modo){
 
             case(0): //está quieto
-                if(diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
                     modo = 1;
                     cambio = true;
                 }
-                if(diffabs < distanciaDisparo){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabs < distanciaDisparo){//si está lo suficientemente cerca, cambiamos
                     modo = 2;
                     cambio = true;
                 }
             break;
             case(1):
-                if(diffabs < distanciaDisparo){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabs < distanciaDisparo){//si está lo suficientemente cerca, cambiamos
                     modo = 2;
                     cambio = true;
                 }
                 else{//si no cambiamos, actualiza su posicion
-                    diffX = (diffX/diffabs)*velocidad;//diffX/diffabs nos da el signo 
+                    diffX = (local_diffX/local_diffabs)*velocidad;//diffX/diffabs nos da el signo 
                                                        //(si está a la izquierda es negativo)
                     diffY = 0; //diffX y diffY es lo que se tienen que mover
                     posXanterior = posX; //guardamos la anterior
@@ -68,7 +71,7 @@ void Centinela::update(sf::Sprite& entrada){
                 
             break;
             case(2):
-                if(diffabs > distanciaDisparo){//si está lo suficientemente lejos, cambiamos
+                if(local_diffabs > distanciaDisparo){//si está lo suficientemente lejos, cambiamos
                     modo = 1;
                     cambio = true;
                 } 
