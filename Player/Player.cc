@@ -16,7 +16,7 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
     body.setOrigin(75 / 2, 75 / 2);  // 75 es el tamaño del sprite, cambiar
     body.setPosition(320, 40);//Quitar esto mas adelante
 
-    
+    body.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
     saltos = 1;
     jumpSpeed=0;
     jumpHeight=75*2;
@@ -27,11 +27,13 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
 void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))moveRight(deltaTime);
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))moveLeft(deltaTime);
+    float izq = body.getGlobalBounds().left;
 
- if(body.getGlobalBounds().intersects(plataforma.getBody().getGlobalBounds()) ||
-   body.getGlobalBounds().intersects(suelo.getBody().getGlobalBounds()) ){
+ if(plataforma.getBody().getGlobalBounds().intersects(body.getGlobalBounds()) ||
+   suelo.getBody().getGlobalBounds().intersects(body.getGlobalBounds()) ){
     saltos = PU_saltoDoble ? 2 : 1;
     jumpSpeed=0;
+  
    } else 
       jumpSpeed+=981.0f*deltaTime;
 
@@ -45,7 +47,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     }
     
     //Caída constante
-    body.move(sf::Vector2f(0,jumpSpeed*deltaTime));
+    body.move(0,jumpSpeed*deltaTime);
 }
 
 void Player::setSaltos(){
