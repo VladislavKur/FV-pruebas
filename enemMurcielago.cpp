@@ -2,13 +2,16 @@
 #include <iostream>
 
 #include "include/config.h"
+#include "ej_modulos/murcielago.h"
 
 #define kVel 0.5
+#define UPDATE_TICK_TIME 15/1000
 
 int main() {
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1200, 1200), "P0. Fundamentos de los Videojuegos. DCCIA");
+  window.setFramerateLimit(60);
 
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
@@ -19,19 +22,30 @@ int main() {
   /////////////
   ///Enemigo///
   /////////////
-
+  Murcielago *enemigo = new Murcielago(tex, 1100,100);
+  //Murcielago::Murcielago enemigo(tex,1100,100);
   //Y creo el spritesheet a partir de la imagen anterior
-  sf::Sprite enemigo(tex);
+  sf::Sprite jugador(tex);
 
-  enemigo.setOrigin(75 / 2, 75 / 2);
-  enemigo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-  enemigo.setPosition(1100, 100);
-  int cont = 1;
-  float velocidadX = kVel;
-  std::cout<<"cambio"<<std::endl;
+  jugador.setOrigin(75 / 2, 75 / 2);
+  jugador.setTextureRect(sf::IntRect(1 * 75, 1 * 75, 75, 75));
+  jugador.setPosition(1100, 100);
+  
+  //float velocidadX = kVel;
+  
+  sf::Clock updateClock;
+  float delta;
+
   //Bucle del juego
   while (window.isOpen()) {
-    velocidadX = pow(1.1,velocidadX);
+    if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){
+      delta = updateClock.restart().asMilliseconds();
+      enemigo->update(jugador);
+
+    }
+    
+    
+    /*velocidadX = pow(1.1,velocidadX);
         
     if(enemigo.getPosition().y > 500){
       std::cout<<"cambio2"<<std::endl;
@@ -40,9 +54,8 @@ int main() {
     else{
       //enemigo.move(-velocidadX, kVel+1);
       enemigo.setPosition(enemigo.getPosition().x-velocidadX*0.5,enemigo.getPosition().y+velocidadX*kVel);
-    }
+    }*/
 
-    cont++;
 
     sf::Event evnt;
     while (window.pollEvent(evnt)) {
@@ -69,7 +82,9 @@ int main() {
     }
 
     window.clear();
-    window.draw(enemigo);
+    jugador.move(kVel*(delta/UPDATE_TICK_TIME),0);
+    enemigo->render(window, delta/UPDATE_TICK_TIME);
+    window.draw(jugador);
     window.display();
   }
 
