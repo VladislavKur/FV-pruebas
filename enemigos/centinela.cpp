@@ -101,7 +101,7 @@ void Centinela::update(sf::RectangleShape& entrada){
 void Centinela::render(sf::RenderWindow &entrada, float porcentaje){
     cuerpo.setPosition(
         posXanterior + diffX*porcentaje,
-        posYanterior + diffY*porcentaje);
+        posYanterior + diffY*porcentaje );
 
     
     entrada.draw(cuerpo);
