@@ -4,7 +4,35 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-       
+
+        {
+            "name": "(gdb) Mapa",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/mapa",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
+
+        }
+         ,
+         {
+            "name": "(gdb) Sonido",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/sonido",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
+
+        }
+         ,
         {
             "name": "(gdb) Menu",
             "type": "cppdbg",
