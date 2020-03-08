@@ -1,0 +1,1 @@
+/usr/bin/g++-5    -std=c++1y -Wall -Wextra -g   CMakeFiles/mapa.dir/mapa.cpp.o CMakeFiles/mapa.dir/tinyxml.cpp.o CMakeFiles/mapa.dir/tinystr.cpp.o CMakeFiles/mapa.dir/tinyxmlerror.cpp.o CMakeFiles/mapa.dir/tinyxmlparser.cpp.o  -o mapa -rdynamic -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 

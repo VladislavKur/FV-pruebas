@@ -1,5 +1,5 @@
 #include "menu.h"
-
+//ANDRES : ESTE CODIGO ES PRACTICAMENTE IGUAL AL DE MI PENGO ASI QUE SI LO UTILIZAIS CAMBIARLOOO!!!!!!
 menu::menu(float width , float heigth, Font fuente){
     font = fuente;
 
@@ -7,7 +7,6 @@ menu::menu(float width , float heigth, Font fuente){
     texto[0].setColor(Color::Red);
     texto[0].setString("Play");
     texto[0].setPosition(Vector2f(width/2 , heigth/(num_items +1 ) *1));
-
 
     texto[1].setFont(font);
     texto[1].setColor(Color::White);

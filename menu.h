@@ -1,6 +1,6 @@
 #include<SFML/Graphics.hpp>
 #include<iostream>
-
+//ANDRES : ESTE CODIGO ES PRACTICAMENTE IGUAL AL DE MI PENGO ASI QUE SI LO UTILIZAIS CAMBIARLOOO!!!!!!
 using namespace  sf;
 using namespace std;
 

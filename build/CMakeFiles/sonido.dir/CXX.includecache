@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andres/Escritorio/FV-pruebas/include/config.h
+
+/home/andres/Escritorio/FV-pruebas/sonido.cpp
+sonido.h
+/home/andres/Escritorio/FV-pruebas/sonido.h
+
+/home/andres/Escritorio/FV-pruebas/sonido.h
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+iostream
+-
+include/config.h
+/home/andres/Escritorio/FV-pruebas/include/config.h
+

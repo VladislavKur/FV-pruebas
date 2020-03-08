@@ -236,6 +236,9 @@ ranJamp_BINARY_DIR:STATIC=/home/andres/Escritorio/FV-pruebas/build
 //Value Computed by CMake
 ranJamp_SOURCE_DIR:STATIC=/home/andres/Escritorio/FV-pruebas
 
+//The directory containing a CMake configuration file for tinyxml.
+tinyxml_DIR:PATH=tinyxml_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

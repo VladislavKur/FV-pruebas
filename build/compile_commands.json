@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/andres/Escritorio/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/sonido.dir/sonido.cpp.o -c /home/andres/Escritorio/FV-pruebas/sonido.cpp",
+  "file": "/home/andres/Escritorio/FV-pruebas/sonido.cpp"
+},
+{
+  "directory": "/home/andres/Escritorio/FV-pruebas/build",
   "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/menu.dir/menu.cpp.o -c /home/andres/Escritorio/FV-pruebas/menu.cpp",
   "file": "/home/andres/Escritorio/FV-pruebas/menu.cpp"
 },
@@ -23,6 +28,31 @@
   "directory": "/home/andres/Escritorio/FV-pruebas/build",
   "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/caer.dir/caer.cpp.o -c /home/andres/Escritorio/FV-pruebas/caer.cpp",
   "file": "/home/andres/Escritorio/FV-pruebas/caer.cpp"
+},
+{
+  "directory": "/home/andres/Escritorio/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/mapa.dir/mapa.cpp.o -c /home/andres/Escritorio/FV-pruebas/mapa.cpp",
+  "file": "/home/andres/Escritorio/FV-pruebas/mapa.cpp"
+},
+{
+  "directory": "/home/andres/Escritorio/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/mapa.dir/tinyxml.cpp.o -c /home/andres/Escritorio/FV-pruebas/tinyxml.cpp",
+  "file": "/home/andres/Escritorio/FV-pruebas/tinyxml.cpp"
+},
+{
+  "directory": "/home/andres/Escritorio/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/mapa.dir/tinystr.cpp.o -c /home/andres/Escritorio/FV-pruebas/tinystr.cpp",
+  "file": "/home/andres/Escritorio/FV-pruebas/tinystr.cpp"
+},
+{
+  "directory": "/home/andres/Escritorio/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/mapa.dir/tinyxmlerror.cpp.o -c /home/andres/Escritorio/FV-pruebas/tinyxmlerror.cpp",
+  "file": "/home/andres/Escritorio/FV-pruebas/tinyxmlerror.cpp"
+},
+{
+  "directory": "/home/andres/Escritorio/FV-pruebas/build",
+  "command": "/usr/bin/g++-5      -std=c++1y -Wall -Wextra -g   -o CMakeFiles/mapa.dir/tinyxmlparser.cpp.o -c /home/andres/Escritorio/FV-pruebas/tinyxmlparser.cpp",
+  "file": "/home/andres/Escritorio/FV-pruebas/tinyxmlparser.cpp"
 },
 {
   "directory": "/home/andres/Escritorio/FV-pruebas/build",

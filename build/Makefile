@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named sonido
+
+# Build rule for target.
+sonido: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sonido
+.PHONY : sonido
+
+# fast build rule for target.
+sonido/fast:
+	$(MAKE) -f CMakeFiles/sonido.dir/build.make CMakeFiles/sonido.dir/build
+.PHONY : sonido/fast
+
+#=============================================================================
 # Target rules for targets named menu
 
 # Build rule for target.
@@ -161,6 +174,19 @@ caer: cmake_check_build_system
 caer/fast:
 	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/build
 .PHONY : caer/fast
+
+#=============================================================================
+# Target rules for targets named mapa
+
+# Build rule for target.
+mapa: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mapa
+.PHONY : mapa
+
+# fast build rule for target.
+mapa/fast:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/build
+.PHONY : mapa/fast
 
 #=============================================================================
 # Target rules for targets named recoger
@@ -283,6 +309,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mapa.o: mapa.cpp.o
+
+.PHONY : mapa.o
+
+# target to build an object file
+mapa.cpp.o:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/mapa.cpp.o
+.PHONY : mapa.cpp.o
+
+mapa.i: mapa.cpp.i
+
+.PHONY : mapa.i
+
+# target to preprocess a source file
+mapa.cpp.i:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/mapa.cpp.i
+.PHONY : mapa.cpp.i
+
+mapa.s: mapa.cpp.s
+
+.PHONY : mapa.s
+
+# target to generate assembly for a file
+mapa.cpp.s:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/mapa.cpp.s
+.PHONY : mapa.cpp.s
+
 menu.o: menu.cpp.o
 
 .PHONY : menu.o
@@ -337,18 +390,155 @@ recoger.cpp.s:
 	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/recoger.cpp.s
 .PHONY : recoger.cpp.s
 
+sonido.o: sonido.cpp.o
+
+.PHONY : sonido.o
+
+# target to build an object file
+sonido.cpp.o:
+	$(MAKE) -f CMakeFiles/sonido.dir/build.make CMakeFiles/sonido.dir/sonido.cpp.o
+.PHONY : sonido.cpp.o
+
+sonido.i: sonido.cpp.i
+
+.PHONY : sonido.i
+
+# target to preprocess a source file
+sonido.cpp.i:
+	$(MAKE) -f CMakeFiles/sonido.dir/build.make CMakeFiles/sonido.dir/sonido.cpp.i
+.PHONY : sonido.cpp.i
+
+sonido.s: sonido.cpp.s
+
+.PHONY : sonido.s
+
+# target to generate assembly for a file
+sonido.cpp.s:
+	$(MAKE) -f CMakeFiles/sonido.dir/build.make CMakeFiles/sonido.dir/sonido.cpp.s
+.PHONY : sonido.cpp.s
+
+tinystr.o: tinystr.cpp.o
+
+.PHONY : tinystr.o
+
+# target to build an object file
+tinystr.cpp.o:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinystr.cpp.o
+.PHONY : tinystr.cpp.o
+
+tinystr.i: tinystr.cpp.i
+
+.PHONY : tinystr.i
+
+# target to preprocess a source file
+tinystr.cpp.i:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinystr.cpp.i
+.PHONY : tinystr.cpp.i
+
+tinystr.s: tinystr.cpp.s
+
+.PHONY : tinystr.s
+
+# target to generate assembly for a file
+tinystr.cpp.s:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinystr.cpp.s
+.PHONY : tinystr.cpp.s
+
+tinyxml.o: tinyxml.cpp.o
+
+.PHONY : tinyxml.o
+
+# target to build an object file
+tinyxml.cpp.o:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxml.cpp.o
+.PHONY : tinyxml.cpp.o
+
+tinyxml.i: tinyxml.cpp.i
+
+.PHONY : tinyxml.i
+
+# target to preprocess a source file
+tinyxml.cpp.i:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxml.cpp.i
+.PHONY : tinyxml.cpp.i
+
+tinyxml.s: tinyxml.cpp.s
+
+.PHONY : tinyxml.s
+
+# target to generate assembly for a file
+tinyxml.cpp.s:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxml.cpp.s
+.PHONY : tinyxml.cpp.s
+
+tinyxmlerror.o: tinyxmlerror.cpp.o
+
+.PHONY : tinyxmlerror.o
+
+# target to build an object file
+tinyxmlerror.cpp.o:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxmlerror.cpp.o
+.PHONY : tinyxmlerror.cpp.o
+
+tinyxmlerror.i: tinyxmlerror.cpp.i
+
+.PHONY : tinyxmlerror.i
+
+# target to preprocess a source file
+tinyxmlerror.cpp.i:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxmlerror.cpp.i
+.PHONY : tinyxmlerror.cpp.i
+
+tinyxmlerror.s: tinyxmlerror.cpp.s
+
+.PHONY : tinyxmlerror.s
+
+# target to generate assembly for a file
+tinyxmlerror.cpp.s:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxmlerror.cpp.s
+.PHONY : tinyxmlerror.cpp.s
+
+tinyxmlparser.o: tinyxmlparser.cpp.o
+
+.PHONY : tinyxmlparser.o
+
+# target to build an object file
+tinyxmlparser.cpp.o:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxmlparser.cpp.o
+.PHONY : tinyxmlparser.cpp.o
+
+tinyxmlparser.i: tinyxmlparser.cpp.i
+
+.PHONY : tinyxmlparser.i
+
+# target to preprocess a source file
+tinyxmlparser.cpp.i:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxmlparser.cpp.i
+.PHONY : tinyxmlparser.cpp.i
+
+tinyxmlparser.s: tinyxmlparser.cpp.s
+
+.PHONY : tinyxmlparser.s
+
+# target to generate assembly for a file
+tinyxmlparser.cpp.s:
+	$(MAKE) -f CMakeFiles/mapa.dir/build.make CMakeFiles/mapa.dir/tinyxmlparser.cpp.s
+.PHONY : tinyxmlparser.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... sonido"
 	@echo "... edit_cache"
 	@echo "... menu"
 	@echo "... rebuild_cache"
 	@echo "... libModulos"
 	@echo "... ranJamp"
 	@echo "... caer"
+	@echo "... mapa"
 	@echo "... recoger"
 	@echo "... caer.o"
 	@echo "... caer.i"
@@ -362,12 +552,30 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... mapa.o"
+	@echo "... mapa.i"
+	@echo "... mapa.s"
 	@echo "... menu.o"
 	@echo "... menu.i"
 	@echo "... menu.s"
 	@echo "... recoger.o"
 	@echo "... recoger.i"
 	@echo "... recoger.s"
+	@echo "... sonido.o"
+	@echo "... sonido.i"
+	@echo "... sonido.s"
+	@echo "... tinystr.o"
+	@echo "... tinystr.i"
+	@echo "... tinystr.s"
+	@echo "... tinyxml.o"
+	@echo "... tinyxml.i"
+	@echo "... tinyxml.s"
+	@echo "... tinyxmlerror.o"
+	@echo "... tinyxmlerror.i"
+	@echo "... tinyxmlerror.s"
+	@echo "... tinyxmlparser.o"
+	@echo "... tinyxmlparser.i"
+	@echo "... tinyxmlparser.s"
 .PHONY : help
 
 

@@ -15,6 +15,8 @@ add_executable(ranJamp main.cpp)
 add_executable(caer caer.cpp)
 add_executable(recoger recoger.cpp)
 add_executable(menu menu.cpp)
+add_executable(sonido sonido.cpp)
+add_executable(mapa mapa.cpp tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp) 
 
 #Añadir todos los objetos (ficheros o) que requiera el ejecutable. 
 #Habitualmente todas las librerias definidas mediante subcarpetas
@@ -29,6 +31,7 @@ if (SFML_FOUND)
     target_link_libraries(ranJamp ${SFML_LIBRARIES})
     target_link_libraries(caer ${SFML_LIBRARIES})
     target_link_libraries(recoger ${SFML_LIBRARIES})
-     target_link_libraries(menu ${SFML_LIBRARIES})
+    target_link_libraries(menu ${SFML_LIBRARIES})
+    target_link_libraries(sonido ${SFML_LIBRARIES})
+    target_link_libraries(mapa ${SFML_LIBRARIES})
 endif()
-
