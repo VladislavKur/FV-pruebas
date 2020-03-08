@@ -22,7 +22,7 @@ int main() {
   /////////////
   ///Enemigo///
   /////////////
-  Murcielago *enemigo = new Murcielago(tex, 1100,100);
+  Murcielago *enemigo = new Murcielago(tex, 0,0);
   //Murcielago::Murcielago enemigo(tex,1100,100);
   //Y creo el spritesheet a partir de la imagen anterior
   sf::Sprite jugador(tex);
@@ -40,7 +40,7 @@ int main() {
   while (window.isOpen()) {
     if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){
       delta = updateClock.restart().asMilliseconds();
-      enemigo->update(jugador);
+      //enemigo->update(jugador);
 
     }
     

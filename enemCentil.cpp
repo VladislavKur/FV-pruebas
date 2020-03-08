@@ -29,7 +29,7 @@ int main() {
   cuerpoMueve.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   cuerpoMueve.setPosition(600, 600);
 
-  Centinela::Centinela maloso(tex,1000, 600);
+  Centinela *maloso = new Centinela(tex,1000, 600);
 
   //Bucle del juego
 
@@ -39,9 +39,9 @@ int main() {
     /////////////////////////////////////////////
     //LO PRIMERO ES LA COMPROBACION DE UPDATEAR//
     /////////////////////////////////////////////
-    if(updateClock.getElapsedTime.asMilliseconds()>UPDATE_TICK_TIME){ //si hay que actualizar, actualiza
+    if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){ //si hay que actualizar, actualiza
       delta = updateClock.restart().asMilliseconds();
-      maloso.update(cuerpoMueve);
+      maloso->update(cuerpoMueve);
 
     }
 
@@ -73,7 +73,7 @@ int main() {
     //////////////////////////
     window.clear();
     cuerpoMueve.move(kVel*(delta/UPDATE_TICK_TIME),0);
-    maloso.render(window, delta/UPDATE_TICK_TIME);
+    maloso->render(window, delta/UPDATE_TICK_TIME);
     window.draw(cuerpoMueve);
     window.display();
   }

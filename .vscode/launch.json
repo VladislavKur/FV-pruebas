@@ -70,6 +70,19 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb"
+        },
+
+        {
+            "name": "(gdb) Centinela",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/centinela",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
         }
     ]
 }
