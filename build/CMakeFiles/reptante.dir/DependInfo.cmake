@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/fv/Desktop/FV-pruebas/enemRep.cpp" "/home/fv/Desktop/FV-pruebas/build/CMakeFiles/reptante.dir/enemRep.cpp.o"
+  "/home/antonio/Documents/proyectoFV/FV-pruebas/enemRep.cpp" "/home/antonio/Documents/proyectoFV/FV-pruebas/build/CMakeFiles/reptante.dir/enemRep.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

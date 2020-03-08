@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fv/Desktop/FV-pruebas
+CMAKE_SOURCE_DIR = /home/antonio/Documents/proyectoFV/FV-pruebas
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fv/Desktop/FV-pruebas/build
+CMAKE_BINARY_DIR = /home/antonio/Documents/proyectoFV/FV-pruebas/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fv/Desktop/FV-pruebas/build/CMakeFiles /home/fv/Desktop/FV-pruebas/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/antonio/Documents/proyectoFV/FV-pruebas/build/CMakeFiles /home/antonio/Documents/proyectoFV/FV-pruebas/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fv/Desktop/FV-pruebas/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/antonio/Documents/proyectoFV/FV-pruebas/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named murcielago
+# Target rules for targets named centinela
 
 # Build rule for target.
-murcielago: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 murcielago
-.PHONY : murcielago
+centinela: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 centinela
+.PHONY : centinela
 
 # fast build rule for target.
-murcielago/fast:
-	$(MAKE) -f CMakeFiles/murcielago.dir/build.make CMakeFiles/murcielago.dir/build
-.PHONY : murcielago/fast
+centinela/fast:
+	$(MAKE) -f CMakeFiles/centinela.dir/build.make CMakeFiles/centinela.dir/build
+.PHONY : centinela/fast
 
 #=============================================================================
 # Target rules for targets named matar
@@ -137,43 +137,30 @@ matar/fast:
 .PHONY : matar/fast
 
 #=============================================================================
-# Target rules for targets named reptante
+# Target rules for targets named murcielago
 
 # Build rule for target.
-reptante: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 reptante
-.PHONY : reptante
+murcielago: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 murcielago
+.PHONY : murcielago
 
 # fast build rule for target.
-reptante/fast:
-	$(MAKE) -f CMakeFiles/reptante.dir/build.make CMakeFiles/reptante.dir/build
-.PHONY : reptante/fast
+murcielago/fast:
+	$(MAKE) -f CMakeFiles/murcielago.dir/build.make CMakeFiles/murcielago.dir/build
+.PHONY : murcielago/fast
 
 #=============================================================================
-# Target rules for targets named libModulos
+# Target rules for targets named libEnemigos
 
 # Build rule for target.
-libModulos: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libModulos
-.PHONY : libModulos
+libEnemigos: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libEnemigos
+.PHONY : libEnemigos
 
 # fast build rule for target.
-libModulos/fast:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/build
-.PHONY : libModulos/fast
-
-#=============================================================================
-# Target rules for targets named ranJamp
-
-# Build rule for target.
-ranJamp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ranJamp
-.PHONY : ranJamp
-
-# fast build rule for target.
-ranJamp/fast:
-	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/build
-.PHONY : ranJamp/fast
+libEnemigos/fast:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/build
+.PHONY : libEnemigos/fast
 
 #=============================================================================
 # Target rules for targets named caer
@@ -200,6 +187,19 @@ recoger: cmake_check_build_system
 recoger/fast:
 	$(MAKE) -f CMakeFiles/recoger.dir/build.make CMakeFiles/recoger.dir/build
 .PHONY : recoger/fast
+
+#=============================================================================
+# Target rules for targets named reptante
+
+# Build rule for target.
+reptante: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 reptante
+.PHONY : reptante
+
+# fast build rule for target.
+reptante/fast:
+	$(MAKE) -f CMakeFiles/reptante.dir/build.make CMakeFiles/reptante.dir/build
+.PHONY : reptante/fast
 
 caer.o: caer.cpp.o
 
@@ -228,113 +228,32 @@ caer.cpp.s:
 	$(MAKE) -f CMakeFiles/caer.dir/build.make CMakeFiles/caer.dir/caer.cpp.s
 .PHONY : caer.cpp.s
 
-ej_modulos/centinela.o: ej_modulos/centinela.cpp.o
+enemCentil.o: enemCentil.cpp.o
 
-.PHONY : ej_modulos/centinela.o
-
-# target to build an object file
-ej_modulos/centinela.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/centinela.cpp.o
-.PHONY : ej_modulos/centinela.cpp.o
-
-ej_modulos/centinela.i: ej_modulos/centinela.cpp.i
-
-.PHONY : ej_modulos/centinela.i
-
-# target to preprocess a source file
-ej_modulos/centinela.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/centinela.cpp.i
-.PHONY : ej_modulos/centinela.cpp.i
-
-ej_modulos/centinela.s: ej_modulos/centinela.cpp.s
-
-.PHONY : ej_modulos/centinela.s
-
-# target to generate assembly for a file
-ej_modulos/centinela.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/centinela.cpp.s
-.PHONY : ej_modulos/centinela.cpp.s
-
-ej_modulos/mimodulo.o: ej_modulos/mimodulo.cpp.o
-
-.PHONY : ej_modulos/mimodulo.o
+.PHONY : enemCentil.o
 
 # target to build an object file
-ej_modulos/mimodulo.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.o
-.PHONY : ej_modulos/mimodulo.cpp.o
+enemCentil.cpp.o:
+	$(MAKE) -f CMakeFiles/centinela.dir/build.make CMakeFiles/centinela.dir/enemCentil.cpp.o
+.PHONY : enemCentil.cpp.o
 
-ej_modulos/mimodulo.i: ej_modulos/mimodulo.cpp.i
+enemCentil.i: enemCentil.cpp.i
 
-.PHONY : ej_modulos/mimodulo.i
-
-# target to preprocess a source file
-ej_modulos/mimodulo.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.i
-.PHONY : ej_modulos/mimodulo.cpp.i
-
-ej_modulos/mimodulo.s: ej_modulos/mimodulo.cpp.s
-
-.PHONY : ej_modulos/mimodulo.s
-
-# target to generate assembly for a file
-ej_modulos/mimodulo.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo.cpp.s
-.PHONY : ej_modulos/mimodulo.cpp.s
-
-ej_modulos/mimodulo2.o: ej_modulos/mimodulo2.cpp.o
-
-.PHONY : ej_modulos/mimodulo2.o
-
-# target to build an object file
-ej_modulos/mimodulo2.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.o
-.PHONY : ej_modulos/mimodulo2.cpp.o
-
-ej_modulos/mimodulo2.i: ej_modulos/mimodulo2.cpp.i
-
-.PHONY : ej_modulos/mimodulo2.i
+.PHONY : enemCentil.i
 
 # target to preprocess a source file
-ej_modulos/mimodulo2.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.i
-.PHONY : ej_modulos/mimodulo2.cpp.i
+enemCentil.cpp.i:
+	$(MAKE) -f CMakeFiles/centinela.dir/build.make CMakeFiles/centinela.dir/enemCentil.cpp.i
+.PHONY : enemCentil.cpp.i
 
-ej_modulos/mimodulo2.s: ej_modulos/mimodulo2.cpp.s
+enemCentil.s: enemCentil.cpp.s
 
-.PHONY : ej_modulos/mimodulo2.s
-
-# target to generate assembly for a file
-ej_modulos/mimodulo2.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/mimodulo2.cpp.s
-.PHONY : ej_modulos/mimodulo2.cpp.s
-
-ej_modulos/murcielago.o: ej_modulos/murcielago.cpp.o
-
-.PHONY : ej_modulos/murcielago.o
-
-# target to build an object file
-ej_modulos/murcielago.cpp.o:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/murcielago.cpp.o
-.PHONY : ej_modulos/murcielago.cpp.o
-
-ej_modulos/murcielago.i: ej_modulos/murcielago.cpp.i
-
-.PHONY : ej_modulos/murcielago.i
-
-# target to preprocess a source file
-ej_modulos/murcielago.cpp.i:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/murcielago.cpp.i
-.PHONY : ej_modulos/murcielago.cpp.i
-
-ej_modulos/murcielago.s: ej_modulos/murcielago.cpp.s
-
-.PHONY : ej_modulos/murcielago.s
+.PHONY : enemCentil.s
 
 # target to generate assembly for a file
-ej_modulos/murcielago.cpp.s:
-	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/ej_modulos/murcielago.cpp.s
-.PHONY : ej_modulos/murcielago.cpp.s
+enemCentil.cpp.s:
+	$(MAKE) -f CMakeFiles/centinela.dir/build.make CMakeFiles/centinela.dir/enemCentil.cpp.s
+.PHONY : enemCentil.cpp.s
 
 enemMurcielago.o: enemMurcielago.cpp.o
 
@@ -390,32 +309,113 @@ enemRep.cpp.s:
 	$(MAKE) -f CMakeFiles/reptante.dir/build.make CMakeFiles/reptante.dir/enemRep.cpp.s
 .PHONY : enemRep.cpp.s
 
-main.o: main.cpp.o
+enemigos/centinela.o: enemigos/centinela.cpp.o
 
-.PHONY : main.o
+.PHONY : enemigos/centinela.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.o
-.PHONY : main.cpp.o
+enemigos/centinela.cpp.o:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/centinela.cpp.o
+.PHONY : enemigos/centinela.cpp.o
 
-main.i: main.cpp.i
+enemigos/centinela.i: enemigos/centinela.cpp.i
 
-.PHONY : main.i
+.PHONY : enemigos/centinela.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.i
-.PHONY : main.cpp.i
+enemigos/centinela.cpp.i:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/centinela.cpp.i
+.PHONY : enemigos/centinela.cpp.i
 
-main.s: main.cpp.s
+enemigos/centinela.s: enemigos/centinela.cpp.s
 
-.PHONY : main.s
+.PHONY : enemigos/centinela.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/ranJamp.dir/build.make CMakeFiles/ranJamp.dir/main.cpp.s
-.PHONY : main.cpp.s
+enemigos/centinela.cpp.s:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/centinela.cpp.s
+.PHONY : enemigos/centinela.cpp.s
+
+enemigos/mimodulo.o: enemigos/mimodulo.cpp.o
+
+.PHONY : enemigos/mimodulo.o
+
+# target to build an object file
+enemigos/mimodulo.cpp.o:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/mimodulo.cpp.o
+.PHONY : enemigos/mimodulo.cpp.o
+
+enemigos/mimodulo.i: enemigos/mimodulo.cpp.i
+
+.PHONY : enemigos/mimodulo.i
+
+# target to preprocess a source file
+enemigos/mimodulo.cpp.i:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/mimodulo.cpp.i
+.PHONY : enemigos/mimodulo.cpp.i
+
+enemigos/mimodulo.s: enemigos/mimodulo.cpp.s
+
+.PHONY : enemigos/mimodulo.s
+
+# target to generate assembly for a file
+enemigos/mimodulo.cpp.s:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/mimodulo.cpp.s
+.PHONY : enemigos/mimodulo.cpp.s
+
+enemigos/mimodulo2.o: enemigos/mimodulo2.cpp.o
+
+.PHONY : enemigos/mimodulo2.o
+
+# target to build an object file
+enemigos/mimodulo2.cpp.o:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/mimodulo2.cpp.o
+.PHONY : enemigos/mimodulo2.cpp.o
+
+enemigos/mimodulo2.i: enemigos/mimodulo2.cpp.i
+
+.PHONY : enemigos/mimodulo2.i
+
+# target to preprocess a source file
+enemigos/mimodulo2.cpp.i:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/mimodulo2.cpp.i
+.PHONY : enemigos/mimodulo2.cpp.i
+
+enemigos/mimodulo2.s: enemigos/mimodulo2.cpp.s
+
+.PHONY : enemigos/mimodulo2.s
+
+# target to generate assembly for a file
+enemigos/mimodulo2.cpp.s:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/mimodulo2.cpp.s
+.PHONY : enemigos/mimodulo2.cpp.s
+
+enemigos/murcielago.o: enemigos/murcielago.cpp.o
+
+.PHONY : enemigos/murcielago.o
+
+# target to build an object file
+enemigos/murcielago.cpp.o:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/murcielago.cpp.o
+.PHONY : enemigos/murcielago.cpp.o
+
+enemigos/murcielago.i: enemigos/murcielago.cpp.i
+
+.PHONY : enemigos/murcielago.i
+
+# target to preprocess a source file
+enemigos/murcielago.cpp.i:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/murcielago.cpp.i
+.PHONY : enemigos/murcielago.cpp.i
+
+enemigos/murcielago.s: enemigos/murcielago.cpp.s
+
+.PHONY : enemigos/murcielago.s
+
+# target to generate assembly for a file
+enemigos/murcielago.cpp.s:
+	$(MAKE) -f CMakeFiles/libEnemigos.dir/build.make CMakeFiles/libEnemigos.dir/enemigos/murcielago.cpp.s
+.PHONY : enemigos/murcielago.cpp.s
 
 matarpersonaje.o: matarpersonaje.cpp.o
 
@@ -477,39 +477,39 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... murcielago"
-	@echo "... matar"
-	@echo "... edit_cache"
-	@echo "... reptante"
 	@echo "... rebuild_cache"
-	@echo "... libModulos"
-	@echo "... ranJamp"
+	@echo "... centinela"
+	@echo "... matar"
+	@echo "... murcielago"
+	@echo "... libEnemigos"
 	@echo "... caer"
 	@echo "... recoger"
+	@echo "... edit_cache"
+	@echo "... reptante"
 	@echo "... caer.o"
 	@echo "... caer.i"
 	@echo "... caer.s"
-	@echo "... ej_modulos/centinela.o"
-	@echo "... ej_modulos/centinela.i"
-	@echo "... ej_modulos/centinela.s"
-	@echo "... ej_modulos/mimodulo.o"
-	@echo "... ej_modulos/mimodulo.i"
-	@echo "... ej_modulos/mimodulo.s"
-	@echo "... ej_modulos/mimodulo2.o"
-	@echo "... ej_modulos/mimodulo2.i"
-	@echo "... ej_modulos/mimodulo2.s"
-	@echo "... ej_modulos/murcielago.o"
-	@echo "... ej_modulos/murcielago.i"
-	@echo "... ej_modulos/murcielago.s"
+	@echo "... enemCentil.o"
+	@echo "... enemCentil.i"
+	@echo "... enemCentil.s"
 	@echo "... enemMurcielago.o"
 	@echo "... enemMurcielago.i"
 	@echo "... enemMurcielago.s"
 	@echo "... enemRep.o"
 	@echo "... enemRep.i"
 	@echo "... enemRep.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... enemigos/centinela.o"
+	@echo "... enemigos/centinela.i"
+	@echo "... enemigos/centinela.s"
+	@echo "... enemigos/mimodulo.o"
+	@echo "... enemigos/mimodulo.i"
+	@echo "... enemigos/mimodulo.s"
+	@echo "... enemigos/mimodulo2.o"
+	@echo "... enemigos/mimodulo2.i"
+	@echo "... enemigos/mimodulo2.s"
+	@echo "... enemigos/murcielago.o"
+	@echo "... enemigos/murcielago.i"
+	@echo "... enemigos/murcielago.s"
 	@echo "... matarpersonaje.o"
 	@echo "... matarpersonaje.i"
 	@echo "... matarpersonaje.s"

@@ -1,1 +1,1 @@
-/usr/bin/g++-5    -std=c++1y -Wall -Wextra -g   CMakeFiles/murcielago.dir/enemMurcielago.cpp.o  -o murcielago -rdynamic -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 
+/usr/bin/g++-5    -std=c++1y -Wall -Wextra -g   CMakeFiles/murcielago.dir/enemMurcielago.cpp.o  -o murcielago -rdynamic liblibEnemigos.a -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 

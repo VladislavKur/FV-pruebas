@@ -4,7 +4,7 @@
 #include "include/config.h"
 #include "centinela.h"
 
-#define kVel 300
+#define kVel 900
 #define UPDATE_TICK_TIME 15/1000
 
 
@@ -35,7 +35,7 @@ int main() {
   cuerpoMueve.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
   cuerpoMueve.setPosition(600, 600);*/
 
-  Centinela *maloso = new Centinela(tex,1000, 600);
+  Centinela *maloso = new Centinela(tex,1100, 600);
 
   //Bucle del juego
 

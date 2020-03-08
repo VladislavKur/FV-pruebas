@@ -19,11 +19,11 @@ class Centinela{
         float posYanterior;
         float diffX;
         float diffY;
-        float velocidad = 0.001;
+        float velocidad = 6;
         int modo;
         //modo: 0 quieto, modo: 1 caminar, modo: 2 matar
         sf::Sprite cuerpo;
-        static const int distanciaAcercamiento = 200;
+        static const int distanciaAcercamiento = 600;
         static const int distanciaDisparo = 100;
 
 };
