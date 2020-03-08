@@ -1,4 +1,4 @@
-# Install script for directory: /home/fv/Desktop/FV-pruebas
+# Install script for directory: /home/antonio/Documents/proyectoFV/FV-pruebas
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/fv/Desktop/FV-pruebas/build/ej_modulos/cmake_install.cmake")
+  include("/home/antonio/Documents/proyectoFV/FV-pruebas/build/enemigos/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/fv/Desktop/FV-pruebas/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/antonio/Documents/proyectoFV/FV-pruebas/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

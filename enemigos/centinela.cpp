@@ -18,8 +18,8 @@ Centinela::Centinela(sf::Texture& tex){
 Centinela::Centinela(sf::Texture& tex, int x, int y){
     posX = x;
     posY = y;
-    diffX= x;
-    diffY= y;
+    diffX= 0.0;
+    diffY= 0.0;
     posXanterior = x;
     posYanterior = y;
     modo = 0;
@@ -45,7 +45,7 @@ void Centinela::update(sf::RectangleShape& entrada){
     float posJugador = entrada.getPosition().x;
 
     float local_diffX = posJugador - posX;
-    float local_diffabs = abs(diffX);
+    float local_diffabs = abs(local_diffX);
 
     diffX = 0; //inicialmente no se mueve
     diffY = 0; //inicialmente no se mueve
@@ -102,6 +102,7 @@ void Centinela::render(sf::RenderWindow &entrada, float porcentaje){
     cuerpo.setPosition(
         posXanterior + diffX*porcentaje,
         posYanterior + diffY*porcentaje);
+
     
     entrada.draw(cuerpo);
 }
