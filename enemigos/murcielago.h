@@ -9,7 +9,7 @@ class Murcielago{
     public:
         Murcielago(sf::Texture& tex);
         Murcielago(sf::Texture& tex,int x, int y);
-        void update(sf::Sprite& entrada);
+        void update(sf::RectangleShape& entrada);
         void render(sf::RenderWindow& entrada, float porcentaje);
     private:
         void actualizarPosicion(float entradaX, float entradaY);

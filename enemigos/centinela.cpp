@@ -45,7 +45,7 @@ void Centinela::update(sf::RectangleShape& entrada){
     float posJugador = entrada.getPosition().x;
 
     float local_diffX = posJugador - posX;
-    float local_diffabs = abs(diffX);
+    float local_diffabs = abs(local_diffX);
 
     diffX = 0; //inicialmente no se mueve
     diffY = 0; //inicialmente no se mueve

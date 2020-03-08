@@ -2,8 +2,8 @@
 
 Murcielago::Murcielago(sf::Texture& tex){
     cuerpo.setTexture(tex);
-    posX = 1100.0;
-    posY = 100.0;
+    posX = 0.0;
+    posY = 0.0;
     posXanterior = 0.0;
     posYanterior = 0.0;
     diffX = 0.0;
@@ -40,14 +40,14 @@ void Murcielago::actualizarPosicion(float entradaX, float entradaY){
 
 };
 
-void Murcielago::update(sf::Sprite& entrada){
+void Murcielago::update(sf::RectangleShape& entrada){
 
     float posJugadorX = entrada.getPosition().x;
     float posJugadorY = entrada.getPosition().y;
 
     float local_diffX = posJugadorX - posX;
     float local_diffY = posJugadorY - posY;
-    float local_diffabs = abs(diffX);
+    float local_diffabs = abs(local_diffX);
 
     diffX = 0; //inicialmente no se mueve
     diffY = 0; //inicialmente no se mueve
@@ -71,7 +71,7 @@ void Murcielago::update(sf::Sprite& entrada){
                    cambio = true;
                 }
                 else{
-                    actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);     
+                    actualizarPosicion((local_diffX/local_diffabs)*velocidad,(local_diffY/local_diffabs)*velocidad);     
                 }
                                 
             break;
