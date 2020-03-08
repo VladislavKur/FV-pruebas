@@ -1,0 +1,29 @@
+Por parte de la pareja Vermia-Vladis:
+
+1. Ejecutables
+
+Los únicos que importante por nuestra parte son Caer y Acciones.
+El resto de los ejecutables son versiones incompletas o fallidas de estos dos.
+Hemos decidido juntar varios puntos del TenSheet en un mismo ejecutable en vez de hacer MUCHOS ejecutables.
+
+2. Puntos del TenSheet
+
+Caer comprueba los puntos:
+    - Personaje y movimientos básicos
+    - Colisión con objetos físicos (o sea plataformas)
+    - Gravedad ( que es velocidad += a), o sea físicas.
+    - Físicas y colisiones con plataformas (ver arriba)
+
+Acciones comprueba los puntos:
+    - Personaje y movimientos básicos (obviamente se repite porque es algo básico)
+    - Personaje recogiendo armas
+    - Personaje disparando 
+
+3. Cómo usar los ejecutables
+
+Los controles del Personaje (sujetos a cambios) son:
+    -Moverse: Flechas
+    -Recoger objeto: E
+    -Disparar: D
+    -Saltar: Space
+Mediante cout se dan instrucciones básicas al principio

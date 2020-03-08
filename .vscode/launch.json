@@ -37,7 +37,7 @@
             "name": "(gdb) Menu",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/menu",
+            "program": "${workspaceFolder}/build/Menu",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -66,7 +66,7 @@
             "name": "(gdb) Caer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/caer",
+            "program": "${workspaceFolder}/build/Gravedad",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -79,13 +79,39 @@
             "name": "(gdb) Recoger",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/recoger",
+            "program": "${workspaceFolder}/build/Recoger",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb"
+        },
+        {
+            "name": "(gdb) Disparar",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Disparar",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
+
+        },
+        {
+            "name": "(gdb) Acciones",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Acciones",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb"
+
         }
     ]
 }
