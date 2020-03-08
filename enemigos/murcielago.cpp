@@ -26,15 +26,32 @@ Murcielago::Murcielago(sf::Texture& tex, int x, int y){
     cuerpo.setTexture(tex);
     cuerpo.setOrigin(75 / 2, 75 / 2);
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-    cuerpo.setPosition(x+100, y+100);
+    cuerpo.setPosition(x, y);
+};
+
+void Murcielago::actualizarPosicion(float entradaX, float entradaY){
+
+    posXanterior = posX;
+    posYanterior = posY;
+    posX += entradaX;
+    posY += entradaY;
+    diffX = posX - posXanterior;
+    diffY = posY - posYanterior;
+
 };
 
 void Murcielago::update(sf::Sprite& entrada){
 
-    float posJugador = entrada.getPosition().x;
+    float posJugadorX = entrada.getPosition().x;
+    float posJugadorY = entrada.getPosition().y;
 
-    float diffX = posJugador - posX;
-    float diffabs = abs(diffX);
+    float local_diffX = posJugadorX - posX;
+    float local_diffY = posJugadorY - posY;
+    float local_diffabs = abs(diffX);
+
+    diffX = 0; //inicialmente no se mueve
+    diffY = 0; //inicialmente no se mueve
+
 
     bool cambio; //no nos cambiamos de modo por defecto
     do{
@@ -42,7 +59,7 @@ void Murcielago::update(sf::Sprite& entrada){
         switch(modo){
 
             case(0): //está quieto
-                if(diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
                     modo = 1;
                     cambio = true;
                 }
@@ -54,21 +71,12 @@ void Murcielago::update(sf::Sprite& entrada){
                    cambio = true;
                 }
                 else{
-                    diffX = (diffX/diffabs)*velocidad;//diffX/diffabs nos da el signo //(si está a la izquierda es negativo)
-                    diffY = (diffX/diffabs)*velocidad; //diffX y diffY es lo que se tienen que mover
-                    posXanterior = posX; //guardamos la anterior
-                    posYanterior = posY; //guardamos la anterior
-                    posX += diffX; //actualizamos la futura
+                    actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);     
                 }
                                 
             break;
             case(2): //recto
-                diffX = (diffX/diffabs)*velocidad;//diffX/diffabs nos da el signo 
-                                                        //(si está a la izquierda es negativo)
-                diffY = 0; //diffX y diffY es lo que se tienen que mover
-                posXanterior = posX; //guardamos la anterior
-                posYanterior = posY; //guardamos la anterior
-                posX += diffX; //actualizamos la futura
+                actualizarPosicion((local_diffX/local_diffabs)*velocidad,(local_diffY/local_diffabs)*velocidad);     
             break;
 
         }
@@ -83,10 +91,10 @@ void Murcielago::render(sf::RenderWindow &entrada, float porcentaje){
         cuerpo.setPosition(posX,posY);
     }
     else{
-      
-        posXanterior = diffX/porcentaje;
-        posYanterior = diffY/porcentaje;
-        cuerpo.setPosition(posXanterior,posYanterior);
+        //pasos = pruebaXa +(pruebaX -pruebaXa)*delta;
+        posXanterior += diffX/porcentaje;
+        posYanterior += diffY/porcentaje;
+        cuerpo.setPosition(posXanterior + (posX-posXanterior)* porcentaje, posYanterior + (posY-posYanterior)*porcentaje);
     }
     
     entrada.draw(cuerpo);

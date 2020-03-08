@@ -2,9 +2,9 @@
 #include <iostream>
 
 #include "include/config.h"
-#include "ej_modulos/murcielago.h"
+#include "enemigos/murcielago.h"
 
-#define kVel 0.5
+#define kVel 300
 #define UPDATE_TICK_TIME 15/1000
 
 int main() {
@@ -22,41 +22,34 @@ int main() {
   /////////////
   ///Enemigo///
   /////////////
-  Murcielago *enemigo = new Murcielago(tex, 0,0);
+  Murcielago *enemigo = new Murcielago(tex,1,0);
   //Murcielago::Murcielago enemigo(tex,1100,100);
   //Y creo el spritesheet a partir de la imagen anterior
-  sf::Sprite jugador(tex);
-
+  /*sf::Sprite jugador(tex);
   jugador.setOrigin(75 / 2, 75 / 2);
   jugador.setTextureRect(sf::IntRect(1 * 75, 1 * 75, 75, 75));
-  jugador.setPosition(100, 600);
+  jugador.setPosition(100, 600);*/
   
+  sf::RectangleShape cuerpoMueve(sf::Vector2f(50.0f, 70.0f));
+  cuerpoMueve.setFillColor(sf::Color(0,255,0));
+  cuerpoMueve.setPosition(sf::Vector2f(100,600));
+
   //float velocidadX = kVel;
   
   sf::Clock updateClock;
   float delta;
 
+  float pasos = 0;
+  float pruebaX = 0;
+  float pruebaXa = 0;
   //Bucle del juego
   while (window.isOpen()) {
     if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){
       delta = updateClock.restart().asMilliseconds();
-      //enemigo->update(jugador);
+      enemigo->update(cuerpoMueve);
 
     }
-    
-    
-    /*velocidadX = pow(1.1,velocidadX);
-        
-    if(enemigo.getPosition().y > 500){
-      std::cout<<"cambio2"<<std::endl;
-      enemigo.move(-kVel*4,0);
-    }
-    else{
-      //enemigo.move(-velocidadX, kVel+1);
-      enemigo.setPosition(enemigo.getPosition().x-velocidadX*0.5,enemigo.getPosition().y+velocidadX*kVel);
-    }*/
-
-
+  
     sf::Event evnt;
     while (window.pollEvent(evnt)) {
 
@@ -82,9 +75,10 @@ int main() {
     }
 
     window.clear();
-    jugador.move(kVel*(delta/UPDATE_TICK_TIME),0);
+    //pasos = pruebaXa +(pruebaX -pruebaXa)*delta;
+    cuerpoMueve.move(kVel*(delta/UPDATE_TICK_TIME),0);
     enemigo->render(window, delta/UPDATE_TICK_TIME);
-    window.draw(jugador);
+    window.draw(cuerpoMueve);
     window.display();
   }
 

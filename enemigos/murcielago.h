@@ -12,13 +12,14 @@ class Murcielago{
         void update(sf::Sprite& entrada);
         void render(sf::RenderWindow& entrada, float porcentaje);
     private:
+        void actualizarPosicion(float entradaX, float entradaY);
         float posX;
         float posY;
         float posXanterior;
         float posYanterior;
         float diffX;
         float diffY;
-        float velocidad = 0.5;
+        float velocidad = 0.0001;
         int modo;
         //0: colgado 1:cayendo(diagonal-parabola) 2:recto
         sf::Sprite cuerpo;

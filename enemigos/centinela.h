@@ -9,9 +9,10 @@ class Centinela{
     public:
         Centinela(sf::Texture& tex);
         Centinela(sf::Texture& tex,int x, int y);
-        void update(sf::Sprite& entrada);
+        void update(sf::RectangleShape& entrada);
         void render(sf::RenderWindow& entrada, float porcentaje);
     private:
+        void actualizarPosicion(float entradaX, float entradaY);
         float posX;
         float posY;
         float posXanterior;

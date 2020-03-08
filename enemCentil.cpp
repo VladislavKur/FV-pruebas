@@ -4,7 +4,7 @@
 #include "include/config.h"
 #include "centinela.h"
 
-#define kVel 0.001
+#define kVel 300
 #define UPDATE_TICK_TIME 15/1000
 
 
@@ -23,11 +23,17 @@ int main() {
   ///BLOQUE////
   /////////////
 
-  sf::Sprite cuerpoMueve(tex);
+  
+  sf::RectangleShape cuerpoMueve(sf::Vector2f(50.0f, 70.0f));
+  cuerpoMueve.setFillColor(sf::Color(0,255,0));
+  cuerpoMueve.setPosition(sf::Vector2f(100,600));
+  
+
+  /*sf::Sprite cuerpoMueve(tex);
 
   cuerpoMueve.setOrigin(75 / 2, 75 / 2);
   cuerpoMueve.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-  cuerpoMueve.setPosition(600, 600);
+  cuerpoMueve.setPosition(600, 600);*/
 
   Centinela *maloso = new Centinela(tex,1000, 600);
 
