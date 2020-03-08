@@ -12,6 +12,7 @@ class Centinela{
         void update(sf::Sprite& entrada);
         void render(sf::RenderWindow& entrada, float porcentaje);
     private:
+        void actualizarPosicion(float entradaX, float entradaY);
         float posX;
         float posY;
         float posXanterior;

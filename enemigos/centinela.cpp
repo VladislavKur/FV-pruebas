@@ -29,6 +29,17 @@ Centinela::Centinela(sf::Texture& tex, int x, int y){
     cuerpo.setPosition(x, y);
 };
 
+void Centinela::actualizarPosicion(float entradaX, float entradaY){
+
+    posXanterior = posX;
+    posYanterior = posY;
+    posX += entradaX;
+    posY += entradaY;
+    diffX = posX - posXanterior;
+    diffY = posY - posYanterior;
+
+};
+
 void Centinela::update(sf::Sprite& entrada){
 
     float posJugador = entrada.getPosition().x;
@@ -60,12 +71,8 @@ void Centinela::update(sf::Sprite& entrada){
                     cambio = true;
                 }
                 else{//si no cambiamos, actualiza su posicion
-                    diffX = (local_diffX/local_diffabs)*velocidad;//diffX/diffabs nos da el signo 
-                                                       //(si está a la izquierda es negativo)
-                    diffY = 0; //diffX y diffY es lo que se tienen que mover
-                    posXanterior = posX; //guardamos la anterior
-                    posYanterior = posY; //guardamos la anterior
-                    posX += diffX; //actualizamos la futura
+
+                    actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);
                     
                 }
                 
@@ -94,23 +101,8 @@ void Centinela::update(sf::Sprite& entrada){
 };
 
 void Centinela::render(sf::RenderWindow &entrada, float porcentaje){
-    //cuerpo.move(diffX/porcentaje,diffY/porcentaje);
-    if(diffX/porcentaje <= posX && diffY/porcentaje <= posY){
-
-        cuerpo.setPosition(posX,posY);
-
-    }
-    else{
-        
-        posXanterior += diffX/porcentaje;
-        posYanterior += diffY/porcentaje;
-        cuerpo.setPosition(posXanterior,posYanterior);
-
-    }
-
-    
+    cuerpo.setPosition(
+        posXanterior + diffX*porcentaje,
+        posYanterior + diffY*porcentaje);
     entrada.draw(cuerpo);
-
-    /////HABLAR CON FIDEL
-    //renderizar con getPosition() en vez de move()
 }
