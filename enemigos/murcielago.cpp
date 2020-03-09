@@ -47,7 +47,8 @@ void Murcielago::update(sf::RectangleShape& entrada){
 
     float local_diffX = posJugadorX - posX;
     float local_diffY = posJugadorY - posY;
-    float local_diffabs = abs(local_diffX);
+    float local_diffabsX = abs(local_diffX);
+    float local_diffabsY = abs(local_diffY);
 
     diffX = 0; //inicialmente no se mueve
     diffY = 0; //inicialmente no se mueve
@@ -59,7 +60,7 @@ void Murcielago::update(sf::RectangleShape& entrada){
         switch(modo){
 
             case(0): //está quieto
-                if(local_diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabsX < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
                     modo = 1;
                     cambio = true;
                 }
@@ -71,12 +72,16 @@ void Murcielago::update(sf::RectangleShape& entrada){
                    cambio = true;
                 }
                 else{
-                    actualizarPosicion((local_diffX/local_diffabs)*velocidad,(local_diffY/local_diffabs)*velocidad*3); 
+
+                    float movimientoSuaveX = (local_diffX/local_diffabsX)*velocidad;
+                    float movimientoSuaveY = (local_diffY/local_diffabsY)*velocidad;
+
+                    actualizarPosicion(movimientoSuaveX,movimientoSuaveY); 
                 }
                 
             break;
             case(2): //recto
-                actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);     
+                actualizarPosicion((local_diffX/local_diffabsX)*velocidad,0);     
             break;
 
         }
