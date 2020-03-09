@@ -19,12 +19,12 @@ class Murcielago{
         float posYanterior;
         float diffX;
         float diffY;
-        float velocidad = 0.0001;
+        float velocidad = 4;
         int modo;
         //0: colgado 1:cayendo(diagonal-parabola) 2:recto
         sf::Sprite cuerpo;
-        static const int altura = 500;
-        static const int distanciaAcercamiento = 200;
+        static const int altura = 0;
+        static const int distanciaAcercamiento = 1000;
         //static const int distanciaDisparo = 100;
         
 

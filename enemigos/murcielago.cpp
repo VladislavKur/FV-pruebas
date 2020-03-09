@@ -18,8 +18,8 @@ Murcielago::Murcielago(sf::Texture& tex){
 Murcielago::Murcielago(sf::Texture& tex, int x, int y){
     posX = x;
     posY = y;
-    diffX= x;
-    diffY= y;
+    diffX= 0.0;
+    diffY= 0.0;
     posXanterior = x;
     posYanterior = y;
     modo = 0;
@@ -66,17 +66,17 @@ void Murcielago::update(sf::RectangleShape& entrada){
                 
             break;
             case(1)://diagonal
-                if(posY == altura){
+                if(local_diffY <= altura){
                    modo = 2;
                    cambio = true;
                 }
                 else{
-                    actualizarPosicion((local_diffX/local_diffabs)*velocidad,(local_diffY/local_diffabs)*velocidad);     
+                    actualizarPosicion((local_diffX/local_diffabs)*velocidad,(local_diffY/local_diffabs)*velocidad*3); 
                 }
-                                
+                
             break;
             case(2): //recto
-                actualizarPosicion((local_diffX/local_diffabs)*velocidad,(local_diffY/local_diffabs)*velocidad);     
+                actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);     
             break;
 
         }
@@ -86,16 +86,10 @@ void Murcielago::update(sf::RectangleShape& entrada){
 };
 
 void Murcielago::render(sf::RenderWindow &entrada, float porcentaje){
-    //cuerpo.move(diffX/porcentaje,diffY/porcentaje);
-    if(diffX/porcentaje <= posX && diffY/porcentaje <= posY){
-        cuerpo.setPosition(posX,posY);
-    }
-    else{
-        //pasos = pruebaXa +(pruebaX -pruebaXa)*delta;
-        posXanterior += diffX/porcentaje;
-        posYanterior += diffY/porcentaje;
-        cuerpo.setPosition(posXanterior + (posX-posXanterior)* porcentaje, posYanterior + (posY-posYanterior)*porcentaje);
-    }
+    cuerpo.setPosition(
+        posXanterior + diffX*porcentaje,
+        posYanterior + diffY*porcentaje );
+
     
     entrada.draw(cuerpo);
 

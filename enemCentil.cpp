@@ -29,12 +29,6 @@ int main() {
   cuerpoMueve.setPosition(sf::Vector2f(100,600));
   
 
-  /*sf::Sprite cuerpoMueve(tex);
-
-  cuerpoMueve.setOrigin(75 / 2, 75 / 2);
-  cuerpoMueve.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-  cuerpoMueve.setPosition(600, 600);*/
-
   Centinela *maloso = new Centinela(tex,1100, 600);
 
   //Bucle del juego
