@@ -167,6 +167,18 @@ int main(){
   
   //Bucle del juego
   mapa * mundo = new mapa();
+  View * camara = new View(Vector2f(0.0f, 0.0f), Vector2f(480.0f , 320.0f));
+  
+  Texture tex;
+  if (!tex.loadFromFile("resources/sprites.png")) {
+    cerr << "Error cargando la imagen sprites.png";
+    exit(0);
+  }
+
+  Sprite s(tex);
+  s.setPosition(Vector2f(0,0));
+  s.setTextureRect(IntRect(0, 0 , 75 ,75));
+
   cout<<"he creado el mapa"<<endl;
   while (window->isOpen()) {
     //Bucle de obtención de eventos
@@ -180,13 +192,43 @@ int main(){
         window->close();
       break;
 
+         case Event::KeyPressed:
+
+        //Verifico si se pulsa alguna tecla de movimiento
+        switch (event.key.code) {
+
+        //Mapeo del cursor
+        case Keyboard::Right:
+            s.move(5, 0);
+        break;
+
+        case Keyboard::Left:
+            s.move(-5, 0);
+          break;
+
+        case Keyboard::Up:
+            s.move(0, -5);
+          break;
+
+        case Keyboard::Down:
+            s.move(0, 5);
+          break;
+         
+        default: 
+        break;
+        }
+      break;
+
       default: 
       break;
       
       }
       
     window->clear();
-    mundo->dibujar(window);
+    mundo->dibujar(window); 
+    window->draw(s);
+    camara->setCenter(s.getPosition());
+    window->setView(*camara);
     window->display();
     }
   }
