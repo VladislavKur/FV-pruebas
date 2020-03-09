@@ -60,7 +60,10 @@ int main() {
             std::cout << evnt.key.code << std::endl;
             break;
         }
+        default: 
+        break;
       }
+   
     }
 
     window.clear();

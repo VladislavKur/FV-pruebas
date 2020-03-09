@@ -102,6 +102,8 @@ int main() {
             std::cout << event.key.code << std::endl;
             break;
           }
+        default: 
+        break;
       }
     }
 

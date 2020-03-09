@@ -66,7 +66,10 @@ int main() {
             std::cout << event.key.code << std::endl;
             break;
         }
+        default:
+        break;
       }
+    
     }
     //////////////////////////
     //LO SEGUNDO ES RENDERIZAR
