@@ -1,6 +1,6 @@
-#include "centinela.h"
+#include "reptante.h"
 
-Centinela::Centinela(sf::Texture& tex){
+Reptante::Reptante(sf::Texture& tex){
     cuerpo.setTexture(tex);
     posX = 0.0;
     posY = 0.0;
@@ -15,7 +15,7 @@ Centinela::Centinela(sf::Texture& tex){
 
 };
 
-Centinela::Centinela(sf::Texture& tex, int x, int y){
+Reptante::Reptante(sf::Texture& tex, int x, int y){
     posX = x;
     posY = y;
     diffX= 0.0;
@@ -29,7 +29,7 @@ Centinela::Centinela(sf::Texture& tex, int x, int y){
     cuerpo.setPosition(x, y);
 };
 
-void Centinela::actualizarPosicion(float entradaX, float entradaY){
+void Reptante::actualizarPosicion(float entradaX, float entradaY){
 
     posXanterior = posX;
     posYanterior = posY;
@@ -40,7 +40,7 @@ void Centinela::actualizarPosicion(float entradaX, float entradaY){
 
 };
 
-void Centinela::update(sf::RectangleShape& entrada){
+void Reptante::update(sf::RectangleShape& entrada){
 
     float posJugador = entrada.getPosition().x;
 
@@ -56,14 +56,7 @@ void Centinela::update(sf::RectangleShape& entrada){
         switch(modo){
 
             case(0): //está quieto
-                if(local_diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
-                    modo = 1;
-                    cambio = true;
-                }
-                if(local_diffabs < distanciaDisparo){//si está lo suficientemente cerca, cambiamos
-                    modo = 2;
-                    cambio = true;
-                }
+                actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);      
             break;
             case(1):
                 if(local_diffabs < distanciaDisparo){//si está lo suficientemente cerca, cambiamos
@@ -92,13 +85,15 @@ void Centinela::update(sf::RectangleShape& entrada){
                 }
                 
             break;
+            case(3):
+            break;
 
         }
     }while(cambio); //si cambiamos de modo, volvemos a iterar en el bucle
 
 };
 
-void Centinela::render(sf::RenderWindow &entrada, float porcentaje){
+void Reptante::render(sf::RenderWindow &entrada, float porcentaje){
     cuerpo.setPosition(
         posXanterior + diffX*porcentaje,
         posYanterior + diffY*porcentaje );

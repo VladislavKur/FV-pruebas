@@ -1,14 +1,14 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#ifndef CENTINELA_H
-#define CENTINELA_H
+#ifndef REPTANTE_H
+#define REPTANTE_H
 
-class Centinela{
+class Reptante{
 
     public:
-        Centinela(sf::Texture& tex);
-        Centinela(sf::Texture& tex,int x, int y);
+        Reptante(sf::Texture& tex);
+        Reptante(sf::Texture& tex,int x, int y);
         void update(sf::RectangleShape& entrada);
         void render(sf::RenderWindow& entrada, float porcentaje);
     private:
@@ -21,11 +21,10 @@ class Centinela{
         float diffY;
         float velocidad = 6;
         int modo;
-        //modo: 0 quieto, modo: 1 caminar, modo: 2 matar
+        //modo: 0 suelo, modo: 1 paredI, modo: 2 techo, modo: 3 paredD
         sf::Sprite cuerpo;
-        static const int distanciaAcercamiento = 600;
-        static const int distanciaDisparo = 100;
-
+        sf::RectangleShape esqSuperior;
+        sf::RectangleShape esqInf;
 };
 
 #endif

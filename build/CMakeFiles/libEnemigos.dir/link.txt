@@ -1,2 +1,0 @@
-/usr/bin/ar qc liblibEnemigos.a  CMakeFiles/libEnemigos.dir/enemigos/mimodulo.cpp.o CMakeFiles/libEnemigos.dir/enemigos/mimodulo2.cpp.o CMakeFiles/libEnemigos.dir/enemigos/centinela.cpp.o CMakeFiles/libEnemigos.dir/enemigos/murcielago.cpp.o
-/usr/bin/ranlib liblibEnemigos.a
