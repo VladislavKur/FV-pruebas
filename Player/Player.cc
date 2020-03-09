@@ -79,7 +79,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     }
 
     if(coliArriba.intersects(plataforma.getBody().getGlobalBounds())){
-        jumpSpeed=1;
+        jumpSpeed=10;
     }
     
     //Caída constante
