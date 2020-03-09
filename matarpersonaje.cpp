@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "include/config.h"
+
 
 #define kVel 5
 
@@ -112,9 +112,8 @@ int main() {
     if(!muerto)
       window.draw(personaje);
     else{
-      personaje.setScale(personaje.getScale().x * 0.8, personaje.getScale().y * 0.8);
+      personaje.setScale(personaje.getScale().x * 0.9, personaje.getScale().y * 0.9);
       window.draw(personaje);
-      
     }
     window.draw(enemigo);
     window.display();

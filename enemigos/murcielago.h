@@ -1,3 +1,4 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -19,6 +20,7 @@ class Murcielago{
         float posYanterior;
         float diffX;
         float diffY;
+        float direccion = 0;
         float velocidad = 4;
         int modo;
         //0: colgado 1:cayendo(diagonal-parabola) 2:recto

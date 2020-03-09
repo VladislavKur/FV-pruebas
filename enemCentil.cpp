@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "include/config.h"
+
 #include "centinela.h"
 
 #define kVel 900

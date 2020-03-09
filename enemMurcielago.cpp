@@ -1,7 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "include/config.h"
 #include "enemigos/murcielago.h"
 
 #define kVel 400

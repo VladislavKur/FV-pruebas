@@ -64,7 +64,6 @@ void Murcielago::update(sf::RectangleShape& entrada){
                     modo = 1;
                     cambio = true;
                 }
-                
             break;
             case(1)://diagonal
                 if(local_diffY <= altura){
@@ -81,7 +80,11 @@ void Murcielago::update(sf::RectangleShape& entrada){
                 
             break;
             case(2): //recto
-                actualizarPosicion((local_diffX/local_diffabsX)*velocidad,0);     
+
+                if(direccion == 0)
+                    direccion = local_diffX/local_diffabsX;
+
+                actualizarPosicion(direccion*velocidad,0);     
             break;
 
         }
