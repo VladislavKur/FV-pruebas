@@ -1,0 +1,38 @@
+El grupo se ha divivido en 3 parejas: 
+
+Alejandro, Andrés: 
+    -Ejecutable Mapa.cpp:
+        -Cargar los mapas.  
+        -Dibujar los mapas.
+        -Diseñar los mapas(capas, ...).
+    -Ejecutable Menu.cpp:
+        -Menú. 
+    -Ejecutable Sonido.cpp:
+        -Sonido y Música (Cargarlos).
+Mónica, Antonio:
+    -IA de los enemigos (Diagramas de máquina de estados).
+        -enemCentil.cpp, enemMurcielago.cpp, enemRep.cpp
+    -Características de los enemigos (vida, fuerza, velocidad propia).
+        -centinela.h, centinela.cpp, murcielago.h, murcielago.cpp
+    -Matar enemigo. 
+    -Morir por enemigo (2 golpes) → Prueba de vida del personaje.
+        -matarpersonaje.cpp
+    -Interpolación de render.
+        -enemCentil.cpp, enemMurcielago.cpp, enemRep.cpp, centinela.cpp, murcielago.cpp
+
+Vladis, Martín: 
+    -Ejecutable “Caer”
+        -Personaje y movimientos básicos.
+    -Físicas del juego (gravedad, velocidad).
+        -Colisión objetos fijos. 
+    -Físicas y colisiones con plataformas.
+        -Ejecutable “Acciones”
+        -Personaje recogiendo armas.	
+        -Personaje Disparando.
+
+
+Horas aproximadas de trabajo: 
+
+Alejandro, Andrés : 20-25 h. 
+Antonio , Monica: 20-25 h.
+Vladis , Martín : 25-30 h. 
