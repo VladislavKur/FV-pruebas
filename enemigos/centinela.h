@@ -1,5 +1,5 @@
 #pragma once
-#include <SFL/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <iostream>
 
 #ifndef CENTINELA_H

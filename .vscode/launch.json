@@ -60,20 +60,7 @@
 
         }
          ,
-        {
-            "name": "(gdb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/ranJamp",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb"
-
-        }
-         ,
+      
 
         {
             "name": "(gdb) Caer",
@@ -88,18 +75,6 @@
             "MIMode": "gdb"
         },
 
-        {
-            "name": "(gdb) Recoger",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/Recoger",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb"
-        },
         
 
         {
@@ -117,18 +92,7 @@
 
         ,
             
-        {
-            "name": "(gdb) Disparar",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/Disparar",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb"
-        },
+     
 
         {
             "name": "(gdb) MatarPersonaje",
