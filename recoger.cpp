@@ -3,6 +3,7 @@
 #include "Player/Player.h"
 
 
+
 #define kVel 5
 
 bool colision(sf::RectangleShape objeto1, sf::RectangleShape objeto2){
