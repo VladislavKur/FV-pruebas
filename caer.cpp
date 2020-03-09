@@ -3,6 +3,7 @@
 #include "Player/Player.h"
 #include "Plataforma/Plataforma.h"
 
+using namespace sf;
 
 #define kVel 5
 
@@ -22,17 +23,19 @@ int main() {
 
 
   Player player(&tex, sf::Vector2u(6,4),0.33f);
-  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 400) );  
-  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) );  
-
-
-
+  Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 300) );
+  Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) );
 
   float deltaTime = 0;
   sf::Clock clock;
 
+  RectangleShape coliAbajoVisible;
+  RectangleShape coliArribaVisible;
+  RectangleShape coliIzquierdaVisible;
+  RectangleShape coliDerechaVisible;
 
-
+  std::cout << "Usa las flechas para moverte y SPACE para saltar" << std::endl;
+  std::cout << "Comprueba las colisiones con la plataforma" << std::endl;
 
   sf::View view(sf::Vector2f(player.getBody().getPosition().x, player.getBody().getPosition().y), sf::Vector2f( 640.0f, 480.0f));
 
@@ -81,13 +84,33 @@ int main() {
     ////////////
     ///UPDATE///
     ////////////
+    
+
+    coliAbajoVisible.setPosition(Vector2f(player.coliAbajo.left, player.coliAbajo.top));
+    coliAbajoVisible.setSize(Vector2f(player.coliAbajo.width, player.coliAbajo.height));
+    coliAbajoVisible.setFillColor(Color(255,255,255,128));
+
+    coliArribaVisible.setPosition(Vector2f(player.coliArriba.left, player.coliArriba.top));
+    coliArribaVisible.setSize(Vector2f(player.coliArriba.width, player.coliArriba.height));
+    coliArribaVisible.setFillColor(Color(255,255,0, 128));
+
+    coliDerechaVisible.setPosition(Vector2f(player.coliDerecha.left, player.coliDerecha.top));
+    coliDerechaVisible.setSize(Vector2f(player.coliDerecha.width, player.coliDerecha.height));
+    coliDerechaVisible.setFillColor(Color(255,0,0,128));
+
+    coliIzquierdaVisible.setPosition(Vector2f(player.coliIzquierda.left, player.coliIzquierda.top));
+    coliIzquierdaVisible.setSize(Vector2f(player.coliIzquierda.width, player.coliIzquierda.height));
+    coliIzquierdaVisible.setFillColor(Color(0,255,0,128));
+    
    
     deltaTime = clock.restart().asSeconds();
 
     player.update(deltaTime, plataforma1, plataforma2);
   
+    Collider plat1col=plataforma1.getCollider();
+    Collider playercol = player.getCollider();
   
-    //plataforma1.getCollider().checkCollision( .getCollider(),0.0f);
+    player.getCollider().checkCollision(plat1col ,0.0f);
     
 
     view.setCenter(player.getBody().getPosition());
@@ -101,7 +124,10 @@ int main() {
     player.draw(window);
     plataforma1.Draw(window);
     plataforma2.Draw(window);
-
+    window.draw(coliAbajoVisible);
+    window.draw(coliArribaVisible);
+    window.draw(coliDerechaVisible);
+    window.draw(coliIzquierdaVisible);
 
     window.display();
     }

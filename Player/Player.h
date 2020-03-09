@@ -17,6 +17,10 @@ private:
     float jumpSpeed;
     float jumpHeight; //Constante (en principio)
     Animacion animacion;
+
+    
+
+
 public:
     //CANON
     Player(sf::Texture* textura, sf::Vector2u cantidadImagenes, float SwitchTimeSprite);
@@ -53,4 +57,9 @@ public:
 
     void moveRight(float deltaTime);
     void moveLeft(float deltaTime);
+
+    sf::FloatRect coliAbajo;
+    sf::FloatRect coliArriba;
+    sf::FloatRect coliIzquierda;
+    sf::FloatRect coliDerecha;
 };

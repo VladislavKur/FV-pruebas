@@ -60,7 +60,8 @@ int main() {
   suelo.setFillColor(sf::Color(255,0,0));
   suelo.setPosition(0,470);
 
-  std::cout << "Pulsa E para recoger el rectangulo verde" << std::endl;
+  std::cout << "Usa las flechas para moverte y SPACE para saltar" << std::endl;
+  std::cout << "Pulsa E para recoger el rectangulo verde (arma)" << std::endl;
   std::cout << "Una vez recogida el arma, pulsa D para disparar" << std::endl;
 
   sf::View view(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y), sf::Vector2f( 640.0f, 480.0f));
