@@ -24,6 +24,8 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
     jumpSpeed=0;
     jumpHeight=75*2;
 
+    auxSaltos = true;
+
     
 }
 
@@ -66,7 +68,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
 //Dejar de caer si toco plataforma
  if(coliAbajo.intersects(plataforma.getBody().getGlobalBounds()) ||
    coliAbajo.intersects(suelo.getBody().getGlobalBounds()) ){
-    saltos = PU_saltoDoble ? 2 : 1;
+    saltos = PU_saltoDoble ? 2: 1;
     jumpSpeed=0;
   
    } else 
@@ -75,7 +77,12 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
   //caer
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
+     
+      if(auxSaltos==true && saltos > 0){
         saltar();
+        auxSaltos= false;
+        
+      }
     }
 
     if(coliArriba.intersects(plataforma.getBody().getGlobalBounds())){
@@ -86,11 +93,6 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     body.move(0,jumpSpeed*deltaTime);
 }
 
-void Player::setSaltos(){
-  
-  //jumpHeight *= 2;
-  saltos+= 100;
-}
 
 
 
@@ -115,10 +117,8 @@ void Player::moveLeft(float deltaTime){
 
 }
 void Player::saltar(){
-  if(saltos!=0){
-        
+  if(saltos > 0){
         jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
-        std::cout<< "Saltos: " << saltos<<std::endl;
         saltos--;
       }
 }
@@ -130,4 +130,8 @@ void Player::obtenerPU_SaltoDoble(){
 
 void Player::setArma(int p_arma){
   arma = p_arma;
+}
+
+void Player::setAuxSaltos(){
+  auxSaltos= true;
 }
