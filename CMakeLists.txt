@@ -13,6 +13,7 @@ add_subdirectory(Animacion)
 add_subdirectory(enemigos)
 add_subdirectory(Collider)
 add_subdirectory(Plataforma)
+add_subdirectory(Mundo)
 
 #Opciones a pasar al compilador de C++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")

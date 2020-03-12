@@ -36,11 +36,11 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     coliAbajo.left = gp.x - gbb.width/2 + 25;
     coliAbajo.top = gp.y + gbb.height/2;
     coliAbajo.width = gbb.width-50;
-    coliAbajo.height = 6;
+    coliAbajo.height = 2;
     
     coliIzquierda.left = gp.x - gbb.width/2+12;
     coliIzquierda.top = gp.y - gbb.height/2 + 25 ;
-    coliIzquierda.width = gbb.width/2-15;
+    coliIzquierda.width = gbb.width/2 - 15;
     coliIzquierda.height = gbb.height -25;
 
     coliDerecha.left = gp.x+5;
