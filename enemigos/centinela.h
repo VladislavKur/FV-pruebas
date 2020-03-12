@@ -10,7 +10,7 @@ class Centinela{
     public:
         Centinela(sf::Texture& tex);
         Centinela(sf::Texture& tex,int x, int y);
-        void update(sf::RectangleShape& entrada);
+        void update(sf::RectangleShape& entrada, float deltaTime);
         void render(sf::RenderWindow& entrada, float porcentaje);
     private:
         void actualizarPosicion(float entradaX, float entradaY);
@@ -20,7 +20,7 @@ class Centinela{
         float posYanterior;
         float diffX;
         float diffY;
-        float velocidad = 6;
+        float velocidad = 60;
         int modo;
         //modo: 0 quieto, modo: 1 caminar, modo: 2 matar
         sf::Sprite cuerpo;

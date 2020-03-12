@@ -40,7 +40,7 @@ void Centinela::actualizarPosicion(float entradaX, float entradaY){
 
 };
 
-void Centinela::update(sf::RectangleShape& entrada){
+void Centinela::update(sf::RectangleShape& entrada, float deltaTime){
 
     float posJugador = entrada.getPosition().x;
 
@@ -71,7 +71,7 @@ void Centinela::update(sf::RectangleShape& entrada){
                     cambio = true;
                 }
                 else{//si no cambiamos, actualiza su posicion
-                   actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);                  
+                   actualizarPosicion((local_diffX/local_diffabs)*velocidad*deltaTime,0);                  
                 }
                 
             break;
@@ -103,6 +103,7 @@ void Centinela::render(sf::RenderWindow &entrada, float porcentaje){
         posXanterior + diffX*porcentaje,
         posYanterior + diffY*porcentaje );
 
+    
     
     entrada.draw(cuerpo);
 }
