@@ -94,7 +94,12 @@ int main() {
         case sf::Keyboard::Left:
           
           case sf::Keyboard::Space:
+          
+          if (event.key.code == sf::Keyboard::Space)
+           player.setAuxSaltos();
           break;
+        
+        
         case sf::Keyboard::Escape:
           window.close();
           break;
@@ -103,6 +108,7 @@ int main() {
         }
         default: break;
       }
+      
     }
 
 
@@ -128,7 +134,8 @@ int main() {
         item.setSize(sf::Vector2f(0,0));
         item.setPosition(-500,-500); //lejos de la accion   
         player.setArma(1);      
-        player.obtenerPU_SaltoDoble();              
+        player.obtenerPU_SaltoDoble();
+         
     }
 
     cooldown-=deltaTime;

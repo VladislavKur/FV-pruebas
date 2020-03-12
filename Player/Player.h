@@ -9,7 +9,6 @@ class Player
 private:
     sf::Vector2u textura;
     sf::RectangleShape body;
-    
     float velocidad;
     int saltos;
     int arma;
@@ -17,7 +16,7 @@ private:
     float jumpSpeed;
     float jumpHeight; //Constante (en principio)
     Animacion animacion;
-
+    bool auxSaltos; // inicialmente true, que puede saltar dos veces
     
 
 
@@ -51,9 +50,10 @@ public:
     void perderPU_Velocidad();
     void perderPU_Slowhits();
 
-    void setSaltos();
+ 
     void setVelocidad();
     void setArma(int);
+    void setAuxSaltos();//pone el aux de doble salto a true, que puede volver a saltar
 
     void moveRight(float deltaTime);
     void moveLeft(float deltaTime);
