@@ -9,13 +9,14 @@ using namespace std;
 class mapa{
 
     public:
-
-        mapa(); 
-        void dibujar(RenderWindow * ventana);
-
-
+        mapa();
+        void cargarmapa(const char * f ); 
+        void crearSprites();
+        void crearObjetos();
+        void render(RenderWindow * ventana);
     private:
-
+        TiXmlDocument doc;
+        TiXmlElement * map;
         VertexArray m_vertices;
         Texture m_tileset;
         int _activeLayer;
@@ -33,4 +34,16 @@ class mapa{
         Texture *_tilesetTexture;
         Sprite **_tilesetSprite;
         TiXmlElement ** imagenes;
+
+
+
+        //objetos
+
+        int _widthObject;
+        int _heightObject;
+        int _x;
+        int _y;
+        int _numObjects = 0;
+        RectangleShape ** objetos;
+        TiXmlElement ** objects;
 };
