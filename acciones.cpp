@@ -95,8 +95,7 @@ int main() {
           
           case sf::Keyboard::Space:
           
-          if (event.key.code == sf::Keyboard::Space)
-           player.setAuxSaltos();
+         
           break;
         
         
@@ -106,6 +105,13 @@ int main() {
 
         default: break;
         }
+        case sf::Event::KeyReleased:
+         if (event.key.code == sf::Keyboard::Space){
+           player.setAuxSaltos();std::cout << "perro\n" ;
+         }
+           
+
+        break;
         default: break;
       }
       

@@ -9,6 +9,7 @@ class Player
 private:
     sf::Vector2u textura;
     sf::RectangleShape body;
+    int vida;
     float velocidad;
     int saltos;
     int arma;
@@ -31,6 +32,7 @@ public:
     Collider getCollider(){return Collider(body);}
     
     void saltar();
+    void quitarVida();
 
     //GET
     int getSaltos(){return saltos;}

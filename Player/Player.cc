@@ -20,6 +20,9 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
     body.setPosition(320, 40);//Quitar esto mas adelante
 
     body.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+
+
+    vida = 2;
     saltos = 1;
     jumpSpeed=0;
     jumpHeight=75*2;
@@ -69,6 +72,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
  if(coliAbajo.intersects(plataforma.getBody().getGlobalBounds()) ||
    coliAbajo.intersects(suelo.getBody().getGlobalBounds()) ){
     saltos = PU_saltoDoble ? 2: 1;
+    
     jumpSpeed=0;
   
    } else 
@@ -77,10 +81,18 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
   //caer
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
-     
+   //  std:: cout << PU_saltoDoble << std:: endl;
+      //   std:: cout << saltos << std:: endl;
+        // std:: cout << "antes" << std:: endl;
       if(auxSaltos==true && saltos > 0){
+            //  std:: cout << "entra" << std:: endl;
+          // std:: cout << "_-------------------------------------__" << std:: endl;
         saltar();
-        auxSaltos= false;
+        quitarVida();
+        
+        
+   
+        
         
       }
     }
@@ -118,9 +130,15 @@ void Player::moveLeft(float deltaTime){
 }
 void Player::saltar(){
   if(saltos > 0){
+        auxSaltos= false;
         jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
         saltos--;
       }
+}
+void Player::quitarVida(){
+  if(vida > 0)
+  vida--;
+  else body.setTexture(nullptr);
 }
 
 
