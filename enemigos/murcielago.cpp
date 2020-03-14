@@ -1,46 +1,6 @@
-#include "murcielago.h"
+#include "enemigo.h"
 
-Murcielago::Murcielago(sf::Texture& tex){
-    cuerpo.setTexture(tex);
-    posX = 0.0;
-    posY = 0.0;
-    posXanterior = 0.0;
-    posYanterior = 0.0;
-    diffX = 0.0;
-    diffY = 0.0;
-    modo = 0;
-    cuerpo.setOrigin(75 / 2, 75 / 2);
-    cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-    cuerpo.setPosition(posX, posY);
-
-};
-
-Murcielago::Murcielago(sf::Texture& tex, int x, int y){
-    posX = x;
-    posY = y;
-    diffX= 0.0;
-    diffY= 0.0;
-    posXanterior = x;
-    posYanterior = y;
-    modo = 0;
-    cuerpo.setTexture(tex);
-    cuerpo.setOrigin(75 / 2, 75 / 2);
-    cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-    cuerpo.setPosition(x, y);
-};
-
-void Murcielago::actualizarPosicion(float entradaX, float entradaY){
-
-    posXanterior = posX;
-    posYanterior = posY;
-    posX += entradaX;
-    posY += entradaY;
-    diffX = posX - posXanterior;
-    diffY = posY - posYanterior;
-
-};
-
-void Murcielago::update(sf::RectangleShape& entrada){
+void Murcielago::update(sf::RectangleShape& entrada, float delta){
 
     float posJugadorX = entrada.getPosition().x;
     float posJugadorY = entrada.getPosition().y;
