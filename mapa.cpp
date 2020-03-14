@@ -1,14 +1,17 @@
 #include "mapa.h"
 
-
 mapa::mapa(){
-  TiXmlDocument doc;
-  if(!doc.LoadFile("MapaFinal.tmx")){
+
+}
+
+void mapa::cargarmapa(const char * f){
+
+  if(!doc.LoadFile(f)){
     cout<< "ERROR AL CARGAR EL DOCUMENTO"<<endl;
   }else{
     cout << "LO HE CARGADO" << endl;
   }
-  TiXmlElement * map = doc.FirstChildElement("map");
+  map = doc.FirstChildElement("map");
 
   map->QueryIntAttribute("width", &_width);
   map->QueryIntAttribute("height", &_height);
@@ -108,7 +111,7 @@ mapa::mapa(){
 
 }
 
-void mapa::dibujar(RenderWindow * ventana){
+void mapa::crearSprites(){
 
   for(int l=0; l<_numLayers; l++){
     for(int y=0; y<_height; y++){
@@ -121,9 +124,6 @@ void mapa::dibujar(RenderWindow * ventana){
             gid = gid - cambio[k-1];
           }
           if(gid <=  cambio[k]){
-            // if(gid > 0){
-            //   cout << "gid = " << gid << endl;
-            // }
             if(gid>=_tileWidth*_tileHeight){
               cout << "Error, gid at (l,x,y)= (" << l << "," << x << "," 
               << y << ") :" << gid << " fuera del rango del tileset (" 
@@ -142,12 +142,8 @@ void mapa::dibujar(RenderWindow * ventana){
               if(columna < 0){
                 columna = 0;
               }
-              // cout << "Tcolumnas: " << Tcolumnas<< endl;
-              // cout << "fila :" << fila <<endl;
-              // cout << "columna : " << columna << endl; 
-            _tilemapSprite[l][y][x]->setTextureRect(IntRect(columna*32, fila*32, 32, 32));
+              _tilemapSprite[l][y][x]->setTextureRect(IntRect(columna*32, fila*32, 32, 32));
               _tilemapSprite[l][y][x]->setPosition(x*_tileWidth, y*_tileHeight);
-              ventana->draw(*_tilemapSprite[l][y][x]);
               pintada = true;
             }else{
               _tilemapSprite[l][y][x] = NULL;
@@ -162,11 +158,97 @@ void mapa::dibujar(RenderWindow * ventana){
 
 }
 
+
+void mapa::crearObjetos(){
+
+    TiXmlElement * objectgroup = map->FirstChildElement("objectgroup");
+    TiXmlElement * object = objectgroup->FirstChildElement("object");
+    _numObjects = 0;
+    while(object){
+        object = object->NextSiblingElement("object");
+        _numObjects++;
+    }
+    cout<< "numObjects " << _numObjects<< endl;
+    objects = new TiXmlElement * [_numObjects];
+    objetos = new RectangleShape * [_numObjects];
+    
+    object = objectgroup->FirstChildElement("object");
+    
+    cout<<"object " << object->Attribute("id")<<endl;
+    int num = 0; 
+    while(object){
+        objects[num] = object;
+        object = object->NextSiblingElement("object");
+        num++;
+    }
+    cout<< "num" << num <<endl; 
+    
+    for(int i=0; i < _numObjects; i++){
+        //cout << "OBJETO  ID = " << objects[i]->Attribute("id") << endl;
+        objects[i]->QueryIntAttribute("width", &_widthObject);
+        //cout << "width " << _widthObject<<endl;
+        objects[i]->QueryIntAttribute("height", &_heightObject);
+        //cout << "height " << _heightObject<<endl;
+        objects[i]->QueryIntAttribute("x", &_x);
+        //cout << "x " << _x<<endl;
+        objects[i]->QueryIntAttribute("y", &_y);
+        //cout << "y " << _y << endl;
+        objetos[i] = new RectangleShape(Vector2f(_widthObject, _heightObject));
+        
+        if(objetos[i] != nullptr ){
+         cout<< "TENGOO ALGO" <<endl;
+        }
+        objetos[i]->setPosition(_x,_y);
+        objetos[i]->setFillColor(Color(255, 0 , 0));
+    }
+}
+
+void mapa::render(RenderWindow * ventana){
+  
+
+
+  for(int l=0; l<_numLayers; l++){
+    for(int y=0; y<_height; y++){
+      for(int x=0; x<_width; x++){
+      int imagen = 0;
+      bool pintada = false;
+        for(int k = 0; k< _numTilesets && !pintada; k++){
+          int gid = _tilemap[l][y][x];
+          if(imagen != 0){
+            gid = gid - cambio[k-1];
+          }
+          if(gid <=  cambio[k]){
+            if(gid>=_tileWidth*_tileHeight){
+              cout << "Error, gid at (l,x,y)= (" << l << "," << x << "," 
+              << y << ") :" << gid << " fuera del rango del tileset (" 
+              << _width*_height << ")" << endl;
+            }else if(gid > 0){
+              ventana->draw(*_tilemapSprite[l][y][x]);
+              pintada = true;
+            }else{
+              _tilemapSprite[l][y][x] = NULL;
+            }
+          }else{
+            imagen++;
+          }
+        }
+      }
+    }
+  }
+
+  for(int i=0; i < _numObjects; i++){
+    ventana->draw(*objetos[i]);
+  }
+}
+
 int main(){
   RenderWindow * window = new RenderWindow(sf::VideoMode(640, 480), "Prueba cargar mapa");
-  
+  const char * file = "MapaFinal.tmx";
   //Bucle del juego
   mapa * mundo = new mapa();
+  mundo->cargarmapa(file);
+  mundo->crearObjetos();
+  mundo->crearSprites();
   View * camara = new View(Vector2f(0.0f, 0.0f), Vector2f(480.0f , 320.0f));
   
   Texture tex;
@@ -225,7 +307,7 @@ int main(){
       }
       
     window->clear();
-    mundo->dibujar(window); 
+    mundo->render(window); 
     window->draw(s);
     camara->setCenter(s.getPosition());
     window->setView(*camara);
