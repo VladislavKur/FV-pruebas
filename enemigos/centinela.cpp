@@ -16,7 +16,7 @@ void Centinela::update(sf::RectangleShape& entrada, float delta){
         switch(modo){
 
             case(0): //está quieto
-                if(local_diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabs < distanciaAtaque){//si está lo suficientemente cerca, cambiamos
                     modo = 1;
                     cambio = true;
                 }

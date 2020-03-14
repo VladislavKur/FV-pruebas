@@ -1,5 +1,6 @@
 #include "enemigo.h"
 
+
 void Murcielago::update(sf::RectangleShape& entrada, float delta){
 
     float posJugadorX = entrada.getPosition().x;
@@ -20,7 +21,7 @@ void Murcielago::update(sf::RectangleShape& entrada, float delta){
         switch(modo){
 
             case(0): //está quieto
-                if(local_diffabsX < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabsX < distanciaAtaque){//si está lo suficientemente cerca, cambiamos
                     modo = 1;
                     cambio = true;
                 }

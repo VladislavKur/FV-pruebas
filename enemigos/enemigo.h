@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <Player/Player.h>
+#include <Player.h>
 
 #ifndef ENEMIGO_H
 #define ENEMIGO_H
@@ -10,10 +10,10 @@ class Enemigo{
     public:
         Enemigo(sf::Texture tex, float x, float y);
         ~Enemigo();
-        virtual void update(Player& player, float delta);
-        virtual void render(sf::WindowsRender& entrada, float porcentaje);
+        virtual void update(sf::RectangleShape& player, float delta); ///player
+        virtual void render(sf::RenderWindow & entrada, float porcentaje);
 
-    private:
+    protected:
         float posX, posY;
         float posXanterior, posYanterior;
         float diffX, diffY;
@@ -22,7 +22,7 @@ class Enemigo{
         sf::RectangleShape cuerpo;
         sf::Clock relojAnim;
         void actualizarPosicion(float x, float y);
-}
+};
 
 class Centinela : public Enemigo{
     private:
@@ -31,19 +31,20 @@ class Centinela : public Enemigo{
         void disparar(); //devuelve bala o nada ??????
 
     protected:
-        void update(Player& player, float delta);
-        void render(sf::WindowsRender& entrada, float porcentaje);   
-}
+        void update(sf::RectangleShape& player, float delta);
+        void render(sf::RenderWindow& entrada, float porcentaje);   
+};
 
 class Murcielago : public Enemigo{
     private:
         int distanciaAtaque;
-        //int altura;
+        int altura;
+        int direccion = 0;
         bool haPegado;
     protected:
-        void update(Player& player, float delta);
-        void render(sf::WindowsRender& entrada, float porcentaje);   
-}
+        void update(sf::RectangleShape& player, float delta);
+        void render(sf::RenderWindow& entrada, float porcentaje);   
+};
 
 class Reptante : public Enemigo{
     private:
@@ -51,8 +52,8 @@ class Reptante : public Enemigo{
         sf::RectangleShape esqDcha;
         int direccion;
     protected:
-        void update(Player& player, float delta);
-        void render(sf::WindowsRender& entrada, float porcentaje);   
-}
+        void update(sf::RectangleShape& player, float delta);
+        void render(sf::RenderWindow& entrada, float porcentaje);   
+};
 
 #endif
