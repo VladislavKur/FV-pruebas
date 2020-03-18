@@ -114,12 +114,13 @@ int main() {
     
 
     view.setCenter(player.getBody().getPosition());
+    window.setView(view);
     ///////////////
     /////DRAW/////
     //////////////
     window.clear();
     
-    window.setView(view);
+    
 
     player.draw(window);
     plataforma1.Draw(window);
