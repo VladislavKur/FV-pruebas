@@ -22,7 +22,7 @@
     }
 
     //t --> tipo
-    void Objeto::update(Player otherBody){
+    void Objeto::update(Player &otherBody){
 
         if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && body.getGlobalBounds().intersects(otherBody.getBody().getGlobalBounds())){
 

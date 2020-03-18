@@ -11,7 +11,7 @@ class Objeto
     Objeto(sf::Texture* tex,sf::Vector2f size, sf::Vector2f Posicion, int t);
 
     void draw(sf::RenderWindow& window);
-    void update(Player otherBody);
+    void update(Player &otherBody);
 
 
     void recogido();
