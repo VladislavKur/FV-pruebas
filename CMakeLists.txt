@@ -13,6 +13,7 @@ add_subdirectory(Animacion)
 add_subdirectory(enemigos)
 add_subdirectory(Collider)
 add_subdirectory(Plataforma)
+add_subdirectory(Objeto)
 
 #Opciones a pasar al compilador de C++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")
@@ -29,7 +30,6 @@ add_executable(mapa mapa.cpp tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlpar
 add_executable(mapaObjeto mapaObjeto.cpp tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp) 
 add_executable(Gravedad caer.cpp)
 add_executable(Menu menu.cpp)
-
 add_executable(Acciones acciones.cpp)
 
 

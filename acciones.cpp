@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Player/Player.h"
 #include "Bullet/Bullet.h"
+#include "Objeto/Objeto.h"
 
 
 #define kVel 5
@@ -46,19 +47,17 @@ int main() {
   sf::Clock clock;
 
   float cooldown=0;
-
+ // textura -- Tamaño -- Posicion
   Plataforma plataforma1(nullptr,sf::Vector2f(400,40),sf::Vector2f(200, 400) );  
   Plataforma plataforma2(nullptr,sf::Vector2f(1000,5),sf::Vector2f(0,500) );  
 
   plataforma.setFillColor(sf::Color(0,0,128));
   plataforma.setPosition(200, sprite.getPosition().y+300 );
+ // textura -- Tamaño -- Posicion -- tipo
+  Objeto arma(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,200), 1);
+  Objeto SaltoDoble(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(300,200), 2);
 
-  sf::RectangleShape item(sf::Vector2f(25.0f, 17.0f));
-  item.setFillColor(sf::Color(0,255,0));
-  item.setPosition(sf::Vector2f(200,200));
 
-  suelo.setFillColor(sf::Color(255,0,0));
-  suelo.setPosition(0,470);
 
   std::cout << "Usa las flechas para moverte y SPACE para saltar" << std::endl;
   std::cout << "Pulsa E para recoger el rectangulo verde (arma)" << std::endl;
@@ -135,14 +134,10 @@ int main() {
     }
 
     player.update(deltaTime, plataforma1, plataforma2);
+    arma.update(player);
+    SaltoDoble.update(player);
 
-    if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && colision(player.getBody(),item)){
-        item.setSize(sf::Vector2f(0,0));
-        item.setPosition(-500,-500); //lejos de la accion   
-        player.setArma(1);      
-        player.obtenerPU_SaltoDoble();
-         
-    }
+
 
     cooldown-=deltaTime;
 
@@ -158,13 +153,7 @@ int main() {
     
     
 
-    /*if(sprite.getPosition().y>yInicial){
-      jumpSpeed=0;
-      sprite.setPosition( sf::Vector2f(sprite.getPosition().x,yInicial) );
-      saltando=false;
-    }*/
-    
-    
+
     
 
     ///////////////
@@ -183,7 +172,9 @@ int main() {
     plataforma1.Draw(window);
     plataforma2.Draw(window);
     player.draw(window);
-    window.draw(item);
+    arma.draw(window);
+    SaltoDoble.draw(window);
+
 
     window.display();
     }else{

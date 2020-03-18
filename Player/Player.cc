@@ -138,7 +138,7 @@ void Player::saltar(){
 void Player::quitarVida(){
   if(vida > 0)
   vida--;
-  else body.setTexture(nullptr);
+  // aqui ira la animacion de morir
 }
 
 
