@@ -1,3 +1,4 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -21,7 +22,9 @@ int main() {
   /////////////
   ///Enemigo///
   /////////////
-  Murcielago *enemigo = new Murcielago(tex,1000,200);
+  float x = 1000.0;
+  float y = 200.0;
+  Murcielago *enemigo = new Murcielago(tex,x,y);
  
   
   sf::RectangleShape cuerpoMueve(sf::Vector2f(50.0f, 70.0f));
@@ -35,7 +38,7 @@ int main() {
   while (window.isOpen()) {
     if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){
       delta = updateClock.restart().asMilliseconds();
-      enemigo->update(cuerpoMueve);
+      enemigo->update(cuerpoMueve, delta);
 
     }
   

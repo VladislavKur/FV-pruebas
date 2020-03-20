@@ -1,4 +1,6 @@
+#pragma once
 #include "enemigo.h"
+#include "centinela.h"
 
 void Centinela::update(sf::RectangleShape& entrada, float delta){
 

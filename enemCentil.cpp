@@ -1,3 +1,4 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -29,7 +30,9 @@ int main() {
   cuerpoMueve.setPosition(sf::Vector2f(100,600));
   
 
-  Centinela *maloso = new Centinela(tex,1100, 600);
+  float x = 1100.0;
+  float y = 600.0;
+  Centinela *maloso = new Centinela(tex,x,y);
 
   //Bucle del juego
 
@@ -41,7 +44,7 @@ int main() {
     /////////////////////////////////////////////
     if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){ //si hay que actualizar, actualiza
       delta = updateClock.restart().asMilliseconds();
-      maloso->update(cuerpoMueve);
+      maloso->update(cuerpoMueve, delta);
 
     }
 

@@ -1,3 +1,4 @@
+#pragma once
 #include "enemigo.h"
 
 Enemigo::Enemigo(sf::Texture& tex, int x, int y){
