@@ -1,19 +1,18 @@
-#pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
 
 #include "centinela.h"
 
-#define kVel 900
-#define UPDATE_TICK_TIME 15/1000
+#define kVel 90.0
 
 
 int main() {
 
+  const float UPDATE_TICK_TIME = 15.0; //magnitud: millisegundos
+
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1200, 1200), "P0. Fundamentos de los Videojuegos. DCCIA");
-  window.setFramerateLimit(60);
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
   if (!tex.loadFromFile("resources/sprites.png")) {
@@ -29,22 +28,23 @@ int main() {
   cuerpoMueve.setPosition(sf::Vector2f(100,600));
   
 
-  float x = 1100.0;
-  float y = 600.0;
-  Centinela *maloso = new Centinela(tex,x,y);
+  Centinela *maloso = new Centinela(tex,1100, 600);
 
   //Bucle del juego
 
   sf::Clock updateClock;
   float delta;
+  float elapsus;
+  int contador = 0;
   while (window.isOpen()) {
+
     /////////////////////////////////////////////
     //LO PRIMERO ES LA COMPROBACION DE UPDATEAR//
     /////////////////////////////////////////////
-    if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){ //si hay que actualizar, actualiza
-      delta = updateClock.restart().asMilliseconds();
-      maloso->update(cuerpoMueve, delta);
 
+    if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){ //si hay que actualizar, actualiza
+      delta = updateClock.restart().asSeconds();
+      maloso->update(cuerpoMueve, delta);
     }
 
     sf::Event event;
@@ -76,11 +76,15 @@ int main() {
     //////////////////////////
     //LO SEGUNDO ES RENDERIZAR
     //////////////////////////
+
     window.clear();
-    cuerpoMueve.move(kVel*(delta/UPDATE_TICK_TIME),0);
-    maloso->render(window, delta/UPDATE_TICK_TIME);
+    cuerpoMueve.move(kVel/1000.0,0);
+    elapsus = updateClock.getElapsedTime().asMilliseconds();
+
+    maloso->render(window, elapsus/UPDATE_TICK_TIME);
     window.draw(cuerpoMueve);
     window.display();
+    contador++;
   }
 
   return 0;

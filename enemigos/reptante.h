@@ -6,13 +6,16 @@
 #ifndef REPTANTE_H
 #define REPTANTE_H
 
+class Reptante{
+
 class Reptante : public Enemigo{
     private:
         sf::RectangleShape esqIzq;
         sf::RectangleShape esqDcha;
         int direccion;
-    public:
+    protected:
         void update(sf::RectangleShape& player, float delta);
         void render(sf::RenderWindow& entrada, float porcentaje);   
 };
+
 #endif

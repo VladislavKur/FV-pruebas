@@ -1,6 +1,5 @@
-#pragma once
 #include "enemigo.h"
-#include "reptante.h"
+
 
 void Reptante::update(sf::RectangleShape& entrada, float delta){
 ///las colisiones

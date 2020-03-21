@@ -1,11 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-
 #include "enemigo.h"
 
 #ifndef MURCIELAGO_H
 #define MURCIELAGO_H
+
+class Murcielago{
 
 class Murcielago : public Enemigo{
     private:
@@ -13,11 +14,9 @@ class Murcielago : public Enemigo{
         int altura;
         int direccion = 0;
         bool haPegado;
-    public:
-        Murcielago(sf::Texture& tex, float x, float y):Enemigo(tex, x, y){}
+    protected:
         void update(sf::RectangleShape& player, float delta);
-        void render(sf::RenderWindow& entrada, float porcentaje);  
-         
+        void render(sf::RenderWindow& entrada, float porcentaje);   
 };
 
 #endif

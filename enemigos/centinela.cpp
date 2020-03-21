@@ -1,7 +1,50 @@
+<<<<<<< HEAD
 #pragma once
+=======
+>>>>>>> db7bbe819a95367f9878fb4f1e3a84fe6efe6596
 #include "centinela.h"
 
-void Centinela::update(sf::RectangleShape& entrada, float delta){
+Centinela::Centinela(sf::Texture& tex){
+    cuerpo.setTexture(tex);
+    posX = 0.0;
+    posY = 0.0;
+    posXanterior = 0.0;
+    posYanterior = 0.0;
+    diffX = 0.0;
+    diffY = 0.0;
+    modo = 0;
+    cuerpo.setOrigin(75 / 2, 75 / 2);
+    cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+    cuerpo.setPosition(posX, posY);
+
+};
+
+Centinela::Centinela(sf::Texture& tex, int x, int y){
+    posX = x;
+    posY = y;
+    diffX= 0.0;
+    diffY= 0.0;
+    posXanterior = x;
+    posYanterior = y;
+    modo = 0;
+    cuerpo.setTexture(tex);
+    cuerpo.setOrigin(75 / 2, 75 / 2);
+    cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+    cuerpo.setPosition(x, y);
+};
+
+void Centinela::actualizarPosicion(float entradaX, float entradaY){
+
+    posXanterior = posX;
+    posYanterior = posY;
+    posX += entradaX;
+    posY += entradaY;
+    diffX = posX - posXanterior;
+    diffY = posY - posYanterior;
+
+};
+
+void Centinela::update(sf::RectangleShape& entrada, float deltaTime){
 
     float posJugador = entrada.getPosition().x;
 
@@ -17,7 +60,7 @@ void Centinela::update(sf::RectangleShape& entrada, float delta){
         switch(modo){
 
             case(0): //está quieto
-                if(local_diffabs < distanciaAtaque){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
                     modo = 1;
                     cambio = true;
                 }
@@ -32,7 +75,7 @@ void Centinela::update(sf::RectangleShape& entrada, float delta){
                     cambio = true;
                 }
                 else{//si no cambiamos, actualiza su posicion
-                   actualizarPosicion((local_diffX/local_diffabs)*velocidad,0);                  
+                   actualizarPosicion((local_diffX/local_diffabs)*velocidad*deltaTime,0);                  
                 }
                 
             break;
@@ -64,6 +107,7 @@ void Centinela::render(sf::RenderWindow &entrada, float porcentaje){
         posXanterior + diffX*porcentaje,
         posYanterior + diffY*porcentaje );
 
+    
     
     entrada.draw(cuerpo);
 }

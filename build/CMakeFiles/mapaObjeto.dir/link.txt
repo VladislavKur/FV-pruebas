@@ -1,1 +1,0 @@
-/usr/bin/g++-5    -std=c++1y -Wall -Wextra -g   CMakeFiles/mapaObjeto.dir/mapaObjeto.cpp.o CMakeFiles/mapaObjeto.dir/tinyxml.cpp.o CMakeFiles/mapaObjeto.dir/tinystr.cpp.o CMakeFiles/mapaObjeto.dir/tinyxmlerror.cpp.o CMakeFiles/mapaObjeto.dir/tinyxmlparser.cpp.o  -o mapaObjeto -rdynamic -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 
