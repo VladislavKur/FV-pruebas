@@ -23,7 +23,7 @@ class Enemigo{
         sf::Clock relojAnim;
         void actualizarPosicion(float x, float y);
 };
-
+/*
 class Centinela : public Enemigo{
     private:
         int distanciaAtaque;
@@ -54,6 +54,6 @@ class Reptante : public Enemigo{
     protected:
         void update(sf::RectangleShape& player, float delta);
         void render(sf::RenderWindow& entrada, float porcentaje);   
-};
+};*/
 
 #endif

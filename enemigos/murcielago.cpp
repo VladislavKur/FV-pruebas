@@ -1,4 +1,4 @@
-#include "enemigo.h"
+#include "murcielago.h"
 
 
 void Murcielago::update(sf::RectangleShape& entrada, float delta){
@@ -33,8 +33,8 @@ void Murcielago::update(sf::RectangleShape& entrada, float delta){
                 }
                 else{
 
-                    float movimientoSuaveX = (local_diffX/local_diffabsX)*velocidad;
-                    float movimientoSuaveY = (local_diffY/local_diffabsY)*velocidad;
+                    float movimientoSuaveX = (local_diffX/local_diffabsX)*velocidad*delta;
+                    float movimientoSuaveY = (local_diffY/local_diffabsY)*velocidad*delta;
 
                     actualizarPosicion(movimientoSuaveX,movimientoSuaveY); 
                 }

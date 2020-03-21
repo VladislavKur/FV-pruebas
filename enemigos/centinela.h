@@ -1,10 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "enemigo.h"
 
 #ifndef CENTINELA_H
 #define CENTINELA_H
-
+/*
 class Centinela{
 
     public:
@@ -27,6 +28,18 @@ class Centinela{
         static const int distanciaAcercamiento = 600;
         static const int distanciaDisparo = 100;
 
+};*/
+
+
+class Centinela : public Enemigo{
+    private:
+        int distanciaAtaque;
+        int distanciaDisparo;
+        void disparar(); //devuelve bala o nada ??????
+
+    protected:
+        void update(sf::RectangleShape& player, float delta);
+        void render(sf::RenderWindow& entrada, float porcentaje);   
 };
 
 #endif
