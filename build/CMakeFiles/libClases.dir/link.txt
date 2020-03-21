@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibClases.a  CMakeFiles/libClases.dir/Player/Player.cc.o CMakeFiles/libClases.dir/Bullet/Bullet.cc.o CMakeFiles/libClases.dir/Animacion/Animacion.cpp.o CMakeFiles/libClases.dir/enemigos/centinela.cpp.o CMakeFiles/libClases.dir/enemigos/murcielago.cpp.o CMakeFiles/libClases.dir/Collider/Collider.cpp.o CMakeFiles/libClases.dir/Plataforma/Plataforma.cpp.o
+/usr/bin/ranlib liblibClases.a

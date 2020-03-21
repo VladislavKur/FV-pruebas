@@ -57,7 +57,6 @@ void Murcielago::render(sf::RenderWindow &entrada, float porcentaje){
     cuerpo.setPosition(
         posXanterior + diffX*porcentaje,
         posYanterior + diffY*porcentaje );
-
     
     entrada.draw(cuerpo);
 

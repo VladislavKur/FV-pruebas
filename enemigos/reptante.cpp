@@ -4,7 +4,6 @@
 
 void Reptante::update(sf::RectangleShape& entrada, float delta){
 ///las colisiones
-
 };
 
 void Reptante::render(sf::RenderWindow &entrada, float porcentaje){
@@ -12,6 +11,5 @@ void Reptante::render(sf::RenderWindow &entrada, float porcentaje){
         posXanterior + diffX*porcentaje,
         posYanterior + diffY*porcentaje );
 
-    
     entrada.draw(cuerpo);
 }

@@ -7,7 +7,6 @@
 #ifndef MURCIELAGO_H
 #define MURCIELAGO_H
 
-
 class Murcielago : public Enemigo{
     private:
         int distanciaAtaque;

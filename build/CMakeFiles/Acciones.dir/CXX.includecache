@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fv/Desktop/FV-pruebas/Animacion/Animacion.h
+SFML/Graphics.hpp
+-
+
+/home/fv/Desktop/FV-pruebas/Bullet/Bullet.h
+SFML/Graphics.hpp
+-
+
+/home/fv/Desktop/FV-pruebas/Collider/Collider.h
+SFML/Graphics.hpp
+-
+
+/home/fv/Desktop/FV-pruebas/Plataforma/Plataforma.h
+SFML/Graphics.hpp
+-
+../Collider/Collider.h
+/home/fv/Desktop/FV-pruebas/Collider/Collider.h
+
+/home/fv/Desktop/FV-pruebas/Player/Player.h
+SFML/Graphics.hpp
+-
+../Animacion/Animacion.h
+/home/fv/Desktop/FV-pruebas/Animacion/Animacion.h
+../Collider/Collider.h
+/home/fv/Desktop/FV-pruebas/Collider/Collider.h
+../Plataforma/Plataforma.h
+/home/fv/Desktop/FV-pruebas/Plataforma/Plataforma.h
+
+/home/fv/Desktop/FV-pruebas/acciones.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+Player/Player.h
+/home/fv/Desktop/FV-pruebas/Player/Player.h
+Bullet/Bullet.h
+/home/fv/Desktop/FV-pruebas/Bullet/Bullet.h
+

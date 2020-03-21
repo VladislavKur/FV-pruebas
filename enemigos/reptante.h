@@ -6,7 +6,6 @@
 #ifndef REPTANTE_H
 #define REPTANTE_H
 
-
 class Reptante : public Enemigo{
     private:
         sf::RectangleShape esqIzq;

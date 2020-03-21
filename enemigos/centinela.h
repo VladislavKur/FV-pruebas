@@ -18,5 +18,4 @@ class Centinela : public Enemigo{
         void render(sf::RenderWindow& entrada, float porcentaje);   
 };
 
-
 #endif

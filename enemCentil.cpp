@@ -20,11 +20,10 @@ int main() {
     std::cerr << "Error cargando la imagen sprites.png";
     exit(0);
   }
+  
   //////////////
   ///BLOQUE////
-  /////////////
-
-  
+  /////////////  
   sf::RectangleShape cuerpoMueve(sf::Vector2f(50.0f, 70.0f));
   cuerpoMueve.setFillColor(sf::Color(0,255,0));
   cuerpoMueve.setPosition(sf::Vector2f(100,600));
