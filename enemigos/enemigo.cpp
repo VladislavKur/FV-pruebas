@@ -1,6 +1,7 @@
 #include "enemigo.h"
 
-Enemigo::Enemigo(sf::Texture& tex, int x, int y){
+Enemigo::Enemigo(sf::Texture& tex,float x, float y){
+    cuerpo.setTexture(tex);
     posX = x;
     posY = y;
     diffX= 0.0;
@@ -8,10 +9,10 @@ Enemigo::Enemigo(sf::Texture& tex, int x, int y){
     posXanterior = x;
     posYanterior = y;
     modo = 0;
-    cuerpo.setTexture(tex);
+    /*cuerpo.setTexture(tex);
     cuerpo.setOrigin(75 / 2, 75 / 2);
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
-    cuerpo.setPosition(x, y);
+    cuerpo.setPosition(x, y);*/
 };
 Enemigo::~Enemigo(){}
 

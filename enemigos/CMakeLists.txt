@@ -2,7 +2,8 @@
 target_sources(libClases PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/centinela.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/murcielago.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/centinela.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/reptante.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/enemigo.cpp"
 )
 
 #Y donde se encuentran los .h

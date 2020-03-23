@@ -5,6 +5,22 @@
 
 #ifndef CENTINELA_H
 #define CENTINELA_H
+
+class Centinela : public Enemigo{
+    private:
+        int distanciaAtaque;
+        int distanciaDisparo;
+        void disparar(); //devuelve bala o nada ??????
+
+    public:
+        Centinela(sf::Texture& tex);
+        Centinela(sf::Texture& tex, int x, int y);
+        void update(sf::RectangleShape& player, float delta);
+        void render(sf::RenderWindow& entrada, float porcentaje);   
+};
+
+#endif
+
 /*
 class Centinela{
 
@@ -29,17 +45,3 @@ class Centinela{
         static const int distanciaDisparo = 100;
 
 };*/
-
-
-class Centinela : public Enemigo{
-    private:
-        int distanciaAtaque;
-        int distanciaDisparo;
-        void disparar(); //devuelve bala o nada ??????
-
-    protected:
-        void update(sf::RectangleShape& player, float delta);
-        void render(sf::RenderWindow& entrada, float porcentaje);   
-};
-
-#endif

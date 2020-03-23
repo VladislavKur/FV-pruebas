@@ -1,39 +1,34 @@
-<<<<<<< HEAD
-#pragma once
-=======
->>>>>>> db7bbe819a95367f9878fb4f1e3a84fe6efe6596
 #include "centinela.h"
 
-Centinela::Centinela(sf::Texture& tex){
-    cuerpo.setTexture(tex);
-    posX = 0.0;
+Centinela::Centinela(sf::Texture& tex) : Enemigo(tex,0,0){
+    /*posX = 0.0;
     posY = 0.0;
     posXanterior = 0.0;
     posYanterior = 0.0;
     diffX = 0.0;
     diffY = 0.0;
-    modo = 0;
+    modo = 0;*/
     cuerpo.setOrigin(75 / 2, 75 / 2);
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
     cuerpo.setPosition(posX, posY);
 
 };
 
-Centinela::Centinela(sf::Texture& tex, int x, int y){
-    posX = x;
+Centinela::Centinela(sf::Texture& tex, int x, int y) : Enemigo(tex,x,y){
+    /*posX = x;
     posY = y;
     diffX= 0.0;
     diffY= 0.0;
     posXanterior = x;
-    posYanterior = y;
+    posYanterior = y;*/
     modo = 0;
-    cuerpo.setTexture(tex);
+    //cuerpo.setTexture(tex);
     cuerpo.setOrigin(75 / 2, 75 / 2);
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
     cuerpo.setPosition(x, y);
 };
 
-void Centinela::actualizarPosicion(float entradaX, float entradaY){
+/*void Centinela::actualizarPosicion(float entradaX, float entradaY){
 
     posXanterior = posX;
     posYanterior = posY;
@@ -42,7 +37,7 @@ void Centinela::actualizarPosicion(float entradaX, float entradaY){
     diffX = posX - posXanterior;
     diffY = posY - posYanterior;
 
-};
+};*/
 
 void Centinela::update(sf::RectangleShape& entrada, float deltaTime){
 
@@ -60,7 +55,7 @@ void Centinela::update(sf::RectangleShape& entrada, float deltaTime){
         switch(modo){
 
             case(0): //está quieto
-                if(local_diffabs < distanciaAcercamiento){//si está lo suficientemente cerca, cambiamos
+                if(local_diffabs < distanciaAtaque){//si está lo suficientemente cerca, cambiamos
                     modo = 1;
                     cambio = true;
                 }
@@ -72,6 +67,10 @@ void Centinela::update(sf::RectangleShape& entrada, float deltaTime){
             case(1):
                 if(local_diffabs < distanciaDisparo){//si está lo suficientemente cerca, cambiamos
                     modo = 2;
+                    cambio = true;
+                }
+                else if(local_diffabs> distanciaAtaque){
+                    modo = 1;
                     cambio = true;
                 }
                 else{//si no cambiamos, actualiza su posicion

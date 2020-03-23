@@ -9,8 +9,6 @@
 
 class Enemigo{
     public:
-        Enemigo(sf::Texture tex, float x, float y);
-        ~Enemigo();
         virtual void update(sf::RectangleShape& player, float delta); ///player
         virtual void render(sf::RenderWindow & entrada, float porcentaje);
 
@@ -20,6 +18,8 @@ class Enemigo{
         float diffX, diffY;
         float velocidad;
         int modo;
+        Enemigo(sf::Texture& tex,float x, float y);
+        ~Enemigo();
         sf::RectangleShape cuerpo;
         sf::Clock relojAnim;
         void actualizarPosicion(float x, float y);
