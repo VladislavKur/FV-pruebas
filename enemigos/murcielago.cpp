@@ -16,7 +16,7 @@ Murcielago::Murcielago(sf::Texture& tex) : Enemigo(tex,0,0){
 
 };
 
-Murcielago::Murcielago(sf::Texture& tex, int x, int y) : Enemigo(tex,x,y){
+Murcielago::Murcielago(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
     /*posX = x;
     posY = y;
     diffX= 0.0;

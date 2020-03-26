@@ -1,6 +1,6 @@
 #include "centinela.h"
 
-Centinela::Centinela(sf::Texture& tex) : Enemigo(tex,0,0){
+Centinela::Centinela(sf::Texture& tex) : Enemigo(tex,0.0f,0.0f){
     /*posX = 0.0;
     posY = 0.0;
     posXanterior = 0.0;
@@ -14,7 +14,7 @@ Centinela::Centinela(sf::Texture& tex) : Enemigo(tex,0,0){
 
 };
 
-Centinela::Centinela(sf::Texture& tex, int x, int y) : Enemigo(tex,x,y){
+Centinela::Centinela(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
     /*posX = x;
     posY = y;
     diffX= 0.0;

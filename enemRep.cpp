@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-
+#include "enemigos/reptante.h"
 
 #define kVel 1
 
@@ -31,12 +31,14 @@ int main() {
   int modoReptante = 0; //0: suelo, 1: paredD; 2: techo 3: paredI
   int direccion = 1; //1: reloj, -1: contrario
 
+  Reptante *enemigo = new Reptante(tex,200.0f,150.0f);
+  
   //Bucle del juego
   while (window.isOpen()) {
     if(direccion == -1)
     modoReptante = 1;
     //switch movimiento del reptante
-    switch(modoReptante){
+    /*switch(modoReptante){
       case 0: //suelo
             sprite.move(kVel*direccion, 0);
             if(sprite.getPosition().x == 1100 && direccion==1)
@@ -78,7 +80,7 @@ int main() {
                     modoReptante = 1;
             }
       break;
-    }
+    }*/
     
     sf::Event event;
     while (window.pollEvent(event)) {

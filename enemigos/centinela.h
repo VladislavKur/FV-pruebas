@@ -14,7 +14,7 @@ class Centinela : public Enemigo{
 
     public:
         Centinela(sf::Texture& tex);
-        Centinela(sf::Texture& tex, int x, int y);
+        Centinela(sf::Texture& tex, float x, float y);
         void update(sf::RectangleShape& player, float delta);
         void render(sf::RenderWindow& entrada, float porcentaje);   
 };

@@ -14,7 +14,7 @@ class Murcielago : public Enemigo{
         bool haPegado;
     public:
         Murcielago(sf::Texture& tex);
-        Murcielago(sf::Texture& tex, int x, int y);
+        Murcielago(sf::Texture& tex, float x, float y);
         void update(sf::RectangleShape& player, float delta);
         void render(sf::RenderWindow& entrada, float porcentaje);   
 };
