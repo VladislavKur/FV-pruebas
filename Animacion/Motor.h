@@ -1,4 +1,4 @@
-#include <SFML/Graphic.hpp>
+#include <SFML/Graphics.hpp>
 #include <iostream>
 
 #ifndef MOTOR_H
@@ -25,7 +25,7 @@
             static bool getOpen();
             static char readEventTeclado();
 
-    }
+    };
 
 
 #endif

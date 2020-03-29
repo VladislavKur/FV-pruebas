@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "enemigos/reptante.h"
+#include "Plataforma/Plataforma.h"
 
 #define kVel 1
 
@@ -18,7 +19,7 @@ int main() {
   }
 
   //Y creo el spritesheet a partir de la imagen anterior
-  sf::Sprite sprite(tex);
+  /*sf::Sprite sprite(tex);
 
   //Le pongo el centroide donde corresponde
   sprite.setOrigin(75 / 2, 75 / 2);
@@ -27,11 +28,13 @@ int main() {
 
   // Lo dispongo en el centro de la pantalla
   sprite.setPosition(100, 100);
-
+*/
   int modoReptante = 0; //0: suelo, 1: paredD; 2: techo 3: paredI
   int direccion = 1; //1: reloj, -1: contrario
 
   Reptante *enemigo = new Reptante(tex,200.0f,150.0f);
+
+  Plataforma plataforma1(nullptr, sf::Vector2f(100.0f,1000.0f),sf::Vector2f(500.0f,200.0f));
   
   //Bucle del juego
   while (window.isOpen()) {
@@ -109,8 +112,11 @@ int main() {
       }
     }
 
+    //enemigo->update(,delta);
+    plataforma1.getCollider().checkCollision(enemigo->getCollider(),1.0f);
+
     window.clear();
-    window.draw(sprite);
+    //window.draw(sprite);
     window.display();
   }
 

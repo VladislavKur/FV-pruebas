@@ -7,7 +7,7 @@ Collider::Collider(sf::RectangleShape &body) :  body(body){
 
 }
 
-bool Collider::checkCollision(Collider &other, float push){
+bool Collider::checkCollision(Collider & other, float push) {
     // posicion y centro del objeto pasado
     sf::Vector2f otherPosicion = other.getPosicion();
     sf::Vector2f otherMitad = other.getMitadSize();

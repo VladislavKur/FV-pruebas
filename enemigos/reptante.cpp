@@ -14,7 +14,7 @@ Reptante::Reptante(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
     cuerpo.setPosition(x, y);
 
-    esqIzq.setOrigin(75 / 2, 75 / 2);
+    /*esqIzq.setOrigin(75 / 2, 75 / 2);
     esqDcha.setOrigin(75 / 2, 75 / 2);
 
     esqIzq.setRotation(34.825f);
@@ -24,7 +24,9 @@ Reptante::Reptante(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
     esqDcha.setPosition(x,y);
 
     esqIzq.setFillColor(sf::Color(sf::Uint32 (255)));
-    esqIzq.setFillColor(sf::Color(sf::Uint32 (120)));
+    esqIzq.setFillColor(sf::Color(sf::Uint32 (120)));*/
+    
+    
 };
 
 void Reptante::update(sf::RectangleShape& entrada, float delta){

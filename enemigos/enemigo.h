@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "../Player/Player.h"
+
 
 
 #ifndef ENEMIGO_H
