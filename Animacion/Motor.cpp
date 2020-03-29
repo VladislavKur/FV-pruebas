@@ -42,7 +42,7 @@ bool cargarSprite(sf::Texture& entrada, std::string fichero){
 
     if(!entrada.loadFromFile("resources/" + fichero)){
 
-        std::cerr << "Error cargando la imagen " << fichero;
+
         devolver = false;
 
     }
@@ -51,11 +51,23 @@ bool cargarSprite(sf::Texture& entrada, std::string fichero){
 
 }
 
-void Motor::recorte(sf::RectangleShape &entrada,  int xi,int yi, int lenghtX, int lengthY){
+void Motor::recorte(sf::RectangleShape &entrada,  int xi,int yi, int lengthX, int lengthY){
 
-    entrada.setOrigin(xi + (lenghtX/2),yi-(lengthY/2));
+    entrada.setOrigin(xi + (lengthX/2),yi+(lengthY/2));
 
     entrada.setTextureRect(sf::IntRect(xi,yi,lenghtX,lengthY));
+
+}
+
+void Motor::setTamanyoCuerpo(sf::RectangleShape &cuerpo,sf::Vector2f entrada){
+
+    cuerpo.setSize(entrada);
+
+}
+
+void setTextura(sf::RectangleShape& cuerpo, sf::Texture entrada){
+
+    cuerpo.setTexture(texture);
 
 }
 

@@ -6,6 +6,8 @@
 
     class Motor{
 
+        friend class Animacion;
+
         private:
             static sf::RenderWindow ventana;
             static bool instanced;
@@ -13,7 +15,9 @@
         protected:
             static bool dibujo(sf::RectangleShape entrada);
             static bool cargarSprite(sf::Texture& entrada, std::string fichero);//wip
-            static void recorte(sf::RectangleShape &entrada, int xi, int yi, int xf, int yf);
+            static void recorte(sf::RectangleShape &entrada, int xi, int yi, int lengthX, int lengthY);
+            static void setTamanyoCuerpo(sf::RectangleShape& cuerpo,sf::Vector2f entrada);
+            static void setTextura(sf::RectangleShape& cuerpo, sf::Texture entrada);
             static void posicionar(sf::RectangleShape& entrada, float x, float y);
         public:
             static bool crearVentana();

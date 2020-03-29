@@ -9,22 +9,26 @@ Player::~Player(){
 
 }
 
-Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTimeSprite) 
-: animacion(tex,cantidadImagenes,SwitchTimeSprite){
+Player::Player(int x, int y) 
+: animacion("sprites.png",
+            sf::Vector2u(40,19),
+            0.33f,
+            sf::Vector2f(100.0f,100.0f),
+            sf::Vector2f(75.0,75.0)
+            ){
     
-    arma=0;
-    body.setSize(sf::Vector2f(100.0f,100.0f));
-    body.setTexture(tex);
     
-    body.setOrigin(75 / 2, 75 / 2);  // 75 es el tamaño del sprite, cambiar
-    body.setPosition(320, 40);//Quitar esto mas adelante
+    //body.setSize(sf::Vector2f(100.0f,100.0f));
+    //body.setTexture(tex);
+    
+    //body.setOrigin(75 / 2, 75 / 2);  // 75 es el tamaño del sprite, cambiar
+    //body.setPosition(x, y);//Quitar esto mas adelante
 
-    body.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
+    //body.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
     saltos = 1;
     jumpSpeed=0;
     jumpHeight=75*2;
-
-    
+    arma=0;    
 }
 
 void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){

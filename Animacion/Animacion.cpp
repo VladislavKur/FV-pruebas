@@ -4,7 +4,19 @@
 
 
 Animacion::~Animacion(){}
-Animacion::Animacion(sf::Texture* textura, sf::Vector2u cantidadImagenes, float SwitchTimeSprite){
+Animacion::Animacion(std::string fichero,sf::Vector2u cantidadImagenes, float SwitchTimeSprite,
+            sf::Vector2f tamanyoCuerpo,sf::Vector2f tamanyoSprite){
+
+    sf::Texture textura;
+
+    if(!Motor::cargarSprite(textura,fichero)){
+        std::cerr << "Error cargando la imagen " << fichero;
+        //hacer handle del error WIP
+    }
+
+    Motor::setTamanyoCuerpo(this->body,tamanyoCuerpo);
+    Motor::setTextura(this->body);
+    Motor::recorte(this->body,0*75,2*75,75,75);
 
     this->cantidadImagenes=cantidadImagenes; //cantidad de imagenes de spritesheet
     this->SwitchTimeSprite=SwitchTimeSprite; //el tiempo que tarda de una imagen a otra
