@@ -6,16 +6,16 @@
 Animacion::~Animacion(){}
 Animacion::Animacion(sf::Texture* textura, sf::Vector2u cantidadImagenes, float SwitchTimeSprite){
 
-    this->cantidadImagenes=cantidadImagenes;
-    this->SwitchTimeSprite=SwitchTimeSprite;
+    this->cantidadImagenes=cantidadImagenes; //cantidad de imagenes de spritesheet
+    this->SwitchTimeSprite=SwitchTimeSprite; //el tiempo que tarda de una imagen a otra
 
-    spriteActual.y= 0;
-    spriteActual.x = 0;
+    spriteActual.y= 0;  //empieza con el primero
+    spriteActual.x = 0; //empieza con el primero
     
-    temporizador = 0;
+    temporizador = 0; //el temporizador se inicia a 0
 
 
-    textureRect.height = textura->getSize().y/ float(cantidadImagenes.y);
+    textureRect.height = textura->getSize().y/ float(cantidadImagenes.y); //
     textureRect.width = textura->getSize().x/ float(cantidadImagenes.x);
 
 }

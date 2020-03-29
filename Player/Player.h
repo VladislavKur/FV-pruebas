@@ -18,9 +18,6 @@ private:
     float jumpHeight; //Constante (en principio)
     Animacion animacion;
 
-    
-
-
 public:
     //CANON
     Player(sf::Texture* textura, sf::Vector2u cantidadImagenes, float SwitchTimeSprite);
