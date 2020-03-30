@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphic.hpp>
+#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "../Player/Player.h"
 #include "../enemigos/enemigo.h"
@@ -11,19 +11,19 @@
     class Juego{
 
         private:
-            Player::Player jugador;
-            Enemigo::Enemigo* enemies = NULL;
-            Bullet::Bullet* bulletPlayer = NULL;
-            Bullet::Bullet* bulletEnemies = NULL;
+            Player jugador;
+            Enemigo* enemies = NULL;
+            Bullet* bulletPlayer = NULL;
+            Bullet* bulletEnemies = NULL;
             static Juego* pinstance;
 
         protected:
             Juego();
         public:
-            Juego instance();
+            Juego *instance();
             void update(float updateTime);
             void render(float deltaTime);            
 
-    }
+    };
 
 #endif

@@ -15,7 +15,7 @@ Animacion::Animacion(std::string fichero,sf::Vector2u cantidadImagenes, float Sw
     }
 
     Motor::setTamanyoCuerpo(this->body,tamanyoCuerpo);
-    Motor::setTextura(this->body);
+    Motor::setTextura(this->body, textura);
     Motor::recorte(this->body,0*75,2*75,75,75);
 
     this->cantidadImagenes=cantidadImagenes; //cantidad de imagenes de spritesheet
@@ -27,8 +27,8 @@ Animacion::Animacion(std::string fichero,sf::Vector2u cantidadImagenes, float Sw
     temporizador = 0; //el temporizador se inicia a 0
 
 
-    textureRect.height = textura->getSize().y/ float(cantidadImagenes.y); //
-    textureRect.width = textura->getSize().x/ float(cantidadImagenes.x);
+    textureRect.height = textura.getSize().y/ float(cantidadImagenes.y); //
+    textureRect.width = textura.getSize().x/ float(cantidadImagenes.x);
 
 }
 

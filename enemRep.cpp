@@ -3,6 +3,7 @@
 
 #include "enemigos/reptante.h"
 #include "Plataforma/Plataforma.h"
+//#include "Collider/Collider.h"
 
 #define kVel 1
 
@@ -33,8 +34,8 @@ int main() {
   int direccion = 1; //1: reloj, -1: contrario
 
   Reptante *enemigo = new Reptante(tex,200.0f,150.0f);
-
   Plataforma plataforma1(nullptr, sf::Vector2f(100.0f,1000.0f),sf::Vector2f(500.0f,200.0f));
+  Plataforma plataforma2(nullptr, sf::Vector2f(1000.0f,100.0f),sf::Vector2f(1000.0f,200.0f));
   
   //Bucle del juego
   while (window.isOpen()) {
@@ -111,9 +112,10 @@ int main() {
         break;
       }
     }
-
-    //enemigo->update(,delta);
-    plataforma1.getCollider().checkCollision(enemigo->getCollider(),1.0f);
+  
+    enemigo->update(5.0f, plataforma1, plataforma2);
+    //Collider c = enemigo->getCollider();
+    //plataforma1.getCollider().checkCollision(enemigo->getCollider(),0.0f);
 
     window.clear();
     //window.draw(sprite);

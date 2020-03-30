@@ -55,7 +55,7 @@ void Motor::recorte(sf::RectangleShape &entrada,  int xi,int yi, int lengthX, in
 
     entrada.setOrigin(xi + (lengthX/2),yi+(lengthY/2));
 
-    entrada.setTextureRect(sf::IntRect(xi,yi,lenghtX,lengthY));
+    entrada.setTextureRect(sf::IntRect(xi,yi,lengthX,lengthY));
 
 }
 
@@ -65,7 +65,7 @@ void Motor::setTamanyoCuerpo(sf::RectangleShape &cuerpo,sf::Vector2f entrada){
 
 }
 
-void setTextura(sf::RectangleShape& cuerpo, sf::Texture entrada){
+void setTextura(sf::RectangleShape& cuerpo, sf::Texture* texture){
 
     cuerpo.setTexture(texture);
 

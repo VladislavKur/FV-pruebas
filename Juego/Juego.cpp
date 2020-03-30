@@ -1,16 +1,14 @@
 #include "Juego.h"
 
-Juego::pinstance = 0;
+Juego* Juego::pinstance = 0;
 
 Juego::Juego(){
 
-
-
 }
 
-Juego Juego::instance(){
+Juego* Juego::instance(){
 
-    if(pinstance = 0){
+    if(pinstance == 0){
 
         pinstance = new Juego();
 

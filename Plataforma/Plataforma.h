@@ -1,8 +1,9 @@
-#pragma once
 #include <SFML/Graphics.hpp>
 #include "../Collider/Collider.h"
 
 
+#ifndef PLATAFORMA_H
+#define PLATAFORMA_H
 
 
 class Plataforma{
@@ -22,3 +23,5 @@ class Plataforma{
     sf::RectangleShape body;
 
 };
+
+#endif
