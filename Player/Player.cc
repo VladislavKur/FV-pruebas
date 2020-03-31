@@ -21,7 +21,7 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
 
     body.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
 
-
+    PU_saltoDoble=false;
     vida = 2;
     saltos = 1;
     jumpSpeed=0;
@@ -103,6 +103,8 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     
     //Caída constante
     body.move(0,jumpSpeed*deltaTime);
+
+    std::cout<< "Salto doble: " << PU_saltoDoble << "-----" << "auxSaltos: " << auxSaltos << "-----" << "Saltos: "<< saltos <<std::endl;
 }
 
 

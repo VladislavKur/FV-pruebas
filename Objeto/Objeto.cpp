@@ -23,7 +23,7 @@
 
     //t --> tipo
     void Objeto::update(Player &otherBody){
-
+        //std::cout<<"Tipo : "<< tipo <<std::endl;
         if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && body.getGlobalBounds().intersects(otherBody.getBody().getGlobalBounds())){
 
             body.setSize(sf::Vector2f(0,0));
