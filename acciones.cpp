@@ -56,6 +56,7 @@ int main() {
  // textura -- Tamaño -- Posicion -- tipo
   Objeto arma(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,300), 1);
   Objeto SaltoDoble(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(300,100), 2);
+  SaltoDoble.setTipo(2);
 
 
 

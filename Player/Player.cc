@@ -88,12 +88,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
             //  std:: cout << "entra" << std:: endl;
           // std:: cout << "_-------------------------------------__" << std:: endl;
         saltar();
-        
-        
-        
-   
-        
-        
+    
       }
     }
 

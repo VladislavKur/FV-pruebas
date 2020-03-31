@@ -28,6 +28,7 @@
 
             body.setSize(sf::Vector2f(0,0));
             body.setPosition(-500,-500); //lejos de la accion  
+            std::cout << tipo << std:: endl;
             
 
             switch (tipo){
