@@ -16,14 +16,14 @@
             body.setTexture(tex);
             body.setPosition(Posicion);
 
-        tipo = std::min(std::max(t,2),1);
+        tipo = t;
 
 
     }
 
     //t --> tipo
     void Objeto::update(Player &otherBody){
-
+        //std::cout<<"Tipo : "<< tipo <<std::endl;
         if( sf::Keyboard::isKeyPressed(sf::Keyboard::E) && body.getGlobalBounds().intersects(otherBody.getBody().getGlobalBounds())){
 
             body.setSize(sf::Vector2f(0,0));
