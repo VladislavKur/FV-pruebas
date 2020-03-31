@@ -39,6 +39,10 @@
                 case 2:
                     otherBody.obtenerPU_SaltoDoble();
                     break;
+
+                case 3:
+                    otherBody.obtenerPU_Velocidad();
+                    break;
             
             default:
                 std:: cout <<"Default" << std::endl;
