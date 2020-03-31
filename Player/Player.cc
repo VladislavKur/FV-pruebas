@@ -58,6 +58,10 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     coliArriba.width = gbb.width - 40;
     coliArriba.height = 5;
 
+    cooldownSalto-=deltaTime;
+    if(cooldownSalto<0){
+      auxSaltos=true;
+    }
 
     //Moverse a la derecha si la plataforma lo permite
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
@@ -74,13 +78,19 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
  if(coliAbajo.intersects(plataforma.getBody().getGlobalBounds()) ||
    coliAbajo.intersects(suelo.getBody().getGlobalBounds()) ){
     saltos = PU_saltoDoble ? 5: 3;
+<<<<<<< HEAD
+    jumpSpeed = 0;
+=======
     
     jumpSpeed=0;
+>>>>>>> 24c87522cfaa05e4e92469119f73981f833b02b5
   
    } else 
       jumpSpeed+=981.0f*deltaTime;
 
   //caer
+
+    
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
    //  std:: cout << PU_saltoDoble << std:: endl;
@@ -89,8 +99,20 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
       if(auxSaltos==true && saltos > 0){
             //  std:: cout << "entra" << std:: endl;
           // std:: cout << "_-------------------------------------__" << std:: endl;
+        
         saltar();
+<<<<<<< HEAD
+        cooldownSalto=500*deltaTime;
+
+        quitarVida();
+        
+        
+   
+        
+        
+=======
     
+>>>>>>> 24c87522cfaa05e4e92469119f73981f833b02b5
       }
     }
 
@@ -101,7 +123,10 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     //Caída constante
     body.move(0,jumpSpeed*deltaTime);
 
+<<<<<<< HEAD
+=======
     if(saltos > 0)
+>>>>>>> 24c87522cfaa05e4e92469119f73981f833b02b5
     std::cout<< "Salto doble: " << PU_saltoDoble << "-----" << "auxSaltos: " << auxSaltos << "-----" << "Saltos: "<< saltos <<std::endl;
 }
 

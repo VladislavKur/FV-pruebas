@@ -18,6 +18,7 @@ private:
     float jumpHeight; //Constante (en principio)
     Animacion animacion;
     bool auxSaltos; // inicialmente true, que puede saltar dos veces
+    float cooldownSalto;
     
 
 

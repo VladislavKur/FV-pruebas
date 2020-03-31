@@ -113,11 +113,17 @@ int main() {
         default: break;
         }
         case sf::Event::KeyReleased:
+<<<<<<< HEAD
+         /*if (event.key.code == sf::Keyboard::Space){
+           player.setAuxSaltos();std::cout << "perro\n" ;
+         }*/
+=======
          if (event.key.code == sf::Keyboard::Space){
            player.setAuxSaltos();
            std::cout << "perro" << id << "\n";
            id++;
          }
+>>>>>>> 24c87522cfaa05e4e92469119f73981f833b02b5
            
 
         break;
