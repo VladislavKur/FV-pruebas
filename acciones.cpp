@@ -55,7 +55,7 @@ int main() {
   plataforma.setFillColor(sf::Color(0,0,128));
   plataforma.setPosition(200, sprite.getPosition().y+300 );
  // textura -- Tamaño -- Posicion -- tipo
-  Objeto velocidad(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,200),sf::Color(0,250,200), 3);
+  Objeto velocidad(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,200),sf::Color(0,200,200), 3);
   Objeto SaltoDoble(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(100,200),sf::Color(0,255,255), 2);
   Objeto arma(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(000,200),sf::Color(255,0,0) ,1);
 

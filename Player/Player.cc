@@ -38,8 +38,8 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     Vector2f gp = body.getPosition();
     FloatRect gbb = body.getGlobalBounds();
 
-    coliAbajo.left = gp.x - gbb.width/2 + 25;
-    coliAbajo.top = gp.y + gbb.height/2;
+    coliAbajo.left = gp.x - gbb.width/2 + 27;
+    coliAbajo.top = gp.y + gbb.height/2+2;
     coliAbajo.width = gbb.width-50;
     coliAbajo.height = 2;
     
