@@ -27,7 +27,7 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
     jumpSpeed=0;
     jumpHeight=75*2;
 
-    auxSaltos = true;
+    auxSaltos = false;
 
     
 }
@@ -88,7 +88,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
             //  std:: cout << "entra" << std:: endl;
           // std:: cout << "_-------------------------------------__" << std:: endl;
         saltar();
-        quitarVida();
+        
         
         
    

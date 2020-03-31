@@ -16,7 +16,7 @@
             body.setTexture(tex);
             body.setPosition(Posicion);
 
-        tipo = std::min(std::max(t,2),1);
+        tipo = t;
 
 
     }

@@ -19,7 +19,7 @@ int main() {
   /////////////
   ////START////
   /////////////
-
+  int id = 0;
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
 
@@ -54,8 +54,8 @@ int main() {
   plataforma.setFillColor(sf::Color(0,0,128));
   plataforma.setPosition(200, sprite.getPosition().y+300 );
  // textura -- Tamaño -- Posicion -- tipo
-  Objeto arma(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,200), 1);
-  Objeto SaltoDoble(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(300,200), 2);
+  Objeto arma(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,300), 1);
+  Objeto SaltoDoble(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(300,100), 2);
 
 
 
@@ -92,7 +92,7 @@ int main() {
 
         case sf::Keyboard::Left:
           
-          case sf::Keyboard::Space:
+        case sf::Keyboard::Space:
           
          
           break;
@@ -106,7 +106,9 @@ int main() {
         }
         case sf::Event::KeyReleased:
          if (event.key.code == sf::Keyboard::Space){
-           player.setAuxSaltos();std::cout << "perro\n" ;
+           player.setAuxSaltos();
+           std::cout << "perro" << id << "\n";
+           id++;
          }
            
 
