@@ -54,9 +54,10 @@ int main() {
   plataforma.setFillColor(sf::Color(0,0,128));
   plataforma.setPosition(200, sprite.getPosition().y+300 );
  // textura -- Tamaño -- Posicion -- tipo
-  Objeto arma(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,300), 1);
-  Objeto SaltoDoble(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(300,100), 2);
-  SaltoDoble.setTipo(2);
+  Objeto velocidad(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(200,200), 3);
+  Objeto SaltoDoble(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(100,200), 2);
+  Objeto arma(nullptr, sf::Vector2f(25.0f, 17.0f),sf::Vector2f(000,200), 1);
+
 
 
 
@@ -139,6 +140,7 @@ int main() {
     player.update(deltaTime, plataforma1, plataforma2);
     arma.update(player);
     SaltoDoble.update(player);
+    velocidad.update(player);
 
 
 
@@ -176,6 +178,7 @@ int main() {
     plataforma2.Draw(window);
     player.draw(window);
     arma.draw(window);
+    velocidad.draw(window);
     SaltoDoble.draw(window);
 
 

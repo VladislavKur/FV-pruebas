@@ -22,12 +22,14 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
     body.setTextureRect(sf::IntRect(0 * 75, 2 * 75, 75, 75));
 
     PU_saltoDoble=false;
+    PU_slowhits=false;
+    PU_velocidad=false;
     vida = 2;
     saltos = 1;
     jumpSpeed=0;
     jumpHeight=75*2;
 
-    auxSaltos = false;
+    auxSaltos = true;
 
     
 }
@@ -60,18 +62,18 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     //Moverse a la derecha si la plataforma lo permite
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
       if(!coliDerecha.intersects(plataforma.getBody().getGlobalBounds()))
-        moveRight(deltaTime);
+        moveRight(PU_velocidad? 1.5*deltaTime : deltaTime);
       }
     //Moverse a la izquierda si la plataforma lo permite
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
       if(!coliIzquierda.intersects(plataforma.getBody().getGlobalBounds()))
-        moveLeft(deltaTime);
+        moveLeft(PU_velocidad? 1.5*deltaTime : deltaTime);
       }
 
 //Dejar de caer si toco plataforma
  if(coliAbajo.intersects(plataforma.getBody().getGlobalBounds()) ||
    coliAbajo.intersects(suelo.getBody().getGlobalBounds()) ){
-    saltos = PU_saltoDoble ? 2: 1;
+    saltos = PU_saltoDoble ? 5: 3;
     
     jumpSpeed=0;
   
@@ -99,6 +101,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     //Caída constante
     body.move(0,jumpSpeed*deltaTime);
 
+    if(saltos > 0)
     std::cout<< "Salto doble: " << PU_saltoDoble << "-----" << "auxSaltos: " << auxSaltos << "-----" << "Saltos: "<< saltos <<std::endl;
 }
 
@@ -126,7 +129,7 @@ void Player::moveLeft(float deltaTime){
 
 }
 void Player::saltar(){
-  if(saltos > 0){
+  if(saltos > 0 && auxSaltos){
         auxSaltos= false;
         jumpSpeed = -sqrtf(2.0f * 981.0f * jumpHeight);
         saltos--;
@@ -149,4 +152,8 @@ void Player::setArma(int p_arma){
 
 void Player::setAuxSaltos(){
   auxSaltos= true;
+}
+
+void Player::obtenerPU_Velocidad(){
+  PU_velocidad=true;
 }
