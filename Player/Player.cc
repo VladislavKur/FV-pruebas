@@ -77,7 +77,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
 //Dejar de caer si toco plataforma
  if(coliAbajo.intersects(plataforma.getBody().getGlobalBounds()) ||
    coliAbajo.intersects(suelo.getBody().getGlobalBounds()) ){
-    saltos = PU_saltoDoble ? 2: 1;
+    saltos = PU_saltoDoble ? 5: 3;
     jumpSpeed = 0;
   
    } else 
