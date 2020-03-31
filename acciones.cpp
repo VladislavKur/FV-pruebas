@@ -118,7 +118,13 @@ int main() {
         }
         case sf::Event::KeyReleased:
          /*if (event.key.code == sf::Keyboard::Space){
+<<<<<<< HEAD
+           player.setAuxSaltos();
+           std::cout << "perro" << id << "\n";
+           id++;
+=======
            player.setAuxSaltos();std::cout << "perro\n" ;
+>>>>>>> 8537febbcd6e35177bd3b44351d06d69246a511d
          }*/
            
 
