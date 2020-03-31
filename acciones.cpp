@@ -118,13 +118,9 @@ int main() {
         }
         case sf::Event::KeyReleased:
          /*if (event.key.code == sf::Keyboard::Space){
-<<<<<<< HEAD
            player.setAuxSaltos();
            std::cout << "perro" << id << "\n";
            id++;
-=======
-           player.setAuxSaltos();std::cout << "perro\n" ;
->>>>>>> 8537febbcd6e35177bd3b44351d06d69246a511d
          }*/
            
 
@@ -139,7 +135,7 @@ int main() {
     ///UPDATE///
     ////////////
     if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)){
-    deltaTime = clock.restart().asSeconds();
+    deltaTime = clock.restart().asMilliseconds();
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
         for(int i=0 ; i<maxBullets ; i++){
