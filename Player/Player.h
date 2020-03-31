@@ -20,6 +20,7 @@ private:
 
 public:
     //CANON
+    Player();
     Player(int x, int y);
     //Player(sf::Texture* textura, sf::Vector2u cantidadImagenes, float SwitchTimeSprite);
     ~Player() ;

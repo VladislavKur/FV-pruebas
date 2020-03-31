@@ -8,6 +8,15 @@ using namespace sf;
 Player::~Player(){
 
 }
+Player::Player()
+:animacion("sprites.png",
+            sf::Vector2u(40,19),
+            0.33f,
+            sf::Vector2f(100.0f,100.0f),
+            sf::Vector2f(75.0,75.0)
+            ){
+
+} 
 
 Player::Player(int x, int y) 
 : animacion("sprites.png",

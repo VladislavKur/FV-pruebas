@@ -2,16 +2,16 @@
 #include <iostream>
 
 #include "enemigos/reptante.h"
-#include "Plataforma/Plataforma.h"
-//#include "Collider/Collider.h"
+
 
 #define kVel 1
+#define UPDATE_TICK_TIME 15/1000
 
 int main() {
 
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(1200, 1200), "P0. Fundamentos de los Videojuegos. DCCIA");
-
+  window.setFramerateLimit(60);
   //Cargo la imagen donde reside la textura del sprite
   sf::Texture tex;
   if (!tex.loadFromFile("resources/sprites.png")) {
@@ -19,73 +19,26 @@ int main() {
     exit(0);
   }
 
-  //Y creo el spritesheet a partir de la imagen anterior
-  /*sf::Sprite sprite(tex);
+  float x = 200.0f;
+  float y = 150.0f;
+  Reptante *enemigo = new Reptante(tex);
 
-  //Le pongo el centroide donde corresponde
-  sprite.setOrigin(75 / 2, 75 / 2);
-  //Cojo el sprite que me interesa por defecto del sheet
-  sprite.setTextureRect(sf::IntRect(0 * 75, 3 * 75, 75, 75));
+  //Plataforma plataforma1(nullptr, sf::Vector2f(100.0f,1000.0f),sf::Vector2f(500.0f,200.0f));
+  sf::RectangleShape cuerpoMueve(sf::Vector2f(50.0f, 70.0f));
+  cuerpoMueve.setFillColor(sf::Color(0,255,0));
+  cuerpoMueve.setPosition(sf::Vector2f(-100,600));
 
-  // Lo dispongo en el centro de la pantalla
-  sprite.setPosition(100, 100);
-*/
-  int modoReptante = 0; //0: suelo, 1: paredD; 2: techo 3: paredI
-  int direccion = 1; //1: reloj, -1: contrario
+  sf::Clock updateClock;
+  float delta;
 
-  Reptante *enemigo = new Reptante(tex,200.0f,150.0f);
-  Plataforma plataforma1(nullptr, sf::Vector2f(100.0f,1000.0f),sf::Vector2f(500.0f,200.0f));
-  Plataforma plataforma2(nullptr, sf::Vector2f(1000.0f,100.0f),sf::Vector2f(1000.0f,200.0f));
-  
   //Bucle del juego
   while (window.isOpen()) {
-    if(direccion == -1)
-    modoReptante = 1;
-    //switch movimiento del reptante
-    /*switch(modoReptante){
-      case 0: //suelo
-            sprite.move(kVel*direccion, 0);
-            if(sprite.getPosition().x == 1100 && direccion==1)
-                modoReptante = 3;
-            else
-            {
-                if(sprite.getPosition().y == 100 && direccion==-1)
-                    modoReptante = 1;
-            }
-            
-      break;
-      case 1: //paredIzq
-            sprite.move(0, -kVel*direccion);
-            if(sprite.getPosition().y == 100 && direccion==1)
-                modoReptante = 0;
-            else
-            {
-                if(sprite.getPosition().x == 100 && direccion==-1)
-                    modoReptante = 2;
-            }
-      break;
-      case 2://Techo
-            sprite.move(-kVel*direccion, 0);
-            if(sprite.getPosition().x == 100 && direccion==1)
-                modoReptante = 1;
-            else
-            {
-                if(sprite.getPosition().y == 100 && direccion==-1)
-                    modoReptante = 3;
-            }
-      break;
-      case 3://pared Dereecha
-            sprite.move(0, kVel*direccion);
-            if(sprite.getPosition().y == 800 && direccion==1)
-                modoReptante = 2;
-            else
-            {
-                if(sprite.getPosition().x == 1100 && direccion==-1)
-                    modoReptante = 1;
-            }
-      break;
-    }*/
-    
+    if(updateClock.getElapsedTime().asMilliseconds()>UPDATE_TICK_TIME){
+      delta = updateClock.restart().asMilliseconds();
+      enemigo->update(cuerpoMueve, delta);
+
+    }
+       
     sf::Event event;
     while (window.pollEvent(event)) {
 
@@ -112,13 +65,14 @@ int main() {
         break;
       }
     }
-  
-    enemigo->update(5.0f, plataforma1, plataforma2);
-    //Collider c = enemigo->getCollider();
-    //plataforma1.getCollider().checkCollision(enemigo->getCollider(),0.0f);
+
+    //enemigo->update(,delta);
+    //plataforma1.getCollider().checkCollision(enemigo->getCollider(),1.0f);
 
     window.clear();
-    //window.draw(sprite);
+    cuerpoMueve.move(kVel*(delta/UPDATE_TICK_TIME),0);
+    enemigo->render(window, delta/UPDATE_TICK_TIME);
+    window.draw(cuerpoMueve);
     window.display();
   }
 

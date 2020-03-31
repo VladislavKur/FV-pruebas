@@ -20,7 +20,7 @@
         protected:
             Juego();
         public:
-            Juego *instance();
+            static Juego *instance();
             void update(float updateTime);
             void render(float deltaTime);            
 

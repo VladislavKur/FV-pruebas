@@ -2,9 +2,10 @@
 
 Juego* Juego::pinstance = 0;
 
-/*Juego::Juego(){
+Juego::Juego(){
 
-}*/
+
+}
 
 Juego* Juego::instance(){
 

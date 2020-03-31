@@ -39,7 +39,7 @@ add_executable(Acciones acciones.cpp)
 #aportaran código
 target_link_libraries(murcielago libClases)
 target_link_libraries(centinela libClases)
-target_link_libraries(reptante libClases)
+
 target_link_libraries(ranJamp libClases)
 target_link_libraries(Gravedad libClases)
     target_link_libraries(Menu libClases)
