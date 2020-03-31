@@ -34,8 +34,8 @@ Reptante::Reptante(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
 }*/
 
 void Reptante::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
-    Vector2f gp = cuerpo.getPosition();
-    FloatRect gbb = cuerpo.getGlobalBounds();
+    sf::Vector2f gp = cuerpo.getPosition();
+    sf::FloatRect gbb = cuerpo.getGlobalBounds();
     
     coliAbajo.left = gp.x - gbb.width/2 + 25;
     coliAbajo.top = gp.y + gbb.height/2;
