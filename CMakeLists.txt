@@ -5,7 +5,6 @@ project(ranJamp)
 #En cada subdirectorio debe haber un fichero CMakeLists.txt
 #Habitualmente cada subdirectorio determinará una libreria 
 
-
 add_library(libClases STATIC)
 add_subdirectory(Player)
 add_subdirectory(Bullet)
@@ -39,7 +38,7 @@ add_executable(Acciones acciones.cpp)
 #aportaran código
 target_link_libraries(murcielago libClases)
 target_link_libraries(centinela libClases)
-
+target_link_libraries(reptante libClases)
 target_link_libraries(ranJamp libClases)
 target_link_libraries(Gravedad libClases)
     target_link_libraries(Menu libClases)

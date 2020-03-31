@@ -12,7 +12,7 @@ Reptante::Reptante(sf::Texture& tex) : Enemigo(tex,0,0){
     cuerpo.setOrigin(75 / 2, 75 / 2);
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
     cuerpo.setPosition(posX, posY);
-
+    cuerpo.setTexture(tex);
 };
 
 Reptante::Reptante(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
@@ -26,6 +26,7 @@ Reptante::Reptante(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
     //cuerpo.setTexture(tex);
     cuerpo.setOrigin(75 / 2, 75 / 2);
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
+    cuerpo.setTexture(tex);
     cuerpo.setPosition(x, y);
     
     

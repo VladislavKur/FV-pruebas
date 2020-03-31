@@ -9,8 +9,8 @@
 
 class Enemigo{
     public:
-        virtual void update(sf::RectangleShape& player, float delta); ///player
-        virtual void render(sf::RenderWindow & entrada, float porcentaje);
+        virtual void update(sf::RectangleShape& player, float delta){}; ///player
+        virtual void render(sf::RenderWindow & entrada, float porcentaje){};
 
     protected:
         float posX, posY;
