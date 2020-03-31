@@ -20,6 +20,7 @@ int main() {
   ////START////
   /////////////
   int id = 0;
+  int id2 = 0;
   //Creamos una ventana
   sf::RenderWindow window(sf::VideoMode(640, 480), "P0. Fundamentos de los Videojuegos. DCCIA");
 
@@ -95,6 +96,11 @@ int main() {
         case sf::Keyboard::Left:
           
         case sf::Keyboard::Space:
+        if (event.key.code == sf::Keyboard::Space){
+           
+           std::cout << "gato" << id2 << "\n";
+           id2++;
+         }
           
          
           break;
