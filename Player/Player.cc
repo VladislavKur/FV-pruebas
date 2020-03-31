@@ -30,7 +30,7 @@ Player::Player(sf::Texture* tex, sf::Vector2u cantidadImagenes, float SwitchTime
     jumpHeight=75*2;
 
     auxSaltos = true;
-
+    cooldownSalto = 0;
     
 }
 
@@ -59,7 +59,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
     coliArriba.height = 5;
 
     cooldownSalto-=deltaTime;
-    if(cooldownSalto<0){
+    if(cooldownSalto<=0){
       auxSaltos=true;
     }
 
@@ -77,13 +77,8 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
 //Dejar de caer si toco plataforma
  if(coliAbajo.intersects(plataforma.getBody().getGlobalBounds()) ||
    coliAbajo.intersects(suelo.getBody().getGlobalBounds()) ){
-    saltos = PU_saltoDoble ? 5: 3;
-<<<<<<< HEAD
+    saltos = PU_saltoDoble ? 2: 1;
     jumpSpeed = 0;
-=======
-    
-    jumpSpeed=0;
->>>>>>> 24c87522cfaa05e4e92469119f73981f833b02b5
   
    } else 
       jumpSpeed+=981.0f*deltaTime;
@@ -101,8 +96,7 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
           // std:: cout << "_-------------------------------------__" << std:: endl;
         
         saltar();
-<<<<<<< HEAD
-        cooldownSalto=500*deltaTime;
+        cooldownSalto=250*deltaTime;
 
         quitarVida();
         
@@ -110,23 +104,16 @@ void Player::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
    
         
         
-=======
-    
->>>>>>> 24c87522cfaa05e4e92469119f73981f833b02b5
       }
     }
 
     if(coliArriba.intersects(plataforma.getBody().getGlobalBounds())){
-        jumpSpeed=10;
+        jumpSpeed=25;
     }
     
     //Caída constante
     body.move(0,jumpSpeed*deltaTime);
 
-<<<<<<< HEAD
-=======
-    if(saltos > 0)
->>>>>>> 24c87522cfaa05e4e92469119f73981f833b02b5
     std::cout<< "Salto doble: " << PU_saltoDoble << "-----" << "auxSaltos: " << auxSaltos << "-----" << "Saltos: "<< saltos <<std::endl;
 }
 

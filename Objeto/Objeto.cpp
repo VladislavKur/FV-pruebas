@@ -7,9 +7,9 @@
     
     
     Objeto::~Objeto(){}
-    Objeto::Objeto(sf::Texture* tex,sf::Vector2f size,  sf::Vector2f Posicion, int t){
+    Objeto::Objeto(sf::Texture* tex,sf::Vector2f size,  sf::Vector2f Posicion,sf::Color color, int t){
 
-        body.setFillColor(sf::Color(0,255,0));
+        body.setFillColor(color);
       
          
             body.setSize(size);
@@ -66,6 +66,10 @@
     int Objeto::getTipo(){
          return tipo;
     }
+
+    sf::RectangleShape Objeto::getBody(){
+    return body;
+}
 
 
 

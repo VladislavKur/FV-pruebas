@@ -8,10 +8,11 @@ class Objeto
 
     public:
     ~Objeto();//t --> tipo
-    Objeto(sf::Texture* tex,sf::Vector2f size, sf::Vector2f Posicion, int t);
+    Objeto(sf::Texture* tex,sf::Vector2f size, sf::Vector2f Posicion,sf::Color color, int t);
 
     void draw(sf::RenderWindow& window);
     void update(Player &otherBody);
+    sf::RectangleShape getBody();
 
 
     void recogido();
