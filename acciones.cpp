@@ -40,7 +40,7 @@ int main() {
     bullets[i]=NULL;
   }
 
-  Player player(&tex, sf::Vector2u(40,19),0.33f);
+  Player player(tex, sf::Vector2u(40,19),0.33f);
 
   float deltaTime = 0;
   sf::Clock clock;

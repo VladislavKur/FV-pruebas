@@ -13,18 +13,6 @@ Reptante::Reptante(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
     cuerpo.setOrigin(75 / 2, 75 / 2);
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
     cuerpo.setPosition(x, y);
-
-    /*esqIzq.setOrigin(75 / 2, 75 / 2);
-    esqDcha.setOrigin(75 / 2, 75 / 2);
-
-    esqIzq.setRotation(34.825f);
-    esqDcha.setRotation(55.175f);
-
-    esqIzq.setPosition(x,y);
-    esqDcha.setPosition(x,y);
-
-    esqIzq.setFillColor(sf::Color(sf::Uint32 (255)));
-    esqIzq.setFillColor(sf::Color(sf::Uint32 (120)));*/
     
     
 }
@@ -34,8 +22,8 @@ Reptante::Reptante(sf::Texture& tex, float x, float y) : Enemigo(tex,x,y){
 }*/
 
 void Reptante::update(float deltaTime, Plataforma plataforma, Plataforma suelo){
-    Vector2f gp = cuerpo.getPosition();
-    FloatRect gbb = cuerpo.getGlobalBounds();
+    sf::Vector2f gp = cuerpo.getPosition();
+    sf::FloatRect gbb = cuerpo.getGlobalBounds();
     
     coliAbajo.left = gp.x - gbb.width/2 + 25;
     coliAbajo.top = gp.y + gbb.height/2;

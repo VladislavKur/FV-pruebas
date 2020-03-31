@@ -18,7 +18,7 @@ class Enemigo{
         float velocidad;
         int modo;
         Enemigo(sf::Texture& tex,float x, float y);
-        ~Enemigo();
+        virtual ~Enemigo();
         sf::RectangleShape cuerpo;
         sf::Clock relojAnim;
         void actualizarPosicion(float x, float y);

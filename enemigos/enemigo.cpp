@@ -14,7 +14,9 @@ Enemigo::Enemigo(sf::Texture& tex,float x, float y){
     cuerpo.setTextureRect(sf::IntRect(0 * 75, 0 * 75, 75, 75));
     cuerpo.setPosition(x, y);*/
 };
-Enemigo::~Enemigo(){}
+Enemigo::~Enemigo(){
+  
+}
 
 void Enemigo::actualizarPosicion(float entradaX, float entradaY){
 
