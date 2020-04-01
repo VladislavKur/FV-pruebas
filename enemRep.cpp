@@ -21,7 +21,7 @@ int main() {
 
   float x = 200.0f;
   float y = 150.0f;
-  Reptante *enemigo = new Reptante(tex);
+  Reptante *enemigo = new Reptante(tex,x,y);
 
   //Plataforma plataforma1(nullptr, sf::Vector2f(100.0f,1000.0f),sf::Vector2f(500.0f,200.0f));
   sf::RectangleShape cuerpoMueve(sf::Vector2f(50.0f, 70.0f));

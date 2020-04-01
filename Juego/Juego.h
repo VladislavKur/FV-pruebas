@@ -21,8 +21,8 @@
             Juego();
         public:
             static Juego *instance();
-            void update(float updateTime);
-            void render(float deltaTime);            
+            void update(float deltaTime);
+            void render(float porcentaje);            
 
     };
 

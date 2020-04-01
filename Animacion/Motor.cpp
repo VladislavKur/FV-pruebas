@@ -84,10 +84,31 @@ float Motor::getReloj(){
     return(devolver);
 }
 
+int Motor::getRelojM(){
+
+    int devolver = updateClock.getElapsedTime().asMilliseconds();
+
+    return(devolver);
+}
+
 float Motor::restartReloj(){
 
     float devolver = updateClock.getElapsedTime().asSeconds();
 
     return(devolver);
+
+}
+
+int Motor::restartRelojM(){
+
+    int devolver = updateClock.getElapsedTime().asMilliseconds();
+
+    return(devolver);
+
+}
+
+bool Motor::getOpen(){
+
+    return(ventana.isOpen());
 
 }

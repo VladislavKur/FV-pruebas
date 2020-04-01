@@ -22,7 +22,9 @@
         public:
             static bool crearVentana();
             static float getReloj();
+            static int getRelojM();
             static float restartReloj();
+            static int restartRelojM();
             static void close();
             static void limpieza();
             static void mostrar();

@@ -18,7 +18,7 @@ Juego* Juego::instance(){
     return(pinstance);
 }
 
-void Juego::update(float updateTime){ //wip
+void Juego::update(float deltaTime){ //wip
 
     for(int i = 0; i < (sizeof(bulletPlayer)/sizeof(*bulletPlayer));i++){
 
@@ -39,7 +39,7 @@ void Juego::update(float updateTime){ //wip
 
 }
 
-void Juego::render(float deltaTime){ //wip
+void Juego::render(float porcentaje){ //wip
 
     for(int i = 0; i < (sizeof(bulletPlayer)/sizeof(*bulletPlayer));i++){
 
